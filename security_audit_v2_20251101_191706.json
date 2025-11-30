@@ -1,0 +1,97 @@
+{
+  "total_tests": 7,
+  "critical_vulnerabilities": 0,
+  "high_vulnerabilities": 0,
+  "medium_vulnerabilities": 0,
+  "low_vulnerabilities": 0,
+  "exploitable_count": 0,
+  "tests_passed": 7,
+  "tests_failed": 0,
+  "duration": 7.456021308898926,
+  "results": [
+    {
+      "test_name": "Access Control - Admin Functions",
+      "vulnerability": "Unauthorized Pause",
+      "severity": "CRITICAL",
+      "expected_behavior": "Deve reverter: N\u00e3o tem DEFAULT_ADMIN_ROLE",
+      "actual_behavior": "Erro durante teste: Could not transact with/call contract function, is contract deployed correctly and chain synced?",
+      "exploitable": false,
+      "tx_hash": null,
+      "gas_used": null,
+      "error_message": "Could not transact with/call contract function, is contract deployed correctly and chain synced?",
+      "timestamp": "2025-11-01T19:16:58.905734"
+    },
+    {
+      "test_name": "Access Control - Multisig Functions",
+      "vulnerability": "Unauthorized Multisig Update",
+      "severity": "CRITICAL",
+      "expected_behavior": "Deve reverter: N\u00e3o \u00e9 o multisig",
+      "actual_behavior": "Erro durante teste: Could not transact with/call contract function, is contract deployed correctly and chain synced?",
+      "exploitable": false,
+      "tx_hash": null,
+      "gas_used": null,
+      "error_message": "Could not transact with/call contract function, is contract deployed correctly and chain synced?",
+      "timestamp": "2025-11-01T19:16:59.992648"
+    },
+    {
+      "test_name": "Withdrawal Limits",
+      "vulnerability": "Withdrawal Limit Bypass",
+      "severity": "HIGH",
+      "expected_behavior": "Deve bloquear saques > $10k",
+      "actual_behavior": "Erro durante teste: Could not transact with/call contract function, is contract deployed correctly and chain synced?",
+      "exploitable": false,
+      "tx_hash": null,
+      "gas_used": null,
+      "error_message": "Could not transact with/call contract function, is contract deployed correctly and chain synced?",
+      "timestamp": "2025-11-01T19:17:01.117564"
+    },
+    {
+      "test_name": "Reentrancy Protection",
+      "vulnerability": "Reentrancy Attack",
+      "severity": "CRITICAL",
+      "expected_behavior": "Deve ter nonReentrant modifier",
+      "actual_behavior": "Erro durante teste: Could not transact with/call contract function, is contract deployed correctly and chain synced?",
+      "exploitable": false,
+      "tx_hash": null,
+      "gas_used": null,
+      "error_message": "Could not transact with/call contract function, is contract deployed correctly and chain synced?",
+      "timestamp": "2025-11-01T19:17:02.262506"
+    },
+    {
+      "test_name": "Circuit Breaker",
+      "vulnerability": "Circuit Breaker Ineffective",
+      "severity": "CRITICAL",
+      "expected_behavior": "Deve bloquear saques quando CB ativo",
+      "actual_behavior": "Erro durante teste: Could not transact with/call contract function, is contract deployed correctly and chain synced?",
+      "exploitable": false,
+      "tx_hash": null,
+      "gas_used": null,
+      "error_message": "Could not transact with/call contract function, is contract deployed correctly and chain synced?",
+      "timestamp": "2025-11-01T19:17:03.272292"
+    },
+    {
+      "test_name": "Beta Mode Restrictions",
+      "vulnerability": "Beta Mode Bypass",
+      "severity": "MEDIUM",
+      "expected_behavior": "Deve bloquear dep\u00f3sitos acima do cap",
+      "actual_behavior": "Erro durante teste: Could not transact with/call contract function, is contract deployed correctly and chain synced?",
+      "exploitable": false,
+      "tx_hash": null,
+      "gas_used": null,
+      "error_message": "Could not transact with/call contract function, is contract deployed correctly and chain synced?",
+      "timestamp": "2025-11-01T19:17:04.283434"
+    },
+    {
+      "test_name": "Paused State Enforcement",
+      "vulnerability": "Paused State Bypass",
+      "severity": "MEDIUM",
+      "expected_behavior": "Opera\u00e7\u00f5es devem ser bloqueadas quando pausado",
+      "actual_behavior": "Erro durante teste: Could not transact with/call contract function, is contract deployed correctly and chain synced?",
+      "exploitable": false,
+      "tx_hash": null,
+      "gas_used": null,
+      "error_message": "Could not transact with/call contract function, is contract deployed correctly and chain synced?",
+      "timestamp": "2025-11-01T19:17:05.296007"
+    }
+  ]
+}

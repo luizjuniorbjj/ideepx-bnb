@@ -1,0 +1,122 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - navigation [ref=e4]:
+        - link "iDeepX" [ref=e5] [cursor=pointer]:
+          - /url: /
+          - img "iDeepX" [ref=e6]
+        - button "Conectar Carteira" [active] [ref=e7] [cursor=pointer]
+    - generic [ref=e9]:
+      - paragraph [ref=e11]: ⚡ EVOLUCIONANDO O TRADING COM DESCENTRALIZAÇÃO BLOCKCHAIN
+      - heading "Profit Sharing Social Copy Trading Smart Contracts · 100%" [level=2] [ref=e12]:
+        - text: Profit Sharing Social Copy Trading
+        - text: Smart Contracts · 100%
+      - paragraph [ref=e15]: Powered by BNB Smart Chain
+      - paragraph [ref=e16]:
+        - generic [ref=e17]: Automação financeira inteligente que opera diretamente na SUA conta.
+      - generic [ref=e18]:
+        - img [ref=e19]
+        - generic [ref=e21]:
+          - paragraph [ref=e22]: NÃO custodiamos seus fundos
+          - paragraph [ref=e23]: 100% na sua corretora parceira, sob seu controle total
+      - generic [ref=e24]:
+        - button "Conectar Carteira" [ref=e25] [cursor=pointer]
+        - button "Saber Mais" [ref=e26] [cursor=pointer]
+      - generic [ref=e27]:
+        - generic [ref=e28]:
+          - paragraph [ref=e29]: $500k+
+          - paragraph [ref=e30]: Distribuído
+        - generic [ref=e31]:
+          - paragraph [ref=e32]: 1,000+
+          - paragraph [ref=e33]: Usuários
+        - generic [ref=e34]:
+          - paragraph [ref=e35]: 99.4%
+          - paragraph [ref=e36]: Segurança
+    - generic [ref=e39]:
+      - generic [ref=e40]:
+        - paragraph [ref=e42]: 🌟 Sobre a iDeepX
+        - heading "Tecnologia Financeira de Nova Geração" [level=3] [ref=e43]
+      - generic [ref=e44]:
+        - paragraph [ref=e45]: Fintech de automação financeira para Forex.Operamos via integração direta com corretoras parceiras, preservando total custódia dos fundos pelo cliente.
+        - paragraph [ref=e46]: "Nossa infraestrutura blockchain BEP20 resolve a principal limitação do social trading: comissionamento multinível automatizado. Distribuição descentralizada, auditável e transparente — conectando tecnologia, performance e sustentabilidade."
+        - generic [ref=e47]:
+          - generic [ref=e48]:
+            - generic [ref=e49]: 🔒
+            - heading "NÃO Custodiamos" [level=4] [ref=e50]
+            - paragraph [ref=e51]: 100% dos fundos ficam na sua corretora
+          - generic [ref=e52]:
+            - generic [ref=e53]: ⚡
+            - heading "Blockchain BEP20" [level=4] [ref=e54]
+            - paragraph [ref=e55]: Distribuição automatizada e auditável
+          - generic [ref=e56]:
+            - generic [ref=e57]: 🌐
+            - heading "100% Transparente" [level=4] [ref=e58]
+            - paragraph [ref=e59]: Todas as operações on-chain
+    - generic [ref=e60]:
+      - generic [ref=e61]:
+        - heading "Por que escolher iDeepX?" [level=3] [ref=e62]
+        - paragraph [ref=e63]: Tecnologia de ponta, segurança máxima
+      - generic [ref=e64]:
+        - generic [ref=e65]:
+          - img [ref=e67]
+          - heading "10 Níveis MLM" [level=3] [ref=e70]
+          - paragraph [ref=e71]: Receba comissões automáticas de até 10 níveis na sua rede
+        - generic [ref=e72]:
+          - img [ref=e74]
+          - heading "Ultra Seguro" [level=3] [ref=e76]
+          - paragraph [ref=e77]: Smart contract auditado com 12 patches de segurança aplicados
+        - generic [ref=e78]:
+          - img [ref=e80]
+          - heading "Circuit Breaker" [level=3] [ref=e83]
+          - paragraph [ref=e84]: Proteção automática em caso de anomalias no sistema
+        - generic [ref=e85]:
+          - img [ref=e87]
+          - heading "Pagamentos Instant" [level=3] [ref=e90]
+          - paragraph [ref=e91]: Comissões creditadas automaticamente em tempo real
+        - generic [ref=e92]:
+          - img [ref=e94]
+          - heading "Rede Global" [level=3] [ref=e99]
+          - paragraph [ref=e100]: Conecte-se com parceiros de qualquer lugar do mundo
+        - generic [ref=e101]:
+          - img [ref=e103]
+          - heading "Dashboard Pro" [level=3] [ref=e105]
+          - paragraph [ref=e106]: Acompanhe todos os seus ganhos e rede em tempo real
+        - generic [ref=e107]:
+          - img [ref=e109]
+          - heading "Gas Otimizado" [level=3] [ref=e111]
+          - paragraph [ref=e112]: Transações otimizadas para menor custo de gas
+        - generic [ref=e113]:
+          - img [ref=e115]
+          - heading "100% OnChain" [level=3] [ref=e118]
+          - paragraph [ref=e119]: Tudo verificável e transparente na blockchain
+    - generic [ref=e120]:
+      - generic [ref=e121]:
+        - heading "Como Funciona?" [level=3] [ref=e122]
+        - paragraph [ref=e123]: Simples, rápido e transparente
+      - generic [ref=e124]:
+        - generic [ref=e125]:
+          - generic [ref=e127]: "1"
+          - heading "Conecte sua Carteira" [level=4] [ref=e128]
+          - paragraph [ref=e129]: Use MetaMask ou qualquer carteira Web3 compatível
+        - generic [ref=e130]:
+          - generic [ref=e132]: "2"
+          - heading "Registre-se" [level=4] [ref=e133]
+          - paragraph [ref=e134]: Cadastre-se usando o link de um patrocinador
+        - generic [ref=e135]:
+          - generic [ref=e137]: "3"
+          - heading "Ative & Ganhe" [level=4] [ref=e138]
+          - paragraph [ref=e139]: Ative sua assinatura ($19/mês) e comece a ganhar comissões
+    - generic [ref=e141]:
+      - heading "Pronto para começar?" [level=3] [ref=e142]
+      - paragraph [ref=e143]: Junte-se a milhares de usuários que já estão ganhando com iDeepX
+      - button "Conectar Carteira" [ref=e144] [cursor=pointer]
+    - contentinfo [ref=e145]:
+      - generic [ref=e146]:
+        - paragraph [ref=e147]: © 2025 iDeepX Distribution. Todos os direitos reservados.
+        - paragraph [ref=e148]: Powered by BNB Smart Chain | Auditado & Verificado
+  - region "Notifications alt+T"
+  - alert [ref=e149]
+```

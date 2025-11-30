@@ -1,0 +1,2389 @@
+{
+  "version": "1.0.0",
+  "week": 1732492800,
+  "weekNumber": 3,
+  "weekStart": "2024-11-25T00:00:00.000Z",
+  "weekEnd": "2024-12-01T04:59:59.999Z",
+  "timestamp": 1762529186,
+  "generatedAt": "2025-11-07T15:26:26.566Z",
+  "summary": {
+    "totalUsers": 55,
+    "activeUsers": 55,
+    "totalProfits": 1396374,
+    "totalCommissions": 115479.02,
+    "totalPaid": 1022077.12,
+    "currency": "USD"
+  },
+  "rulebook": {
+    "address": "0x7A09383b65c07dc525bA0aF1b63DBe14a375aa2B",
+    "ipfsCid": "bafkreicfkbecmhcrsxq4fvond5xvpiwosj3e7a7emocxhr2clidvgfgbii",
+    "contentHash": "0x949b2ae2debf7cdb74e38997ac9fbee2ea26a637ae8d639db86fc8845bf31f3b",
+    "version": "1.0.0"
+  },
+  "proofContract": {
+    "address": "0x620dA2A17Eb2C2fA39D03e47737f485D1C0194Aa",
+    "network": "bscTestnet",
+    "chainId": 97
+  },
+  "businessModel": {
+    "clientShare": 0.65,
+    "companyFee": 0.35,
+    "mlmBase": 0.25,
+    "description": "Cliente recebe 65%, Empresa 35%, MLM 25% do cliente (16.25% total)"
+  },
+  "users": [
+    {
+      "id": "6741b43d-5c91-46f7-922e-f19943fc5a79",
+      "wallet": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+      "profit": 1000,
+      "clientShare": 650,
+      "companyFee": 350,
+      "mlmTotal": 162.5,
+      "commissions": {},
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765092988,
+        "expiresAtISO": "2025-12-07T07:36:28.000Z",
+        "registeredAt": "2025-11-06T00:59:41.312Z"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 5,
+        "volume": 0,
+        "reason": "Needs $5000 volume for advanced"
+      },
+      "netReceived": 631,
+      "calculation": "650.00 (client) + 0.00 (mlm) - 19.00 (subscription)"
+    },
+    {
+      "id": "ddff66d6-d109-4afc-9e60-a96c139902f7",
+      "wallet": "0xfdcb4f77e13aed3fca71aabc5908d90240cc5a9e",
+      "profit": 1000,
+      "clientShare": 650,
+      "companyFee": 350,
+      "mlmTotal": 162.5,
+      "commissions": {},
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765092988,
+        "expiresAtISO": "2025-12-07T07:36:28.000Z",
+        "registeredAt": "2025-11-06T00:59:41.535Z"
+      },
+      "qualified": {
+        "basic": false,
+        "advanced": false,
+        "directs": 0,
+        "volume": 0,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 631,
+      "calculation": "650.00 (client) + 0.00 (mlm) - 19.00 (subscription)"
+    },
+    {
+      "id": "5d15e3da-46b1-40e3-a846-258526c40923",
+      "wallet": "0x0d2a3f370821923519d7c3f9a87a5928b3d15ba1",
+      "profit": 1000,
+      "clientShare": 650,
+      "companyFee": 350,
+      "mlmTotal": 162.5,
+      "commissions": {},
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765092988,
+        "expiresAtISO": "2025-12-07T07:36:28.000Z",
+        "registeredAt": "2025-11-06T00:59:41.768Z"
+      },
+      "qualified": {
+        "basic": false,
+        "advanced": false,
+        "directs": 0,
+        "volume": 0,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 631,
+      "calculation": "650.00 (client) + 0.00 (mlm) - 19.00 (subscription)"
+    },
+    {
+      "id": "f5a60947-3804-42ab-b239-4510fb9b45b1",
+      "wallet": "0xabb62baf80f80ab728c942d33b3fd018549b1d99",
+      "profit": 1000,
+      "clientShare": 650,
+      "companyFee": 350,
+      "mlmTotal": 162.5,
+      "commissions": {},
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765092988,
+        "expiresAtISO": "2025-12-07T07:36:28.000Z",
+        "registeredAt": "2025-11-06T00:59:42.001Z"
+      },
+      "qualified": {
+        "basic": false,
+        "advanced": false,
+        "directs": 0,
+        "volume": 0,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 631,
+      "calculation": "650.00 (client) + 0.00 (mlm) - 19.00 (subscription)"
+    },
+    {
+      "id": "0ea7cc67-be39-4713-9847-0e8d0aeea192",
+      "wallet": "0x310ffa228355a9160582c8e2f7cbd1a5e4d42ac6",
+      "profit": 1000,
+      "clientShare": 650,
+      "companyFee": 350,
+      "mlmTotal": 162.5,
+      "commissions": {},
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765092988,
+        "expiresAtISO": "2025-12-07T07:36:28.000Z",
+        "registeredAt": "2025-11-06T00:59:42.254Z"
+      },
+      "qualified": {
+        "basic": false,
+        "advanced": false,
+        "directs": 0,
+        "volume": 0,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 631,
+      "calculation": "650.00 (client) + 0.00 (mlm) - 19.00 (subscription)"
+    },
+    {
+      "id": "9888b213-6809-4ea5-93af-2945238cfc62",
+      "wallet": "0x5d3286982dbf3206535237e6adea63b736250d65",
+      "profit": 31520,
+      "clientShare": 20488,
+      "companyFee": 11032,
+      "mlmTotal": 5122,
+      "commissions": {
+        "L1": {
+          "amount": 1639.04,
+          "from": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+          "percentage": 0.08
+        }
+      },
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765120227,
+        "expiresAtISO": "2025-12-07T15:10:27.000Z",
+        "registeredAt": "2025-11-07T15:10:27.957Z"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 2,
+        "volume": 0,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 22108.04,
+      "calculation": "20488.00 (client) + 1639.04 (mlm) - 19.00 (subscription)"
+    },
+    {
+      "id": "f841b1f9-c66a-4d91-a962-50faa85a76ef",
+      "wallet": "0xe31f2e5845742a26fc220b3ea4d0a81e305466ac",
+      "profit": 24938,
+      "clientShare": 16209.7,
+      "companyFee": 8728.3,
+      "mlmTotal": 4052.43,
+      "commissions": {
+        "L1": {
+          "amount": 1296.78,
+          "from": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+          "percentage": 0.08
+        }
+      },
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765120228,
+        "expiresAtISO": "2025-12-07T15:10:28.000Z",
+        "registeredAt": "2025-11-07T15:10:28.087Z"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 2,
+        "volume": 0,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 17487.48,
+      "calculation": "16209.70 (client) + 1296.78 (mlm) - 19.00 (subscription)"
+    },
+    {
+      "id": "391d7f53-68e0-4d5b-a39d-742a0d173c08",
+      "wallet": "0xdb72a86e30328e425043f7649987a4dee6704b40",
+      "profit": 37271,
+      "clientShare": 24226.15,
+      "companyFee": 13044.85,
+      "mlmTotal": 6056.54,
+      "commissions": {
+        "L1": {
+          "amount": 1938.09,
+          "from": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+          "percentage": 0.08
+        }
+      },
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765120228,
+        "expiresAtISO": "2025-12-07T15:10:28.000Z",
+        "registeredAt": "2025-11-07T15:10:28.209Z"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 2,
+        "volume": 0,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 26145.24,
+      "calculation": "24226.15 (client) + 1938.09 (mlm) - 19.00 (subscription)"
+    },
+    {
+      "id": "fbe70c44-d9f3-42c6-b356-b9ab2079248d",
+      "wallet": "0xb1f0d7c4639cf8518af9ae8915cb77a7f76e45fa",
+      "profit": 35992,
+      "clientShare": 23394.8,
+      "companyFee": 12597.2,
+      "mlmTotal": 5848.7,
+      "commissions": {
+        "L1": {
+          "amount": 1871.58,
+          "from": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+          "percentage": 0.08
+        }
+      },
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765120228,
+        "expiresAtISO": "2025-12-07T15:10:28.000Z",
+        "registeredAt": "2025-11-07T15:10:28.338Z"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 2,
+        "volume": 0,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 25247.38,
+      "calculation": "23394.80 (client) + 1871.58 (mlm) - 19.00 (subscription)"
+    },
+    {
+      "id": "f60dcaed-a693-4e78-bf5f-4bb594b5950e",
+      "wallet": "0x7eb0d47fec43fa0270a23c715cc5d47b995f28cd",
+      "profit": 35220,
+      "clientShare": 22893,
+      "companyFee": 12327,
+      "mlmTotal": 5723.25,
+      "commissions": {
+        "L1": {
+          "amount": 1831.44,
+          "from": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+          "percentage": 0.08
+        }
+      },
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765120228,
+        "expiresAtISO": "2025-12-07T15:10:28.000Z",
+        "registeredAt": "2025-11-07T15:10:28.463Z"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 2,
+        "volume": 0,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 24705.44,
+      "calculation": "22893.00 (client) + 1831.44 (mlm) - 19.00 (subscription)"
+    },
+    {
+      "id": "c678d2cf-b878-4fd5-9957-c5a08c218020",
+      "wallet": "0xf59af3165f72b985d0f6039a3199de10458e0f33",
+      "profit": 5636,
+      "clientShare": 3663.4,
+      "companyFee": 1972.6,
+      "mlmTotal": 915.85,
+      "commissions": {
+        "L1": {
+          "amount": 293.07,
+          "from": "0x5d3286982dbf3206535237e6adea63b736250d65",
+          "percentage": 0.08
+        },
+        "L2": {
+          "amount": 109.9,
+          "from": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+          "percentage": 0.03
+        }
+      },
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765120228,
+        "expiresAtISO": "2025-12-07T15:10:28.000Z",
+        "registeredAt": "2025-11-07T15:10:28.592Z"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 1,
+        "volume": 0,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 4047.37,
+      "calculation": "3663.40 (client) + 402.97 (mlm) - 19.00 (subscription)"
+    },
+    {
+      "id": "a0ac6e0d-4cb9-4ad6-bc70-71048d122184",
+      "wallet": "0x9a3987c3d0213eeb4469fc8836d6e6435631cfda",
+      "profit": 18811,
+      "clientShare": 12227.15,
+      "companyFee": 6583.85,
+      "mlmTotal": 3056.79,
+      "commissions": {
+        "L1": {
+          "amount": 978.17,
+          "from": "0x5d3286982dbf3206535237e6adea63b736250d65",
+          "percentage": 0.08
+        },
+        "L2": {
+          "amount": 366.81,
+          "from": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+          "percentage": 0.03
+        }
+      },
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765120228,
+        "expiresAtISO": "2025-12-07T15:10:28.000Z",
+        "registeredAt": "2025-11-07T15:10:28.713Z"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 1,
+        "volume": 0,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 13553.13,
+      "calculation": "12227.15 (client) + 1344.98 (mlm) - 19.00 (subscription)"
+    },
+    {
+      "id": "7c037818-521d-4a8c-8c1b-8f3e8fe74937",
+      "wallet": "0x02ce6be99f08a2e829e88e7138aaaedd075245fa",
+      "profit": 33162,
+      "clientShare": 21555.3,
+      "companyFee": 11606.7,
+      "mlmTotal": 5388.82,
+      "commissions": {
+        "L1": {
+          "amount": 1724.42,
+          "from": "0xe31f2e5845742a26fc220b3ea4d0a81e305466ac",
+          "percentage": 0.08
+        },
+        "L2": {
+          "amount": 646.66,
+          "from": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+          "percentage": 0.03
+        }
+      },
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765120228,
+        "expiresAtISO": "2025-12-07T15:10:28.000Z",
+        "registeredAt": "2025-11-07T15:10:28.836Z"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 1,
+        "volume": 0,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 23907.38,
+      "calculation": "21555.30 (client) + 2371.08 (mlm) - 19.00 (subscription)"
+    },
+    {
+      "id": "05cdac69-38bb-447b-bef0-3c4a66547a72",
+      "wallet": "0x19a8c0943ba3a5caf9f1f566ea179e21b6de1682",
+      "profit": 19268,
+      "clientShare": 12524.2,
+      "companyFee": 6743.8,
+      "mlmTotal": 3131.05,
+      "commissions": {
+        "L1": {
+          "amount": 1001.94,
+          "from": "0xe31f2e5845742a26fc220b3ea4d0a81e305466ac",
+          "percentage": 0.08
+        },
+        "L2": {
+          "amount": 375.73,
+          "from": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+          "percentage": 0.03
+        }
+      },
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765120228,
+        "expiresAtISO": "2025-12-07T15:10:28.000Z",
+        "registeredAt": "2025-11-07T15:10:28.955Z"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 1,
+        "volume": 0,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 13882.87,
+      "calculation": "12524.20 (client) + 1377.67 (mlm) - 19.00 (subscription)"
+    },
+    {
+      "id": "770434d7-957e-482d-b811-077bba214e39",
+      "wallet": "0xff2aa277fe7595f578f61bb28c3aff2615e60e32",
+      "profit": 42068,
+      "clientShare": 27344.2,
+      "companyFee": 14723.8,
+      "mlmTotal": 6836.05,
+      "commissions": {
+        "L1": {
+          "amount": 2187.54,
+          "from": "0xdb72a86e30328e425043f7649987a4dee6704b40",
+          "percentage": 0.08
+        },
+        "L2": {
+          "amount": 820.33,
+          "from": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+          "percentage": 0.03
+        }
+      },
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765120229,
+        "expiresAtISO": "2025-12-07T15:10:29.000Z",
+        "registeredAt": "2025-11-07T15:10:29.081Z"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 1,
+        "volume": 0,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 30333.07,
+      "calculation": "27344.20 (client) + 3007.87 (mlm) - 19.00 (subscription)"
+    },
+    {
+      "id": "425f0a07-9eff-4b80-9296-3841bccc7fed",
+      "wallet": "0x047d235d0ca2bc1fcce5677d83a4eafc81c8eb17",
+      "profit": 40902,
+      "clientShare": 26586.3,
+      "companyFee": 14315.7,
+      "mlmTotal": 6646.57,
+      "commissions": {
+        "L1": {
+          "amount": 2126.9,
+          "from": "0xdb72a86e30328e425043f7649987a4dee6704b40",
+          "percentage": 0.08
+        },
+        "L2": {
+          "amount": 797.59,
+          "from": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+          "percentage": 0.03
+        }
+      },
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765120229,
+        "expiresAtISO": "2025-12-07T15:10:29.000Z",
+        "registeredAt": "2025-11-07T15:10:29.204Z"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 1,
+        "volume": 0,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 29491.79,
+      "calculation": "26586.30 (client) + 2924.49 (mlm) - 19.00 (subscription)"
+    },
+    {
+      "id": "0566b25c-f9cc-4d64-aedf-3a6b7f82eb7f",
+      "wallet": "0x418e793fb1fe3a15bf2dede242c43a2ab5bee440",
+      "profit": 43238,
+      "clientShare": 28104.7,
+      "companyFee": 15133.3,
+      "mlmTotal": 7026.18,
+      "commissions": {
+        "L1": {
+          "amount": 2248.38,
+          "from": "0xb1f0d7c4639cf8518af9ae8915cb77a7f76e45fa",
+          "percentage": 0.08
+        },
+        "L2": {
+          "amount": 843.14,
+          "from": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+          "percentage": 0.03
+        }
+      },
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765120229,
+        "expiresAtISO": "2025-12-07T15:10:29.000Z",
+        "registeredAt": "2025-11-07T15:10:29.327Z"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 1,
+        "volume": 0,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 31177.22,
+      "calculation": "28104.70 (client) + 3091.52 (mlm) - 19.00 (subscription)"
+    },
+    {
+      "id": "aef4235d-0c09-4c45-ba07-87f56159aacf",
+      "wallet": "0x059d71d35fcc92a56b2266a7b9e62cdb2464fefc",
+      "profit": 44010,
+      "clientShare": 28606.5,
+      "companyFee": 15403.5,
+      "mlmTotal": 7151.63,
+      "commissions": {
+        "L1": {
+          "amount": 2288.52,
+          "from": "0xb1f0d7c4639cf8518af9ae8915cb77a7f76e45fa",
+          "percentage": 0.08
+        },
+        "L2": {
+          "amount": 858.19,
+          "from": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+          "percentage": 0.03
+        }
+      },
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765120229,
+        "expiresAtISO": "2025-12-07T15:10:29.000Z",
+        "registeredAt": "2025-11-07T15:10:29.452Z"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 1,
+        "volume": 0,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 31734.21,
+      "calculation": "28606.50 (client) + 3146.71 (mlm) - 19.00 (subscription)"
+    },
+    {
+      "id": "7f2bd47c-1247-4852-ab80-7e12a6b155b6",
+      "wallet": "0xa574f2e53aba5fcccb78c0b9d02d8bbed1490e45",
+      "profit": 18215,
+      "clientShare": 11839.75,
+      "companyFee": 6375.25,
+      "mlmTotal": 2959.94,
+      "commissions": {
+        "L1": {
+          "amount": 947.18,
+          "from": "0x7eb0d47fec43fa0270a23c715cc5d47b995f28cd",
+          "percentage": 0.08
+        },
+        "L2": {
+          "amount": 355.19,
+          "from": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+          "percentage": 0.03
+        }
+      },
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765120229,
+        "expiresAtISO": "2025-12-07T15:10:29.000Z",
+        "registeredAt": "2025-11-07T15:10:29.579Z"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 1,
+        "volume": 0,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 13123.12,
+      "calculation": "11839.75 (client) + 1302.37 (mlm) - 19.00 (subscription)"
+    },
+    {
+      "id": "ce116a08-f013-473f-93e8-7ca86927331b",
+      "wallet": "0x6fc2faacd2875335baee56f809f233fe99aad224",
+      "profit": 47026,
+      "clientShare": 30566.9,
+      "companyFee": 16459.1,
+      "mlmTotal": 7641.73,
+      "commissions": {
+        "L1": {
+          "amount": 2445.35,
+          "from": "0x7eb0d47fec43fa0270a23c715cc5d47b995f28cd",
+          "percentage": 0.08
+        },
+        "L2": {
+          "amount": 917.01,
+          "from": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+          "percentage": 0.03
+        }
+      },
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765120229,
+        "expiresAtISO": "2025-12-07T15:10:29.000Z",
+        "registeredAt": "2025-11-07T15:10:29.705Z"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 1,
+        "volume": 0,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 33910.26,
+      "calculation": "30566.90 (client) + 3362.36 (mlm) - 19.00 (subscription)"
+    },
+    {
+      "id": "1006add9-5b54-4024-9649-c992b1245c8b",
+      "wallet": "0x481040f7bb6959f00decf4049223f2c850964453",
+      "profit": 44376,
+      "clientShare": 28844.4,
+      "companyFee": 15531.6,
+      "mlmTotal": 7211.1,
+      "commissions": {
+        "L1": {
+          "amount": 2307.55,
+          "from": "0xf59af3165f72b985d0f6039a3199de10458e0f33",
+          "percentage": 0.08
+        },
+        "L2": {
+          "amount": 865.33,
+          "from": "0x5d3286982dbf3206535237e6adea63b736250d65",
+          "percentage": 0.03
+        },
+        "L3": {
+          "amount": 576.89,
+          "from": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+          "percentage": 0.02
+        }
+      },
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765120229,
+        "expiresAtISO": "2025-12-07T15:10:29.000Z",
+        "registeredAt": "2025-11-07T15:10:29.831Z"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 1,
+        "volume": 0,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 32575.17,
+      "calculation": "28844.40 (client) + 3749.77 (mlm) - 19.00 (subscription)"
+    },
+    {
+      "id": "954c5a0c-ab1e-406b-af1e-183128ac8ac7",
+      "wallet": "0xec14bb3278aae8edaab6d007ab435c31bb58f6a4",
+      "profit": 49812,
+      "clientShare": 32377.8,
+      "companyFee": 17434.2,
+      "mlmTotal": 8094.45,
+      "commissions": {
+        "L1": {
+          "amount": 2590.22,
+          "from": "0x9a3987c3d0213eeb4469fc8836d6e6435631cfda",
+          "percentage": 0.08
+        },
+        "L2": {
+          "amount": 971.33,
+          "from": "0x5d3286982dbf3206535237e6adea63b736250d65",
+          "percentage": 0.03
+        },
+        "L3": {
+          "amount": 647.56,
+          "from": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+          "percentage": 0.02
+        }
+      },
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765120229,
+        "expiresAtISO": "2025-12-07T15:10:29.000Z",
+        "registeredAt": "2025-11-07T15:10:29.957Z"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 1,
+        "volume": 0,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 36567.91,
+      "calculation": "32377.80 (client) + 4209.11 (mlm) - 19.00 (subscription)"
+    },
+    {
+      "id": "772d9599-5d97-4b20-a3ec-77f2cee880eb",
+      "wallet": "0xb1e5919adbddae6a8c252b84dd44c554c67477be",
+      "profit": 17911,
+      "clientShare": 11642.15,
+      "companyFee": 6268.85,
+      "mlmTotal": 2910.54,
+      "commissions": {
+        "L1": {
+          "amount": 931.37,
+          "from": "0x02ce6be99f08a2e829e88e7138aaaedd075245fa",
+          "percentage": 0.08
+        },
+        "L2": {
+          "amount": 349.26,
+          "from": "0xe31f2e5845742a26fc220b3ea4d0a81e305466ac",
+          "percentage": 0.03
+        },
+        "L3": {
+          "amount": 232.84,
+          "from": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+          "percentage": 0.02
+        }
+      },
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765120230,
+        "expiresAtISO": "2025-12-07T15:10:30.000Z",
+        "registeredAt": "2025-11-07T15:10:30.081Z"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 1,
+        "volume": 0,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 13136.62,
+      "calculation": "11642.15 (client) + 1513.47 (mlm) - 19.00 (subscription)"
+    },
+    {
+      "id": "827794dc-0324-45e4-93b3-8653097fe407",
+      "wallet": "0xf9291989cf2a1a7f67a6586add97f20bf1c12a0b",
+      "profit": 45889,
+      "clientShare": 29827.85,
+      "companyFee": 16061.15,
+      "mlmTotal": 7456.96,
+      "commissions": {
+        "L1": {
+          "amount": 2386.23,
+          "from": "0x19a8c0943ba3a5caf9f1f566ea179e21b6de1682",
+          "percentage": 0.08
+        },
+        "L2": {
+          "amount": 894.84,
+          "from": "0xe31f2e5845742a26fc220b3ea4d0a81e305466ac",
+          "percentage": 0.03
+        },
+        "L3": {
+          "amount": 596.56,
+          "from": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+          "percentage": 0.02
+        }
+      },
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765120230,
+        "expiresAtISO": "2025-12-07T15:10:30.000Z",
+        "registeredAt": "2025-11-07T15:10:30.212Z"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 1,
+        "volume": 0,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 33686.48,
+      "calculation": "29827.85 (client) + 3877.63 (mlm) - 19.00 (subscription)"
+    },
+    {
+      "id": "6cfdc4d5-9f99-4978-a111-9b6e7115f925",
+      "wallet": "0xf719ad827ac934108f7878bf6c06de22dab8711d",
+      "profit": 44414,
+      "clientShare": 28869.1,
+      "companyFee": 15544.9,
+      "mlmTotal": 7217.28,
+      "commissions": {
+        "L1": {
+          "amount": 2309.53,
+          "from": "0xff2aa277fe7595f578f61bb28c3aff2615e60e32",
+          "percentage": 0.08
+        },
+        "L2": {
+          "amount": 866.07,
+          "from": "0xdb72a86e30328e425043f7649987a4dee6704b40",
+          "percentage": 0.03
+        },
+        "L3": {
+          "amount": 577.38,
+          "from": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+          "percentage": 0.02
+        }
+      },
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765120230,
+        "expiresAtISO": "2025-12-07T15:10:30.000Z",
+        "registeredAt": "2025-11-07T15:10:30.335Z"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 1,
+        "volume": 0,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 32603.08,
+      "calculation": "28869.10 (client) + 3752.98 (mlm) - 19.00 (subscription)"
+    },
+    {
+      "id": "3e394428-a80f-4734-b573-6484e3f0bf91",
+      "wallet": "0x37f36d59996006653cec3b45f97e2ba24f1ec3dd",
+      "profit": 13610,
+      "clientShare": 8846.5,
+      "companyFee": 4763.5,
+      "mlmTotal": 2211.63,
+      "commissions": {
+        "L1": {
+          "amount": 707.72,
+          "from": "0x047d235d0ca2bc1fcce5677d83a4eafc81c8eb17",
+          "percentage": 0.08
+        },
+        "L2": {
+          "amount": 265.39,
+          "from": "0xdb72a86e30328e425043f7649987a4dee6704b40",
+          "percentage": 0.03
+        },
+        "L3": {
+          "amount": 176.93,
+          "from": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+          "percentage": 0.02
+        }
+      },
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765120230,
+        "expiresAtISO": "2025-12-07T15:10:30.000Z",
+        "registeredAt": "2025-11-07T15:10:30.461Z"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 1,
+        "volume": 0,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 9977.54,
+      "calculation": "8846.50 (client) + 1150.04 (mlm) - 19.00 (subscription)"
+    },
+    {
+      "id": "f71a8b06-4d19-46ce-9091-81d46c386797",
+      "wallet": "0xcdaa264a80c4e47e46fcac3a15abf25399878f99",
+      "profit": 16121,
+      "clientShare": 10478.65,
+      "companyFee": 5642.35,
+      "mlmTotal": 2619.66,
+      "commissions": {
+        "L1": {
+          "amount": 838.29,
+          "from": "0x418e793fb1fe3a15bf2dede242c43a2ab5bee440",
+          "percentage": 0.08
+        },
+        "L2": {
+          "amount": 314.36,
+          "from": "0xb1f0d7c4639cf8518af9ae8915cb77a7f76e45fa",
+          "percentage": 0.03
+        },
+        "L3": {
+          "amount": 209.57,
+          "from": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+          "percentage": 0.02
+        }
+      },
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765120230,
+        "expiresAtISO": "2025-12-07T15:10:30.000Z",
+        "registeredAt": "2025-11-07T15:10:30.583Z"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 1,
+        "volume": 0,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 11821.87,
+      "calculation": "10478.65 (client) + 1362.22 (mlm) - 19.00 (subscription)"
+    },
+    {
+      "id": "d88c0c37-aeda-4124-8e16-971fdd62455f",
+      "wallet": "0x47a5a723bdc047ce2c39fc47a7605610ab393844",
+      "profit": 7025,
+      "clientShare": 4566.25,
+      "companyFee": 2458.75,
+      "mlmTotal": 1141.56,
+      "commissions": {
+        "L1": {
+          "amount": 365.3,
+          "from": "0x059d71d35fcc92a56b2266a7b9e62cdb2464fefc",
+          "percentage": 0.08
+        },
+        "L2": {
+          "amount": 136.99,
+          "from": "0xb1f0d7c4639cf8518af9ae8915cb77a7f76e45fa",
+          "percentage": 0.03
+        },
+        "L3": {
+          "amount": 91.33,
+          "from": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+          "percentage": 0.02
+        }
+      },
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765120230,
+        "expiresAtISO": "2025-12-07T15:10:30.000Z",
+        "registeredAt": "2025-11-07T15:10:30.710Z"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 1,
+        "volume": 0,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 5140.87,
+      "calculation": "4566.25 (client) + 593.62 (mlm) - 19.00 (subscription)"
+    },
+    {
+      "id": "cd76ae5e-e0a3-4941-b648-ba97cbea433d",
+      "wallet": "0xaf99387b5b9be3498a0a58f9714b28da296568ec",
+      "profit": 23597,
+      "clientShare": 15338.05,
+      "companyFee": 8258.95,
+      "mlmTotal": 3834.51,
+      "commissions": {
+        "L1": {
+          "amount": 1227.04,
+          "from": "0xa574f2e53aba5fcccb78c0b9d02d8bbed1490e45",
+          "percentage": 0.08
+        },
+        "L2": {
+          "amount": 460.14,
+          "from": "0x7eb0d47fec43fa0270a23c715cc5d47b995f28cd",
+          "percentage": 0.03
+        },
+        "L3": {
+          "amount": 306.76,
+          "from": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+          "percentage": 0.02
+        }
+      },
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765120230,
+        "expiresAtISO": "2025-12-07T15:10:30.000Z",
+        "registeredAt": "2025-11-07T15:10:30.834Z"
+      },
+      "qualified": {
+        "basic": false,
+        "advanced": false,
+        "directs": 0,
+        "volume": 0,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 17312.99,
+      "calculation": "15338.05 (client) + 1993.94 (mlm) - 19.00 (subscription)"
+    },
+    {
+      "id": "f546218c-aa15-4a92-97bc-0f923e27ab21",
+      "wallet": "0xcf2a99a2c87f822bd1411cce58481f875ebea431",
+      "profit": 16668,
+      "clientShare": 10834.2,
+      "companyFee": 5833.8,
+      "mlmTotal": 2708.55,
+      "commissions": {
+        "L1": {
+          "amount": 866.74,
+          "from": "0x6fc2faacd2875335baee56f809f233fe99aad224",
+          "percentage": 0.08
+        },
+        "L2": {
+          "amount": 325.03,
+          "from": "0x7eb0d47fec43fa0270a23c715cc5d47b995f28cd",
+          "percentage": 0.03
+        },
+        "L3": {
+          "amount": 216.68,
+          "from": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+          "percentage": 0.02
+        }
+      },
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765120230,
+        "expiresAtISO": "2025-12-07T15:10:30.000Z",
+        "registeredAt": "2025-11-07T15:10:30.957Z"
+      },
+      "qualified": {
+        "basic": false,
+        "advanced": false,
+        "directs": 0,
+        "volume": 0,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 12223.65,
+      "calculation": "10834.20 (client) + 1408.45 (mlm) - 19.00 (subscription)"
+    },
+    {
+      "id": "0dc28c04-0634-4ccd-8e12-8d883d67cf3c",
+      "wallet": "0xd1956c932c355a29e33528f3da09e6362ed3aae9",
+      "profit": 32152,
+      "clientShare": 20898.8,
+      "companyFee": 11253.2,
+      "mlmTotal": 5224.7,
+      "commissions": {
+        "L1": {
+          "amount": 1671.9,
+          "from": "0x481040f7bb6959f00decf4049223f2c850964453",
+          "percentage": 0.08
+        },
+        "L2": {
+          "amount": 626.96,
+          "from": "0xf59af3165f72b985d0f6039a3199de10458e0f33",
+          "percentage": 0.03
+        },
+        "L3": {
+          "amount": 417.98,
+          "from": "0x5d3286982dbf3206535237e6adea63b736250d65",
+          "percentage": 0.02
+        },
+        "L4": {
+          "amount": 208.99,
+          "from": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+          "percentage": 0.01
+        }
+      },
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765120231,
+        "expiresAtISO": "2025-12-07T15:10:31.000Z",
+        "registeredAt": "2025-11-07T15:10:31.082Z"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 1,
+        "volume": 0,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 23805.63,
+      "calculation": "20898.80 (client) + 2925.83 (mlm) - 19.00 (subscription)"
+    },
+    {
+      "id": "1acb105f-e673-4de1-a903-4c28d2c41fcb",
+      "wallet": "0x559ada90918b37a4a7fd48c28eca7ca36d1fc12c",
+      "profit": 8615,
+      "clientShare": 5599.75,
+      "companyFee": 3015.25,
+      "mlmTotal": 1399.94,
+      "commissions": {
+        "L1": {
+          "amount": 447.98,
+          "from": "0xec14bb3278aae8edaab6d007ab435c31bb58f6a4",
+          "percentage": 0.08
+        },
+        "L2": {
+          "amount": 167.99,
+          "from": "0x9a3987c3d0213eeb4469fc8836d6e6435631cfda",
+          "percentage": 0.03
+        },
+        "L3": {
+          "amount": 112,
+          "from": "0x5d3286982dbf3206535237e6adea63b736250d65",
+          "percentage": 0.02
+        },
+        "L4": {
+          "amount": 56,
+          "from": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+          "percentage": 0.01
+        }
+      },
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765120231,
+        "expiresAtISO": "2025-12-07T15:10:31.000Z",
+        "registeredAt": "2025-11-07T15:10:31.206Z"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 1,
+        "volume": 0,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 6364.72,
+      "calculation": "5599.75 (client) + 783.97 (mlm) - 19.00 (subscription)"
+    },
+    {
+      "id": "b7c16d49-3cf5-4b20-8519-05f09e742dc4",
+      "wallet": "0x02bc1c35444a1c3b554b7845cbaaf699fa7a7953",
+      "profit": 14335,
+      "clientShare": 9317.75,
+      "companyFee": 5017.25,
+      "mlmTotal": 2329.44,
+      "commissions": {
+        "L1": {
+          "amount": 745.42,
+          "from": "0xb1e5919adbddae6a8c252b84dd44c554c67477be",
+          "percentage": 0.08
+        },
+        "L2": {
+          "amount": 279.53,
+          "from": "0x02ce6be99f08a2e829e88e7138aaaedd075245fa",
+          "percentage": 0.03
+        },
+        "L3": {
+          "amount": 186.35,
+          "from": "0xe31f2e5845742a26fc220b3ea4d0a81e305466ac",
+          "percentage": 0.02
+        },
+        "L4": {
+          "amount": 93.18,
+          "from": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+          "percentage": 0.01
+        }
+      },
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765120231,
+        "expiresAtISO": "2025-12-07T15:10:31.000Z",
+        "registeredAt": "2025-11-07T15:10:31.332Z"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 1,
+        "volume": 0,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 10603.23,
+      "calculation": "9317.75 (client) + 1304.48 (mlm) - 19.00 (subscription)"
+    },
+    {
+      "id": "8347481d-2ac7-4bfc-8e4b-e0d4f486ca70",
+      "wallet": "0x9b530bc1c7bf59c81bf1ca520ca832da5acc47de",
+      "profit": 11959,
+      "clientShare": 7773.35,
+      "companyFee": 4185.65,
+      "mlmTotal": 1943.34,
+      "commissions": {
+        "L1": {
+          "amount": 621.87,
+          "from": "0xf9291989cf2a1a7f67a6586add97f20bf1c12a0b",
+          "percentage": 0.08
+        },
+        "L2": {
+          "amount": 233.2,
+          "from": "0x19a8c0943ba3a5caf9f1f566ea179e21b6de1682",
+          "percentage": 0.03
+        },
+        "L3": {
+          "amount": 155.47,
+          "from": "0xe31f2e5845742a26fc220b3ea4d0a81e305466ac",
+          "percentage": 0.02
+        },
+        "L4": {
+          "amount": 77.73,
+          "from": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+          "percentage": 0.01
+        }
+      },
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765120231,
+        "expiresAtISO": "2025-12-07T15:10:31.000Z",
+        "registeredAt": "2025-11-07T15:10:31.457Z"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 1,
+        "volume": 0,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 8842.62,
+      "calculation": "7773.35 (client) + 1088.27 (mlm) - 19.00 (subscription)"
+    },
+    {
+      "id": "095dd0d9-4130-4f89-9133-c54210a828e9",
+      "wallet": "0x516742173fec78764136fe2c61547d55e6d06f94",
+      "profit": 17805,
+      "clientShare": 11573.25,
+      "companyFee": 6231.75,
+      "mlmTotal": 2893.31,
+      "commissions": {
+        "L1": {
+          "amount": 925.86,
+          "from": "0xf719ad827ac934108f7878bf6c06de22dab8711d",
+          "percentage": 0.08
+        },
+        "L2": {
+          "amount": 347.2,
+          "from": "0xff2aa277fe7595f578f61bb28c3aff2615e60e32",
+          "percentage": 0.03
+        },
+        "L3": {
+          "amount": 231.47,
+          "from": "0xdb72a86e30328e425043f7649987a4dee6704b40",
+          "percentage": 0.02
+        },
+        "L4": {
+          "amount": 115.73,
+          "from": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+          "percentage": 0.01
+        }
+      },
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765120231,
+        "expiresAtISO": "2025-12-07T15:10:31.000Z",
+        "registeredAt": "2025-11-07T15:10:31.583Z"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 1,
+        "volume": 0,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 13174.51,
+      "calculation": "11573.25 (client) + 1620.26 (mlm) - 19.00 (subscription)"
+    },
+    {
+      "id": "04ffeda3-c3cd-4059-ae51-8278290f1577",
+      "wallet": "0x1e9c402864099eec1fd351bd4f7d9dfce330aadd",
+      "profit": 35484,
+      "clientShare": 23064.6,
+      "companyFee": 12419.4,
+      "mlmTotal": 5766.15,
+      "commissions": {
+        "L1": {
+          "amount": 1845.17,
+          "from": "0x37f36d59996006653cec3b45f97e2ba24f1ec3dd",
+          "percentage": 0.08
+        },
+        "L2": {
+          "amount": 691.94,
+          "from": "0x047d235d0ca2bc1fcce5677d83a4eafc81c8eb17",
+          "percentage": 0.03
+        },
+        "L3": {
+          "amount": 461.29,
+          "from": "0xdb72a86e30328e425043f7649987a4dee6704b40",
+          "percentage": 0.02
+        },
+        "L4": {
+          "amount": 230.65,
+          "from": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+          "percentage": 0.01
+        }
+      },
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765120231,
+        "expiresAtISO": "2025-12-07T15:10:31.000Z",
+        "registeredAt": "2025-11-07T15:10:31.707Z"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 1,
+        "volume": 0,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 26274.65,
+      "calculation": "23064.60 (client) + 3229.05 (mlm) - 19.00 (subscription)"
+    },
+    {
+      "id": "b5d37505-6d79-43ba-989f-fabd5b187130",
+      "wallet": "0x0575ae268d06e802c9f1d1bd2604aa3e6ae59b1a",
+      "profit": 10920,
+      "clientShare": 7098,
+      "companyFee": 3822,
+      "mlmTotal": 1774.5,
+      "commissions": {
+        "L1": {
+          "amount": 567.84,
+          "from": "0xcdaa264a80c4e47e46fcac3a15abf25399878f99",
+          "percentage": 0.08
+        },
+        "L2": {
+          "amount": 212.94,
+          "from": "0x418e793fb1fe3a15bf2dede242c43a2ab5bee440",
+          "percentage": 0.03
+        },
+        "L3": {
+          "amount": 141.96,
+          "from": "0xb1f0d7c4639cf8518af9ae8915cb77a7f76e45fa",
+          "percentage": 0.02
+        },
+        "L4": {
+          "amount": 70.98,
+          "from": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+          "percentage": 0.01
+        }
+      },
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765120231,
+        "expiresAtISO": "2025-12-07T15:10:31.000Z",
+        "registeredAt": "2025-11-07T15:10:31.832Z"
+      },
+      "qualified": {
+        "basic": false,
+        "advanced": false,
+        "directs": 0,
+        "volume": 0,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 8072.72,
+      "calculation": "7098.00 (client) + 993.72 (mlm) - 19.00 (subscription)"
+    },
+    {
+      "id": "322c8b9a-7043-4fa3-bf5e-4459c12fcf48",
+      "wallet": "0x53a33b8d42a83afa4b9c3f41acae9fe6e864a528",
+      "profit": 10560,
+      "clientShare": 6864,
+      "companyFee": 3696,
+      "mlmTotal": 1716,
+      "commissions": {
+        "L1": {
+          "amount": 549.12,
+          "from": "0x47a5a723bdc047ce2c39fc47a7605610ab393844",
+          "percentage": 0.08
+        },
+        "L2": {
+          "amount": 205.92,
+          "from": "0x059d71d35fcc92a56b2266a7b9e62cdb2464fefc",
+          "percentage": 0.03
+        },
+        "L3": {
+          "amount": 137.28,
+          "from": "0xb1f0d7c4639cf8518af9ae8915cb77a7f76e45fa",
+          "percentage": 0.02
+        },
+        "L4": {
+          "amount": 68.64,
+          "from": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+          "percentage": 0.01
+        }
+      },
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765120231,
+        "expiresAtISO": "2025-12-07T15:10:31.000Z",
+        "registeredAt": "2025-11-07T15:10:31.957Z"
+      },
+      "qualified": {
+        "basic": false,
+        "advanced": false,
+        "directs": 0,
+        "volume": 0,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 7805.96,
+      "calculation": "6864.00 (client) + 960.96 (mlm) - 19.00 (subscription)"
+    },
+    {
+      "id": "92700836-72a1-49df-a917-26cc3a45fa29",
+      "wallet": "0x6b857de0610a1a6995e936bf577c9da4b7ff1b06",
+      "profit": 31819,
+      "clientShare": 20682.35,
+      "companyFee": 11136.65,
+      "mlmTotal": 5170.59,
+      "commissions": {
+        "L1": {
+          "amount": 1654.59,
+          "from": "0xd1956c932c355a29e33528f3da09e6362ed3aae9",
+          "percentage": 0.08
+        },
+        "L2": {
+          "amount": 620.47,
+          "from": "0x481040f7bb6959f00decf4049223f2c850964453",
+          "percentage": 0.03
+        },
+        "L3": {
+          "amount": 413.65,
+          "from": "0xf59af3165f72b985d0f6039a3199de10458e0f33",
+          "percentage": 0.02
+        },
+        "L4": {
+          "amount": 206.82,
+          "from": "0x5d3286982dbf3206535237e6adea63b736250d65",
+          "percentage": 0.01
+        },
+        "L5": {
+          "amount": 206.82,
+          "from": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+          "percentage": 0.01
+        }
+      },
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765120232,
+        "expiresAtISO": "2025-12-07T15:10:32.000Z",
+        "registeredAt": "2025-11-07T15:10:32.076Z"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 1,
+        "volume": 0,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 23765.7,
+      "calculation": "20682.35 (client) + 3102.35 (mlm) - 19.00 (subscription)"
+    },
+    {
+      "id": "eb12f345-e11a-47bd-b563-e6b6fc566ac0",
+      "wallet": "0xb5f4ed68e597ae6a561f391f87d86533c0d34c06",
+      "profit": 26217,
+      "clientShare": 17041.05,
+      "companyFee": 9175.95,
+      "mlmTotal": 4260.26,
+      "commissions": {
+        "L1": {
+          "amount": 1363.28,
+          "from": "0x559ada90918b37a4a7fd48c28eca7ca36d1fc12c",
+          "percentage": 0.08
+        },
+        "L2": {
+          "amount": 511.23,
+          "from": "0xec14bb3278aae8edaab6d007ab435c31bb58f6a4",
+          "percentage": 0.03
+        },
+        "L3": {
+          "amount": 340.82,
+          "from": "0x9a3987c3d0213eeb4469fc8836d6e6435631cfda",
+          "percentage": 0.02
+        },
+        "L4": {
+          "amount": 170.41,
+          "from": "0x5d3286982dbf3206535237e6adea63b736250d65",
+          "percentage": 0.01
+        },
+        "L5": {
+          "amount": 170.41,
+          "from": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+          "percentage": 0.01
+        }
+      },
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765120232,
+        "expiresAtISO": "2025-12-07T15:10:32.000Z",
+        "registeredAt": "2025-11-07T15:10:32.200Z"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 1,
+        "volume": 0,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 19578.2,
+      "calculation": "17041.05 (client) + 2556.15 (mlm) - 19.00 (subscription)"
+    },
+    {
+      "id": "16272a3c-833f-40c3-a96d-69ca0d26b022",
+      "wallet": "0x2c04be9333c9abdbb7b3db3e5b0aa1a151ba1438",
+      "profit": 41373,
+      "clientShare": 26892.45,
+      "companyFee": 14480.55,
+      "mlmTotal": 6723.11,
+      "commissions": {
+        "L1": {
+          "amount": 2151.4,
+          "from": "0x02bc1c35444a1c3b554b7845cbaaf699fa7a7953",
+          "percentage": 0.08
+        },
+        "L2": {
+          "amount": 806.77,
+          "from": "0xb1e5919adbddae6a8c252b84dd44c554c67477be",
+          "percentage": 0.03
+        },
+        "L3": {
+          "amount": 537.85,
+          "from": "0x02ce6be99f08a2e829e88e7138aaaedd075245fa",
+          "percentage": 0.02
+        },
+        "L4": {
+          "amount": 268.92,
+          "from": "0xe31f2e5845742a26fc220b3ea4d0a81e305466ac",
+          "percentage": 0.01
+        },
+        "L5": {
+          "amount": 268.92,
+          "from": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+          "percentage": 0.01
+        }
+      },
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765120232,
+        "expiresAtISO": "2025-12-07T15:10:32.000Z",
+        "registeredAt": "2025-11-07T15:10:32.323Z"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 1,
+        "volume": 0,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 30907.31,
+      "calculation": "26892.45 (client) + 4033.86 (mlm) - 19.00 (subscription)"
+    },
+    {
+      "id": "a00522ff-90c3-4533-9808-92c39f95fd17",
+      "wallet": "0x1eb3a67885bbc26260b473666978870e0cb2e8d1",
+      "profit": 42840,
+      "clientShare": 27846,
+      "companyFee": 14994,
+      "mlmTotal": 6961.5,
+      "commissions": {
+        "L1": {
+          "amount": 2227.68,
+          "from": "0x9b530bc1c7bf59c81bf1ca520ca832da5acc47de",
+          "percentage": 0.08
+        },
+        "L2": {
+          "amount": 835.38,
+          "from": "0xf9291989cf2a1a7f67a6586add97f20bf1c12a0b",
+          "percentage": 0.03
+        },
+        "L3": {
+          "amount": 556.92,
+          "from": "0x19a8c0943ba3a5caf9f1f566ea179e21b6de1682",
+          "percentage": 0.02
+        },
+        "L4": {
+          "amount": 278.46,
+          "from": "0xe31f2e5845742a26fc220b3ea4d0a81e305466ac",
+          "percentage": 0.01
+        },
+        "L5": {
+          "amount": 278.46,
+          "from": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+          "percentage": 0.01
+        }
+      },
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765120232,
+        "expiresAtISO": "2025-12-07T15:10:32.000Z",
+        "registeredAt": "2025-11-07T15:10:32.451Z"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 1,
+        "volume": 0,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 32003.9,
+      "calculation": "27846.00 (client) + 4176.90 (mlm) - 19.00 (subscription)"
+    },
+    {
+      "id": "53a12a5f-a4dc-4618-8eaa-e1482f9a5cb7",
+      "wallet": "0x822b9ff0f3bd3344f1591a2bc183e8978d622c9a",
+      "profit": 10344,
+      "clientShare": 6723.6,
+      "companyFee": 3620.4,
+      "mlmTotal": 1680.9,
+      "commissions": {
+        "L1": {
+          "amount": 537.89,
+          "from": "0x516742173fec78764136fe2c61547d55e6d06f94",
+          "percentage": 0.08
+        },
+        "L2": {
+          "amount": 201.71,
+          "from": "0xf719ad827ac934108f7878bf6c06de22dab8711d",
+          "percentage": 0.03
+        },
+        "L3": {
+          "amount": 134.47,
+          "from": "0xff2aa277fe7595f578f61bb28c3aff2615e60e32",
+          "percentage": 0.02
+        },
+        "L4": {
+          "amount": 67.24,
+          "from": "0xdb72a86e30328e425043f7649987a4dee6704b40",
+          "percentage": 0.01
+        },
+        "L5": {
+          "amount": 67.24,
+          "from": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+          "percentage": 0.01
+        }
+      },
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765120232,
+        "expiresAtISO": "2025-12-07T15:10:32.000Z",
+        "registeredAt": "2025-11-07T15:10:32.575Z"
+      },
+      "qualified": {
+        "basic": false,
+        "advanced": false,
+        "directs": 0,
+        "volume": 0,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 7713.15,
+      "calculation": "6723.60 (client) + 1008.55 (mlm) - 19.00 (subscription)"
+    },
+    {
+      "id": "9d1bc4a0-f736-4030-9646-14afac1032d5",
+      "wallet": "0x183a00c9d71e0da0181a1d6aace19a1e0a54b6cf",
+      "profit": 14637,
+      "clientShare": 9514.05,
+      "companyFee": 5122.95,
+      "mlmTotal": 2378.51,
+      "commissions": {
+        "L1": {
+          "amount": 761.12,
+          "from": "0x1e9c402864099eec1fd351bd4f7d9dfce330aadd",
+          "percentage": 0.08
+        },
+        "L2": {
+          "amount": 285.42,
+          "from": "0x37f36d59996006653cec3b45f97e2ba24f1ec3dd",
+          "percentage": 0.03
+        },
+        "L3": {
+          "amount": 190.28,
+          "from": "0x047d235d0ca2bc1fcce5677d83a4eafc81c8eb17",
+          "percentage": 0.02
+        },
+        "L4": {
+          "amount": 95.14,
+          "from": "0xdb72a86e30328e425043f7649987a4dee6704b40",
+          "percentage": 0.01
+        },
+        "L5": {
+          "amount": 95.14,
+          "from": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+          "percentage": 0.01
+        }
+      },
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765120232,
+        "expiresAtISO": "2025-12-07T15:10:32.000Z",
+        "registeredAt": "2025-11-07T15:10:32.693Z"
+      },
+      "qualified": {
+        "basic": false,
+        "advanced": false,
+        "directs": 0,
+        "volume": 0,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 10922.15,
+      "calculation": "9514.05 (client) + 1427.10 (mlm) - 19.00 (subscription)"
+    },
+    {
+      "id": "58e1f2d3-2b81-4dff-8ec5-39cc633bc438",
+      "wallet": "0x8a1f441e057e2c0e6e60208f1a681c952c48d109",
+      "profit": 47667,
+      "clientShare": 30983.55,
+      "companyFee": 16683.45,
+      "mlmTotal": 7745.89,
+      "commissions": {
+        "L1": {
+          "amount": 2478.68,
+          "from": "0x6b857de0610a1a6995e936bf577c9da4b7ff1b06",
+          "percentage": 0.08
+        },
+        "L2": {
+          "amount": 929.51,
+          "from": "0xd1956c932c355a29e33528f3da09e6362ed3aae9",
+          "percentage": 0.03
+        },
+        "L3": {
+          "amount": 619.67,
+          "from": "0x481040f7bb6959f00decf4049223f2c850964453",
+          "percentage": 0.02
+        },
+        "L4": {
+          "amount": 309.84,
+          "from": "0xf59af3165f72b985d0f6039a3199de10458e0f33",
+          "percentage": 0.01
+        },
+        "L5": {
+          "amount": 309.84,
+          "from": "0x5d3286982dbf3206535237e6adea63b736250d65",
+          "percentage": 0.01
+        }
+      },
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765120232,
+        "expiresAtISO": "2025-12-07T15:10:32.000Z",
+        "registeredAt": "2025-11-07T15:10:32.814Z"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 1,
+        "volume": 0,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 35612.09,
+      "calculation": "30983.55 (client) + 4647.54 (mlm) - 19.00 (subscription)"
+    },
+    {
+      "id": "bd80e635-8183-42b1-87fd-5a4381a17bfb",
+      "wallet": "0x8bd05c6735a35e9d8488ad7e9f878191f72063dc",
+      "profit": 44692,
+      "clientShare": 29049.8,
+      "companyFee": 15642.2,
+      "mlmTotal": 7262.45,
+      "commissions": {
+        "L1": {
+          "amount": 2323.98,
+          "from": "0xb5f4ed68e597ae6a561f391f87d86533c0d34c06",
+          "percentage": 0.08
+        },
+        "L2": {
+          "amount": 871.49,
+          "from": "0x559ada90918b37a4a7fd48c28eca7ca36d1fc12c",
+          "percentage": 0.03
+        },
+        "L3": {
+          "amount": 581,
+          "from": "0xec14bb3278aae8edaab6d007ab435c31bb58f6a4",
+          "percentage": 0.02
+        },
+        "L4": {
+          "amount": 290.5,
+          "from": "0x9a3987c3d0213eeb4469fc8836d6e6435631cfda",
+          "percentage": 0.01
+        },
+        "L5": {
+          "amount": 290.5,
+          "from": "0x5d3286982dbf3206535237e6adea63b736250d65",
+          "percentage": 0.01
+        }
+      },
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765120232,
+        "expiresAtISO": "2025-12-07T15:10:32.000Z",
+        "registeredAt": "2025-11-07T15:10:32.936Z"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 1,
+        "volume": 0,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 33388.27,
+      "calculation": "29049.80 (client) + 4357.47 (mlm) - 19.00 (subscription)"
+    },
+    {
+      "id": "af43320f-c33b-49b0-847a-119071213ee5",
+      "wallet": "0x69ea9527c10ff08eea4a8471f5a2fdb64fdc3a7e",
+      "profit": 48196,
+      "clientShare": 31327.4,
+      "companyFee": 16868.6,
+      "mlmTotal": 7831.85,
+      "commissions": {
+        "L1": {
+          "amount": 2506.19,
+          "from": "0x2c04be9333c9abdbb7b3db3e5b0aa1a151ba1438",
+          "percentage": 0.08
+        },
+        "L2": {
+          "amount": 939.82,
+          "from": "0x02bc1c35444a1c3b554b7845cbaaf699fa7a7953",
+          "percentage": 0.03
+        },
+        "L3": {
+          "amount": 626.55,
+          "from": "0xb1e5919adbddae6a8c252b84dd44c554c67477be",
+          "percentage": 0.02
+        },
+        "L4": {
+          "amount": 313.27,
+          "from": "0x02ce6be99f08a2e829e88e7138aaaedd075245fa",
+          "percentage": 0.01
+        },
+        "L5": {
+          "amount": 313.27,
+          "from": "0xe31f2e5845742a26fc220b3ea4d0a81e305466ac",
+          "percentage": 0.01
+        }
+      },
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765120233,
+        "expiresAtISO": "2025-12-07T15:10:33.000Z",
+        "registeredAt": "2025-11-07T15:10:33.056Z"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 1,
+        "volume": 0,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 36007.5,
+      "calculation": "31327.40 (client) + 4699.10 (mlm) - 19.00 (subscription)"
+    },
+    {
+      "id": "4240a563-05c2-4feb-87d1-01d5c404821e",
+      "wallet": "0x9362fba53aff470c0bc9cb30219576ccf6c27d21",
+      "profit": 5583,
+      "clientShare": 3628.95,
+      "companyFee": 1954.05,
+      "mlmTotal": 907.24,
+      "commissions": {
+        "L1": {
+          "amount": 290.32,
+          "from": "0x1eb3a67885bbc26260b473666978870e0cb2e8d1",
+          "percentage": 0.08
+        },
+        "L2": {
+          "amount": 108.87,
+          "from": "0x9b530bc1c7bf59c81bf1ca520ca832da5acc47de",
+          "percentage": 0.03
+        },
+        "L3": {
+          "amount": 72.58,
+          "from": "0xf9291989cf2a1a7f67a6586add97f20bf1c12a0b",
+          "percentage": 0.02
+        },
+        "L4": {
+          "amount": 36.29,
+          "from": "0x19a8c0943ba3a5caf9f1f566ea179e21b6de1682",
+          "percentage": 0.01
+        },
+        "L5": {
+          "amount": 36.29,
+          "from": "0xe31f2e5845742a26fc220b3ea4d0a81e305466ac",
+          "percentage": 0.01
+        }
+      },
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765120233,
+        "expiresAtISO": "2025-12-07T15:10:33.000Z",
+        "registeredAt": "2025-11-07T15:10:33.175Z"
+      },
+      "qualified": {
+        "basic": false,
+        "advanced": false,
+        "directs": 0,
+        "volume": 0,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 4154.3,
+      "calculation": "3628.95 (client) + 544.35 (mlm) - 19.00 (subscription)"
+    },
+    {
+      "id": "57329686-5952-4648-b075-6c2a90a57303",
+      "wallet": "0x63306eea6e05364a3ca587edbf6c0b8cf2cfc3ba",
+      "profit": 18400,
+      "clientShare": 11960,
+      "companyFee": 6440,
+      "mlmTotal": 2990,
+      "commissions": {
+        "L1": {
+          "amount": 956.8,
+          "from": "0x8a1f441e057e2c0e6e60208f1a681c952c48d109",
+          "percentage": 0.08
+        },
+        "L2": {
+          "amount": 358.8,
+          "from": "0x6b857de0610a1a6995e936bf577c9da4b7ff1b06",
+          "percentage": 0.03
+        },
+        "L3": {
+          "amount": 239.2,
+          "from": "0xd1956c932c355a29e33528f3da09e6362ed3aae9",
+          "percentage": 0.02
+        },
+        "L4": {
+          "amount": 119.6,
+          "from": "0x481040f7bb6959f00decf4049223f2c850964453",
+          "percentage": 0.01
+        },
+        "L5": {
+          "amount": 119.6,
+          "from": "0xf59af3165f72b985d0f6039a3199de10458e0f33",
+          "percentage": 0.01
+        }
+      },
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765120233,
+        "expiresAtISO": "2025-12-07T15:10:33.000Z",
+        "registeredAt": "2025-11-07T15:10:33.297Z"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 1,
+        "volume": 0,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 13735,
+      "calculation": "11960.00 (client) + 1794.00 (mlm) - 19.00 (subscription)"
+    },
+    {
+      "id": "b49ba168-5ef8-4216-bee2-c520c0f7dbaa",
+      "wallet": "0xfdff4791b648650f7e4a76948edab45c6fee6936",
+      "profit": 40940,
+      "clientShare": 26611,
+      "companyFee": 14329,
+      "mlmTotal": 6652.75,
+      "commissions": {
+        "L1": {
+          "amount": 2128.88,
+          "from": "0x8bd05c6735a35e9d8488ad7e9f878191f72063dc",
+          "percentage": 0.08
+        },
+        "L2": {
+          "amount": 798.33,
+          "from": "0xb5f4ed68e597ae6a561f391f87d86533c0d34c06",
+          "percentage": 0.03
+        },
+        "L3": {
+          "amount": 532.22,
+          "from": "0x559ada90918b37a4a7fd48c28eca7ca36d1fc12c",
+          "percentage": 0.02
+        },
+        "L4": {
+          "amount": 266.11,
+          "from": "0xec14bb3278aae8edaab6d007ab435c31bb58f6a4",
+          "percentage": 0.01
+        },
+        "L5": {
+          "amount": 266.11,
+          "from": "0x9a3987c3d0213eeb4469fc8836d6e6435631cfda",
+          "percentage": 0.01
+        }
+      },
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765120233,
+        "expiresAtISO": "2025-12-07T15:10:33.000Z",
+        "registeredAt": "2025-11-07T15:10:33.419Z"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 1,
+        "volume": 0,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 30583.65,
+      "calculation": "26611.00 (client) + 3991.65 (mlm) - 19.00 (subscription)"
+    },
+    {
+      "id": "4df597ff-05d2-4f3e-ba7f-fd20ed070f3d",
+      "wallet": "0x44d3a4989c10833f87620166007a627f7c522b2b",
+      "profit": 46508,
+      "clientShare": 30230.2,
+      "companyFee": 16277.8,
+      "mlmTotal": 7557.55,
+      "commissions": {
+        "L1": {
+          "amount": 2418.42,
+          "from": "0x69ea9527c10ff08eea4a8471f5a2fdb64fdc3a7e",
+          "percentage": 0.08
+        },
+        "L2": {
+          "amount": 906.91,
+          "from": "0x2c04be9333c9abdbb7b3db3e5b0aa1a151ba1438",
+          "percentage": 0.03
+        },
+        "L3": {
+          "amount": 604.6,
+          "from": "0x02bc1c35444a1c3b554b7845cbaaf699fa7a7953",
+          "percentage": 0.02
+        },
+        "L4": {
+          "amount": 302.3,
+          "from": "0xb1e5919adbddae6a8c252b84dd44c554c67477be",
+          "percentage": 0.01
+        },
+        "L5": {
+          "amount": 302.3,
+          "from": "0x02ce6be99f08a2e829e88e7138aaaedd075245fa",
+          "percentage": 0.01
+        }
+      },
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765120233,
+        "expiresAtISO": "2025-12-07T15:10:33.000Z",
+        "registeredAt": "2025-11-07T15:10:33.540Z"
+      },
+      "qualified": {
+        "basic": false,
+        "advanced": false,
+        "directs": 0,
+        "volume": 0,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 34745.73,
+      "calculation": "30230.20 (client) + 4534.53 (mlm) - 19.00 (subscription)"
+    },
+    {
+      "id": "69eb76a6-fe02-4349-a739-8cb1f6aba84d",
+      "wallet": "0xb6caa57ea04a7b814bf59128e0c30edf40f30cc3",
+      "profit": 15240,
+      "clientShare": 9906,
+      "companyFee": 5334,
+      "mlmTotal": 2476.5,
+      "commissions": {
+        "L1": {
+          "amount": 792.48,
+          "from": "0x63306eea6e05364a3ca587edbf6c0b8cf2cfc3ba",
+          "percentage": 0.08
+        },
+        "L2": {
+          "amount": 297.18,
+          "from": "0x8a1f441e057e2c0e6e60208f1a681c952c48d109",
+          "percentage": 0.03
+        },
+        "L3": {
+          "amount": 198.12,
+          "from": "0x6b857de0610a1a6995e936bf577c9da4b7ff1b06",
+          "percentage": 0.02
+        },
+        "L4": {
+          "amount": 99.06,
+          "from": "0xd1956c932c355a29e33528f3da09e6362ed3aae9",
+          "percentage": 0.01
+        },
+        "L5": {
+          "amount": 99.06,
+          "from": "0x481040f7bb6959f00decf4049223f2c850964453",
+          "percentage": 0.01
+        }
+      },
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765120233,
+        "expiresAtISO": "2025-12-07T15:10:33.000Z",
+        "registeredAt": "2025-11-07T15:10:33.667Z"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 1,
+        "volume": 0,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 11372.9,
+      "calculation": "9906.00 (client) + 1485.90 (mlm) - 19.00 (subscription)"
+    },
+    {
+      "id": "841d4cb9-5135-4580-8593-1b9448737d5d",
+      "wallet": "0x01e0fc06454030fc58b4389c063c8ff552d50b87",
+      "profit": 17189,
+      "clientShare": 11172.85,
+      "companyFee": 6016.15,
+      "mlmTotal": 2793.21,
+      "commissions": {
+        "L1": {
+          "amount": 893.83,
+          "from": "0xfdff4791b648650f7e4a76948edab45c6fee6936",
+          "percentage": 0.08
+        },
+        "L2": {
+          "amount": 335.19,
+          "from": "0x8bd05c6735a35e9d8488ad7e9f878191f72063dc",
+          "percentage": 0.03
+        },
+        "L3": {
+          "amount": 223.46,
+          "from": "0xb5f4ed68e597ae6a561f391f87d86533c0d34c06",
+          "percentage": 0.02
+        },
+        "L4": {
+          "amount": 111.73,
+          "from": "0x559ada90918b37a4a7fd48c28eca7ca36d1fc12c",
+          "percentage": 0.01
+        },
+        "L5": {
+          "amount": 111.73,
+          "from": "0xec14bb3278aae8edaab6d007ab435c31bb58f6a4",
+          "percentage": 0.01
+        }
+      },
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765120233,
+        "expiresAtISO": "2025-12-07T15:10:33.000Z",
+        "registeredAt": "2025-11-07T15:10:33.791Z"
+      },
+      "qualified": {
+        "basic": false,
+        "advanced": false,
+        "directs": 0,
+        "volume": 0,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 12829.79,
+      "calculation": "11172.85 (client) + 1675.94 (mlm) - 19.00 (subscription)"
+    },
+    {
+      "id": "2ee01c27-695a-4955-a9ba-bf9477d40de6",
+      "wallet": "0xdca90fbdf7e90ca062be35615c869ee96a9b666a",
+      "profit": 29918,
+      "clientShare": 19446.7,
+      "companyFee": 10471.3,
+      "mlmTotal": 4861.68,
+      "commissions": {
+        "L1": {
+          "amount": 1555.74,
+          "from": "0xb6caa57ea04a7b814bf59128e0c30edf40f30cc3",
+          "percentage": 0.08
+        },
+        "L2": {
+          "amount": 583.4,
+          "from": "0x63306eea6e05364a3ca587edbf6c0b8cf2cfc3ba",
+          "percentage": 0.03
+        },
+        "L3": {
+          "amount": 388.93,
+          "from": "0x8a1f441e057e2c0e6e60208f1a681c952c48d109",
+          "percentage": 0.02
+        },
+        "L4": {
+          "amount": 194.47,
+          "from": "0x6b857de0610a1a6995e936bf577c9da4b7ff1b06",
+          "percentage": 0.01
+        },
+        "L5": {
+          "amount": 194.47,
+          "from": "0xd1956c932c355a29e33528f3da09e6362ed3aae9",
+          "percentage": 0.01
+        }
+      },
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765120233,
+        "expiresAtISO": "2025-12-07T15:10:33.000Z",
+        "registeredAt": "2025-11-07T15:10:33.918Z"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 1,
+        "volume": 0,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 22344.71,
+      "calculation": "19446.70 (client) + 2917.01 (mlm) - 19.00 (subscription)"
+    },
+    {
+      "id": "963168ba-1002-44c4-ac53-6ed6da101995",
+      "wallet": "0x0617407a701a45c3437b17fb2c8519cc6c6c739d",
+      "profit": 11281,
+      "clientShare": 7332.65,
+      "companyFee": 3948.35,
+      "mlmTotal": 1833.16,
+      "commissions": {
+        "L1": {
+          "amount": 586.61,
+          "from": "0xdca90fbdf7e90ca062be35615c869ee96a9b666a",
+          "percentage": 0.08
+        },
+        "L2": {
+          "amount": 219.98,
+          "from": "0xb6caa57ea04a7b814bf59128e0c30edf40f30cc3",
+          "percentage": 0.03
+        },
+        "L3": {
+          "amount": 146.65,
+          "from": "0x63306eea6e05364a3ca587edbf6c0b8cf2cfc3ba",
+          "percentage": 0.02
+        },
+        "L4": {
+          "amount": 73.33,
+          "from": "0x8a1f441e057e2c0e6e60208f1a681c952c48d109",
+          "percentage": 0.01
+        },
+        "L5": {
+          "amount": 73.33,
+          "from": "0x6b857de0610a1a6995e936bf577c9da4b7ff1b06",
+          "percentage": 0.01
+        }
+      },
+      "subscription": {
+        "active": true,
+        "cost": 19,
+        "expiresAt": 1765120234,
+        "expiresAtISO": "2025-12-07T15:10:34.000Z",
+        "registeredAt": "2025-11-07T15:10:34.042Z"
+      },
+      "qualified": {
+        "basic": false,
+        "advanced": false,
+        "directs": 0,
+        "volume": 0,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 8413.55,
+      "calculation": "7332.65 (client) + 1099.90 (mlm) - 19.00 (subscription)"
+    }
+  ],
+  "mlmBreakdown": {
+    "L1": {
+      "totalPaid": 72351.44,
+      "recipients": 50,
+      "percentage": 0.08
+    },
+    "L2": {
+      "totalPaid": 23915.43,
+      "recipients": 45,
+      "percentage": 0.03
+    },
+    "L3": {
+      "totalPaid": 11883.27,
+      "recipients": 35,
+      "percentage": 0.02
+    },
+    "L4": {
+      "totalPaid": 4125.39,
+      "recipients": 25,
+      "percentage": 0.01
+    },
+    "L5": {
+      "totalPaid": 3203.49,
+      "recipients": 17,
+      "percentage": 0.01
+    },
+    "L6": {
+      "totalPaid": 0,
+      "recipients": 0,
+      "percentage": 0.02
+    },
+    "L7": {
+      "totalPaid": 0,
+      "recipients": 0,
+      "percentage": 0.02
+    },
+    "L8": {
+      "totalPaid": 0,
+      "recipients": 0,
+      "percentage": 0.02
+    },
+    "L9": {
+      "totalPaid": 0,
+      "recipients": 0,
+      "percentage": 0.02
+    },
+    "L10": {
+      "totalPaid": 0,
+      "recipients": 0,
+      "percentage": 0.02
+    }
+  },
+  "validation": {
+    "totalClientShares": 907643.1,
+    "totalCompanyFees": 488730.9,
+    "totalMLMCommissions": 115479.02,
+    "totalLAICosts": 1045,
+    "totalNetPayments": 1022077.12,
+    "checksumPassed": true,
+    "notes": "All calculations verified according to Rulebook 1.0.0"
+  },
+  "metadata": {
+    "generatedBy": "iDeepX Backend v1.0",
+    "calculationEngine": "Snapshot Generator",
+    "rulebookVersion": "1.0.0",
+    "proofVersion": "1.0.0",
+    "notes": "Weekly commission snapshot for PROOF system"
+  }
+}

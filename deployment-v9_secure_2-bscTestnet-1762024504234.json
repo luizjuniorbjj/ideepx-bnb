@@ -1,0 +1,26 @@
+{
+  "version": "V9_SECURE_2",
+  "network": "bscTestnet",
+  "contractAddress": "0xe678A271c096EF9CFE296243e022deaFBE05f4Ea",
+  "usdtAddress": "0x337610d27c682E347C9cD60BD4b3b107C9d34dDd",
+  "multisig": "0xEB2451A8dd58734134DD7Bde64A5f86725b75ef2",
+  "liquidityPool": "0xEB2451A8dd58734134DD7Bde64A5f86725b75ef2",
+  "infrastructureWallet": "0xEB2451A8dd58734134DD7Bde64A5f86725b75ef2",
+  "companyWallet": "0xEB2451A8dd58734134DD7Bde64A5f86725b75ef2",
+  "deployer": "0xEB2451A8dd58734134DD7Bde64A5f86725b75ef2",
+  "deploymentTime": "2025-11-01T19:15:04.194Z",
+  "blockNumber": 70903584,
+  "subscriptionFee": "19",
+  "features": {
+    "circuitBreaker": "110%/130%",
+    "depositCap": "$100k",
+    "maxBetaUsers": 100,
+    "timelock": "24h",
+    "withdrawalLimits": {
+      "users": "$10k/tx, $50k/month",
+      "pools": "$10k/day, $50k/month"
+    },
+    "emergencyReserve": "1%",
+    "addressRedirects": true
+  }
+}

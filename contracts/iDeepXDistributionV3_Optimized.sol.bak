@@ -1,0 +1,872 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import "@openzeppelin/contracts/access/AccessControl.sol";
+import "@openzeppelin/contracts/utils/ReentrancyGuard.sol";
+import "@openzeppelin/contracts/utils/Pausable.sol";
+
+/**
+ * @title iDeepX Distribution V6 - PRODUCTION DEFINITIVO
+ * @dev Sistema com TODAS as correções implementadas e testadas
+ * @notice Estrutura 60/5/12/23 com proteção total de solvência
+ * 
+ * ATENÇÃO CRÍTICA:
+ * - Este contrato usa USDT com 6 DECIMAIS (padrão BSC)
+ * - Assinaturas pagam apenas bônus direto + reserva (NÃO 10 níveis)
+ * - Distribuição MLM 10 níveis ocorre APENAS em performance fees
+ * - Pools protegidos contra insolvência
+ * 
+ * @author DeepX Team - Versão Definitiva para Produção
+ */
+contract iDeepXDistributionV6 is AccessControl, ReentrancyGuard, Pausable {
+
+    // ========== ROLES ==========
+    bytes32 public constant DISTRIBUTOR_ROLE = keccak256("DISTRIBUTOR");
+    bytes32 public constant UPDATER_ROLE = keccak256("UPDATER");
+    bytes32 public constant TREASURY_ROLE = keccak256("TREASURY");
+    
+    // ========== CONSTANTES CRÍTICAS ==========
+    
+    IERC20 public immutable USDT;
+    
+    // USDT NA BSC TEM 6 DECIMAIS! ✅
+    uint256 public constant USDT_DECIMALS = 6;
+    uint256 public constant SUBSCRIPTION_FEE = 29 * 10**6;   // $29 USDT (6 decimais)
+    uint256 public constant MIN_WITHDRAWAL = 10 * 10**6;     // $10 USDT (6 decimais)
+    uint256 public constant DIRECT_BONUS = 5 * 10**6;        // $5 USDT (6 decimais)
+    uint256 public constant FAST_START_BONUS = 5 * 10**6;    // $5 USDT (6 decimais)
+    
+    uint256 public constant SUBSCRIPTION_DURATION = 30 days;
+    uint256 public constant MAX_BATCH_SIZE = 50;
+    uint256 public constant MLM_LEVELS = 10;
+    
+    // ========== DISTRIBUIÇÃO 60/5/12/23 (IMUTÁVEL) ==========
+    uint256 public constant MLM_POOL_PERCENTAGE = 6000;      // 60%
+    uint256 public constant LIQUIDITY_PERCENTAGE = 500;      // 5%
+    uint256 public constant INFRASTRUCTURE_PERCENTAGE = 1200; // 12%
+    uint256 public constant COMPANY_PERCENTAGE = 2300;       // 23%
+    
+    // ========== SUBDIVISÃO DO POOL MLM (60%) ==========
+    uint256 public constant MLM_DIRECT_DISTRIBUTION = 7500;  // 75% para níveis
+    uint256 public constant MLM_RESERVE = 2500;              // 25% para reserva
+    
+    // Uso da reserva MLM
+    uint256 public constant RESERVE_RANK_BONUS = 3000;       // 30% para ranks
+    uint256 public constant RESERVE_PERFORMANCE = 3000;      // 30% para performance  
+    uint256 public constant RESERVE_CONSISTENCY = 2000;      // 20% para consistência
+    uint256 public constant RESERVE_FAST_START = 2000;       // 20% para fast start
+    
+    // ========== VARIÁVEIS DE ESTADO ==========
+    
+    bool public betaMode = true;
+    address public liquidityPool;
+    address public infrastructureWallet;
+    address public companyWallet;
+    
+    // Saldos internos protegidos
+    uint256 public mlmReserveBalance;
+    uint256 public liquidityBalance;
+    uint256 public infrastructureBalance;
+    uint256 public companyBalance;
+    
+    // Controle de solvência
+    uint256 public totalUserBalances;      // Total de saldos não sacados dos usuários
+    uint256 public totalPendingReserve;    // Total de bônus de reserva pendentes
+    
+    // ========== PERCENTUAIS MLM (SOMA = 10000) ==========
+    
+    // Beta: Distribuição agressiva
+    uint256[10] public mlmPercentagesBeta = [
+        3000,  // L1: 30% do direto (22.5% do pool MLM)
+        1500,  // L2: 15% do direto
+        1250,  // L3: 12.5% do direto
+        1000,  // L4: 10% do direto
+        750,   // L5: 7.5% do direto
+        500,   // L6: 5% do direto
+        500,   // L7: 5% do direto
+        500,   // L8: 5% do direto
+        500,   // L9: 5% do direto
+        500    // L10: 5% do direto
+    ]; // TOTAL: 10000 = 100% do MLM_DIRECT_DISTRIBUTION ✅
+    
+    // Permanente: Distribuição equilibrada
+    uint256[10] public mlmPercentagesPermanent = [
+        2500,  // L1: 25% do direto
+        1500,  // L2: 15% do direto
+        1000,  // L3: 10% do direto
+        1000,  // L4: 10% do direto
+        800,   // L5: 8% do direto
+        800,   // L6: 8% do direto
+        800,   // L7: 8% do direto
+        800,   // L8: 8% do direto
+        400,   // L9: 4% do direto
+        400    // L10: 4% do direto
+    ]; // TOTAL: 10000 = 100% ✅
+    
+    // ========== ENUMS ==========
+    
+    enum Rank {
+        STARTER,
+        BRONZE,
+        SILVER,
+        GOLD,
+        PLATINUM,
+        DIAMOND,
+        MASTER,
+        GRANDMASTER
+    }
+    
+    enum EarningType {
+        MLM_COMMISSION,
+        DIRECT_BONUS,
+        RANK_BONUS,
+        PERFORMANCE_BONUS,
+        CONSISTENCY_BONUS,
+        FAST_START
+    }
+    
+    // ========== ESTRUTURAS ==========
+    
+    struct User {
+        address wallet;
+        address sponsor;
+        bool isRegistered;
+        bool subscriptionActive;
+        uint256 subscriptionTimestamp;
+        uint256 subscriptionExpiration;
+        uint256 totalEarned;
+        uint256 totalWithdrawn;
+        uint256 directReferrals;
+        uint256 totalVolume;
+        uint256 consecutiveRenewals;
+        Rank currentRank;
+        bool fastStartClaimed;
+        uint256 registrationTimestamp;
+    }
+    
+    struct RankRequirement {
+        uint256 directsRequired;
+        uint256 volumeRequired;  // Em USDT com 6 decimais
+    }
+    
+    struct RankBonus {
+        uint256 monthlyBonus;     // Em USDT com 6 decimais
+        uint256 directBonusBoost; // Percentual extra
+        uint256 mlmBoost;        // Percentual extra
+    }
+    
+    // ========== MAPPINGS ==========
+    
+    mapping(address => User) public users;
+    mapping(address => uint256) public pendingReserveBonus;
+    mapping(address => bool) public userPaused;
+    mapping(Rank => RankRequirement) public rankRequirements;
+    mapping(Rank => RankBonus) public rankBonuses;
+    
+    // Rankings
+    address[] public top100Traders;
+    mapping(address => uint256) public traderRanking;
+    
+    // ========== ESTATÍSTICAS ==========
+    
+    uint256 public totalUsers;
+    uint256 public totalActiveSubscriptions;
+    uint256 public totalMLMDistributed;
+    uint256 public totalReserveDistributed;
+    uint256 public totalVolumeProcessed;
+    uint256 public totalSubscriptionRevenue;
+    uint256 public totalPerformanceRevenue;
+    
+    // ========== EVENTOS ==========
+    
+    event UserRegistered(address indexed user, address indexed sponsor);
+    event SubscriptionActivated(address indexed user, uint256 amount, bool wasInactive);
+    event SubscriptionDistributed(uint256 mlm, uint256 liquidity, uint256 infrastructure, uint256 company);
+    event PerformanceFeeReceived(address indexed from, uint256 amount);
+    event PerformanceFeeDistributed(address indexed client, uint256 totalFee);
+    event MLMCommissionPaid(address indexed recipient, address indexed from, uint256 level, uint256 amount);
+    event ReserveBonusPaid(address indexed user, uint256 amount, EarningType bonusType);
+    event RankUpgraded(address indexed user, Rank newRank);
+    event PoolWithdrawal(address indexed recipient, uint256 amount, string poolType);
+    event SolvencyAlert(uint256 required, uint256 available);
+    
+    // ========== ERROS CUSTOMIZADOS (CORRIGIDOS) ==========
+    
+    error InvalidAddress();
+    error UserAlreadyRegistered();
+    error UserNotRegistered();
+    error SponsorNotRegistered();
+    error InvalidAmount();
+    error TransferFailed();
+    error SubscriptionStillActive();
+    error SubscriptionNotActive();  // CORRIGIDO ✅
+    error InsufficientBalance();
+    error InsufficientContractBalance();
+    error BatchSizeExceeded();
+    error BelowMinimumWithdrawal();
+    error UserIsPaused();
+    error NoReserveBonus();
+    error PoolWithdrawalWouldCauseInsolvency();
+    error ContractIsInsolvent();  // NOVO ✅
+    
+    // ========== MODIFICADORES ==========
+    
+    /**
+     * @notice Garante que o contrato permanece solvente após a operação
+     */
+    modifier ensureSolvency() {
+        _;
+        _checkSolvency();
+    }
+    
+    // ========== CONSTRUTOR ==========
+    
+    constructor(
+        address _usdtAddress,
+        address _liquidityPool,
+        address _infrastructureWallet,
+        address _companyWallet
+    ) {
+        if (_usdtAddress == address(0) ||
+            _liquidityPool == address(0) ||
+            _infrastructureWallet == address(0) ||
+            _companyWallet == address(0)) {
+            revert InvalidAddress();
+        }
+        
+        USDT = IERC20(_usdtAddress);
+        liquidityPool = _liquidityPool;
+        infrastructureWallet = _infrastructureWallet;
+        companyWallet = _companyWallet;
+        
+        _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
+        _grantRole(DISTRIBUTOR_ROLE, msg.sender);
+        _grantRole(UPDATER_ROLE, msg.sender);
+        _grantRole(TREASURY_ROLE, msg.sender);
+        
+        _initializeRanks();
+        _registerOwner();
+    }
+    
+    // ========== INICIALIZAÇÃO ==========
+    
+    function _initializeRanks() private {
+        // Requisitos (valores em USDT 6 decimais)
+        rankRequirements[Rank.BRONZE] = RankRequirement(3, 1000 * 10**6);
+        rankRequirements[Rank.SILVER] = RankRequirement(10, 10000 * 10**6);
+        rankRequirements[Rank.GOLD] = RankRequirement(25, 50000 * 10**6);
+        rankRequirements[Rank.PLATINUM] = RankRequirement(50, 250000 * 10**6);
+        rankRequirements[Rank.DIAMOND] = RankRequirement(100, 1000000 * 10**6);
+        rankRequirements[Rank.MASTER] = RankRequirement(250, 5000000 * 10**6);
+        rankRequirements[Rank.GRANDMASTER] = RankRequirement(500, 25000000 * 10**6);
+        
+        // Bônus (valores em USDT 6 decimais)
+        rankBonuses[Rank.BRONZE] = RankBonus(50 * 10**6, 10, 5);
+        rankBonuses[Rank.SILVER] = RankBonus(100 * 10**6, 20, 10);
+        rankBonuses[Rank.GOLD] = RankBonus(250 * 10**6, 30, 15);
+        rankBonuses[Rank.PLATINUM] = RankBonus(500 * 10**6, 50, 20);
+        rankBonuses[Rank.DIAMOND] = RankBonus(1000 * 10**6, 75, 30);
+        rankBonuses[Rank.MASTER] = RankBonus(2000 * 10**6, 100, 40);
+        rankBonuses[Rank.GRANDMASTER] = RankBonus(5000 * 10**6, 150, 50);
+    }
+    
+    function _registerOwner() private {
+        users[msg.sender] = User({
+            wallet: msg.sender,
+            sponsor: address(0),
+            isRegistered: true,
+            subscriptionActive: true,
+            subscriptionTimestamp: block.timestamp,
+            subscriptionExpiration: block.timestamp + (365 days * 100),
+            totalEarned: 0,
+            totalWithdrawn: 0,
+            directReferrals: 0,
+            totalVolume: 0,
+            consecutiveRenewals: 0,
+            currentRank: Rank.GRANDMASTER,
+            fastStartClaimed: true,
+            registrationTimestamp: block.timestamp
+        });
+        totalUsers = 1;
+        totalActiveSubscriptions = 1;
+    }
+    
+    // ========== FUNÇÕES PRINCIPAIS ==========
+    
+    /**
+     * @notice Registra novo usuário com sponsor
+     */
+    function registerWithSponsor(address sponsorWallet) external nonReentrant whenNotPaused {
+        if (sponsorWallet == address(0) || sponsorWallet == msg.sender) revert InvalidAddress();
+        if (users[msg.sender].isRegistered) revert UserAlreadyRegistered();
+        if (!users[sponsorWallet].isRegistered) revert SponsorNotRegistered();
+        
+        users[msg.sender] = User({
+            wallet: msg.sender,
+            sponsor: sponsorWallet,
+            isRegistered: true,
+            subscriptionActive: false,
+            subscriptionTimestamp: 0,
+            subscriptionExpiration: 0,
+            totalEarned: 0,
+            totalWithdrawn: 0,
+            directReferrals: 0,
+            totalVolume: 0,
+            consecutiveRenewals: 0,
+            currentRank: Rank.STARTER,
+            fastStartClaimed: false,
+            registrationTimestamp: block.timestamp
+        });
+        
+        users[sponsorWallet].directReferrals++;
+        totalUsers++;
+        
+        emit UserRegistered(msg.sender, sponsorWallet);
+        _checkAndUpgradeRank(sponsorWallet);
+    }
+    
+    /**
+     * @notice Ativa ou renova assinatura mensal
+     * @dev Paga bônus direto ao sponsor e alimenta reserva MLM
+     *      NÃO distribui para 10 níveis (só performance faz isso)
+     */
+    function activateSubscription() external nonReentrant whenNotPaused ensureSolvency {
+        if (!users[msg.sender].isRegistered) revert UserNotRegistered();
+        if (userPaused[msg.sender]) revert UserIsPaused();
+        
+        // Verificar se estava inativo ANTES
+        bool wasInactive = !users[msg.sender].subscriptionActive || 
+                          block.timestamp > users[msg.sender].subscriptionExpiration;
+        
+        if (!wasInactive && users[msg.sender].subscriptionActive) {
+            revert SubscriptionStillActive();
+        }
+        
+        // Transferir USDT (6 decimais)
+        if (!USDT.transferFrom(msg.sender, address(this), SUBSCRIPTION_FEE)) {
+            revert TransferFailed();
+        }
+        
+        // Atualizar renovações
+        bool isRenewal = users[msg.sender].subscriptionTimestamp > 0;
+        if (isRenewal && block.timestamp <= users[msg.sender].subscriptionExpiration + 7 days) {
+            users[msg.sender].consecutiveRenewals++;
+        } else if (isRenewal) {
+            users[msg.sender].consecutiveRenewals = 0;
+        }
+        
+        // Atualizar estado
+        users[msg.sender].subscriptionActive = true;
+        users[msg.sender].subscriptionTimestamp = block.timestamp;
+        users[msg.sender].subscriptionExpiration = block.timestamp + SUBSCRIPTION_DURATION;
+        
+        // CONTADOR CORRIGIDO ✅
+        if (wasInactive) {
+            totalActiveSubscriptions++;
+        }
+        
+        totalSubscriptionRevenue += SUBSCRIPTION_FEE;
+        
+        // Distribuir (sponsor + pools)
+        _distributeSubscriptionFee(msg.sender);
+        
+        // Bonificações
+        if (!users[msg.sender].fastStartClaimed && 
+            block.timestamp <= users[msg.sender].registrationTimestamp + 7 days) {
+            _payFastStartBonus(msg.sender);
+        }
+        
+        if (users[msg.sender].consecutiveRenewals >= 3) {
+            _payConsistencyBonus(msg.sender);
+        }
+        
+        emit SubscriptionActivated(msg.sender, SUBSCRIPTION_FEE, wasInactive);
+    }
+    
+    /**
+     * @notice Distribui assinatura: sponsor + reserva + pools (5/12/23)
+     */
+    function _distributeSubscriptionFee(address subscriber) private {
+        uint256 amount = SUBSCRIPTION_FEE;
+        
+        // Calcular distribuição 60/5/12/23
+        uint256 mlmAmount = (amount * MLM_POOL_PERCENTAGE) / 10000;
+        uint256 liqAmount = (amount * LIQUIDITY_PERCENTAGE) / 10000;
+        uint256 infAmount = (amount * INFRASTRUCTURE_PERCENTAGE) / 10000;
+        uint256 compAmount = (amount * COMPANY_PERCENTAGE) / 10000;
+        
+        // Acumular pools
+        liquidityBalance += liqAmount;
+        infrastructureBalance += infAmount;
+        companyBalance += compAmount;
+        
+        // Pagar bônus direto ao sponsor
+        address sponsor = users[subscriber].sponsor;
+        uint256 directPaid = 0;
+        
+        if (sponsor != address(0) && users[sponsor].subscriptionActive) {
+            uint256 directAmount = DIRECT_BONUS;
+            
+            // Aplicar boost de rank
+            RankBonus memory rb = rankBonuses[users[sponsor].currentRank];
+            if (rb.directBonusBoost > 0) {
+                directAmount = directAmount * (100 + rb.directBonusBoost) / 100;
+            }
+            
+            users[sponsor].totalEarned += directAmount;
+            totalUserBalances += directAmount;
+            directPaid = directAmount;
+            
+            emit MLMCommissionPaid(sponsor, subscriber, 0, directAmount);
+        }
+        
+        // Resto do MLM vai para reserva
+        if (mlmAmount > directPaid) {
+            mlmReserveBalance += (mlmAmount - directPaid);
+        }
+        
+        emit SubscriptionDistributed(mlmAmount, liqAmount, infAmount, compAmount);
+    }
+    
+    /**
+     * @notice Processa performance fees com distribuição em 10 níveis
+     */
+    function distributePerformanceFee(
+        address[] calldata clients,
+        uint256[] calldata amounts
+    ) external nonReentrant whenNotPaused ensureSolvency onlyRole(DISTRIBUTOR_ROLE) {
+        if (clients.length != amounts.length) revert InvalidAmount();
+        if (clients.length > MAX_BATCH_SIZE) revert BatchSizeExceeded();
+        
+        uint256 totalAmount = 0;
+        for (uint256 i = 0; i < amounts.length; i++) {
+            totalAmount += amounts[i];
+        }
+        
+        // Trazer USDT para o contrato
+        if (!USDT.transferFrom(msg.sender, address(this), totalAmount)) {
+            revert TransferFailed();
+        }
+        
+        emit PerformanceFeeReceived(msg.sender, totalAmount);
+        
+        // Processar cada cliente
+        for (uint256 i = 0; i < clients.length; i++) {
+            _processSinglePerformanceFee(clients[i], amounts[i]);
+        }
+    }
+    
+    /**
+     * @notice Processa fee individual - ERRO CORRIGIDO ✅
+     */
+    function _processSinglePerformanceFee(address client, uint256 amount) private {
+        // CORREÇÃO: Mensagem de erro apropriada
+        if (!users[client].isRegistered) revert UserNotRegistered();
+        if (!users[client].subscriptionActive) revert SubscriptionNotActive();
+        
+        totalVolumeProcessed += amount;
+        totalPerformanceRevenue += amount;
+        
+        // Distribuição 60/5/12/23
+        uint256 mlmTotal = (amount * MLM_POOL_PERCENTAGE) / 10000;
+        uint256 liqAmount = (amount * LIQUIDITY_PERCENTAGE) / 10000;
+        uint256 infAmount = (amount * INFRASTRUCTURE_PERCENTAGE) / 10000;
+        uint256 compAmount = (amount * COMPANY_PERCENTAGE) / 10000;
+        
+        // Acumular pools
+        liquidityBalance += liqAmount;
+        infrastructureBalance += infAmount;
+        companyBalance += compAmount;
+        
+        // MLM: 75% direto, 25% reserva
+        uint256 mlmDirect = (mlmTotal * MLM_DIRECT_DISTRIBUTION) / 10000;
+        uint256 mlmReserve = mlmTotal - mlmDirect;
+        
+        mlmReserveBalance += mlmReserve;
+        
+        // Distribuir nos 10 níveis
+        _distributeMLMCommissions(client, mlmDirect);
+        
+        emit PerformanceFeeDistributed(client, amount);
+    }
+    
+    /**
+     * @notice Distribui comissões MLM em 10 níveis
+     */
+    function _distributeMLMCommissions(address client, uint256 totalMLM) private {
+        address currentSponsor = users[client].sponsor;
+        uint256[10] memory percentages = betaMode ? mlmPercentagesBeta : mlmPercentagesPermanent;
+        
+        for (uint8 level = 0; level < MLM_LEVELS; level++) {
+            if (currentSponsor == address(0)) break;
+            
+            if (users[currentSponsor].subscriptionActive) {
+                uint256 commission = (totalMLM * percentages[level]) / 10000;
+                
+                // Boost de rank
+                RankBonus memory rb = rankBonuses[users[currentSponsor].currentRank];
+                if (rb.mlmBoost > 0) {
+                    commission = commission * (100 + rb.mlmBoost) / 100;
+                }
+                
+                users[currentSponsor].totalEarned += commission;
+                users[currentSponsor].totalVolume += commission;
+                totalUserBalances += commission;
+                totalMLMDistributed += commission;
+                
+                emit MLMCommissionPaid(currentSponsor, client, level + 1, commission);
+            }
+            
+            currentSponsor = users[currentSponsor].sponsor;
+        }
+    }
+    
+    /**
+     * @notice Paga fast start bonus
+     */
+    function _payFastStartBonus(address user) private {
+        address sponsor = users[user].sponsor;
+        if (sponsor != address(0) && users[sponsor].subscriptionActive) {
+            if (mlmReserveBalance >= FAST_START_BONUS) {
+                pendingReserveBonus[sponsor] += FAST_START_BONUS;
+                totalPendingReserve += FAST_START_BONUS;
+                mlmReserveBalance -= FAST_START_BONUS;
+                users[user].fastStartClaimed = true;
+                emit ReserveBonusPaid(sponsor, FAST_START_BONUS, EarningType.FAST_START);
+            }
+        }
+    }
+    
+    /**
+     * @notice Paga consistency bonus
+     */
+    function _payConsistencyBonus(address user) private {
+        uint256 bonus = 0;
+        uint256 renewals = users[user].consecutiveRenewals;
+        
+        if (renewals >= 24) {
+            bonus = SUBSCRIPTION_FEE * 30 / 100;
+        } else if (renewals >= 12) {
+            bonus = SUBSCRIPTION_FEE * 20 / 100;
+        } else if (renewals >= 6) {
+            bonus = SUBSCRIPTION_FEE * 10 / 100;
+        } else if (renewals >= 3) {
+            bonus = SUBSCRIPTION_FEE * 5 / 100;
+        }
+        
+        if (bonus > 0 && mlmReserveBalance >= bonus) {
+            pendingReserveBonus[user] += bonus;
+            totalPendingReserve += bonus;
+            mlmReserveBalance -= bonus;
+            emit ReserveBonusPaid(user, bonus, EarningType.CONSISTENCY_BONUS);
+        }
+    }
+    
+    /**
+     * @notice Saca bônus da reserva
+     */
+    function claimReserveBonus() external nonReentrant whenNotPaused {
+        uint256 amount = pendingReserveBonus[msg.sender];
+        if (amount == 0) revert NoReserveBonus();
+        
+        if (USDT.balanceOf(address(this)) < amount) {
+            revert InsufficientContractBalance();
+        }
+        
+        pendingReserveBonus[msg.sender] = 0;
+        totalPendingReserve -= amount;
+        users[msg.sender].totalEarned += amount;
+        totalReserveDistributed += amount;
+        
+        if (!USDT.transfer(msg.sender, amount)) {
+            revert TransferFailed();
+        }
+    }
+    
+    /**
+     * @notice Saca ganhos acumulados
+     */
+    function withdrawEarnings() external nonReentrant whenNotPaused {
+        if (userPaused[msg.sender]) revert UserIsPaused();
+        
+        uint256 available = users[msg.sender].totalEarned - users[msg.sender].totalWithdrawn;
+        if (available < MIN_WITHDRAWAL) revert BelowMinimumWithdrawal();
+        
+        if (USDT.balanceOf(address(this)) < available) {
+            revert InsufficientContractBalance();
+        }
+        
+        users[msg.sender].totalWithdrawn += available;
+        totalUserBalances -= available;
+        
+        if (!USDT.transfer(msg.sender, available)) {
+            revert TransferFailed();
+        }
+    }
+    
+    /**
+     * @notice Admin saca dos pools COM PROTEÇÃO
+     */
+    function withdrawPoolFunds(string calldata poolType, uint256 amount) 
+        external 
+        nonReentrant 
+        onlyRole(TREASURY_ROLE) 
+    {
+        // Verificar solvência ANTES
+        uint256 requiredBalance = totalUserBalances + totalPendingReserve;
+        uint256 currentBalance = USDT.balanceOf(address(this));
+        
+        if (currentBalance < requiredBalance + amount) {
+            revert PoolWithdrawalWouldCauseInsolvency();
+        }
+        
+        address recipient;
+        
+        if (keccak256(bytes(poolType)) == keccak256("liquidity")) {
+            if (amount > liquidityBalance) revert InsufficientBalance();
+            liquidityBalance -= amount;
+            recipient = liquidityPool;
+        } else if (keccak256(bytes(poolType)) == keccak256("infrastructure")) {
+            if (amount > infrastructureBalance) revert InsufficientBalance();
+            infrastructureBalance -= amount;
+            recipient = infrastructureWallet;
+        } else if (keccak256(bytes(poolType)) == keccak256("company")) {
+            if (amount > companyBalance) revert InsufficientBalance();
+            companyBalance -= amount;
+            recipient = companyWallet;
+        } else {
+            revert InvalidAmount();
+        }
+        
+        if (!USDT.transfer(recipient, amount)) {
+            revert TransferFailed();
+        }
+        
+        emit PoolWithdrawal(recipient, amount, poolType);
+    }
+    
+    /**
+     * @notice Verifica solvência - AGORA REVERTE SE INSOLVENTE ✅
+     */
+    function _checkSolvency() private view {
+        uint256 required = totalUserBalances + totalPendingReserve;
+        uint256 current = USDT.balanceOf(address(this));
+        
+        if (current < required) {
+            revert ContractIsInsolvent();
+        }
+    }
+    
+    /**
+     * @notice Atualiza e faz upgrade de rank
+     */
+    function _checkAndUpgradeRank(address user) private {
+        User storage u = users[user];
+        RankRequirement memory req;
+        
+        for (uint8 r = uint8(Rank.GRANDMASTER); r > uint8(u.currentRank); r--) {
+            req = rankRequirements[Rank(r)];
+            
+            if (u.directReferrals >= req.directsRequired &&
+                u.totalVolume >= req.volumeRequired) {
+                
+                Rank oldRank = u.currentRank;
+                u.currentRank = Rank(r);
+                
+                // Bonus de upgrade (10% do mensal)
+                if (oldRank != Rank(r)) {
+                    uint256 upgradeBonus = rankBonuses[Rank(r)].monthlyBonus / 10;
+                    if (mlmReserveBalance >= upgradeBonus) {
+                        pendingReserveBonus[user] += upgradeBonus;
+                        totalPendingReserve += upgradeBonus;
+                        mlmReserveBalance -= upgradeBonus;
+                    }
+                }
+                
+                emit RankUpgraded(user, Rank(r));
+                break;
+            }
+        }
+    }
+    
+    /**
+     * @notice Distribui bônus mensais de rank
+     */
+    function distributeRankBonuses(address[] calldata recipients) 
+        external 
+        nonReentrant 
+        onlyRole(DISTRIBUTOR_ROLE) 
+    {
+        for (uint256 i = 0; i < recipients.length; i++) {
+            address user = recipients[i];
+            if (!users[user].subscriptionActive) continue;
+            
+            Rank rank = users[user].currentRank;
+            if (rank == Rank.STARTER) continue;
+            
+            uint256 monthlyBonus = rankBonuses[rank].monthlyBonus;
+            if (monthlyBonus > 0 && mlmReserveBalance >= monthlyBonus) {
+                pendingReserveBonus[user] += monthlyBonus;
+                totalPendingReserve += monthlyBonus;
+                mlmReserveBalance -= monthlyBonus;
+                emit ReserveBonusPaid(user, monthlyBonus, EarningType.RANK_BONUS);
+            }
+        }
+    }
+    
+    /**
+     * @notice Distribui performance bonus - USANDO PERCENTUAL CORRETO ✅
+     */
+    function distributePerformanceBonus() 
+        external 
+        nonReentrant 
+        onlyRole(DISTRIBUTOR_ROLE) 
+    {
+        if (top100Traders.length == 0) revert InvalidAmount();
+        
+        // CORREÇÃO: Usar o percentual definido no cabeçalho
+        uint256 availablePool = (mlmReserveBalance * RESERVE_PERFORMANCE) / 10000;
+        if (availablePool == 0) revert InsufficientBalance();
+        
+        uint256 distributed = 0;
+        
+        for (uint256 i = 0; i < top100Traders.length && i < 100; i++) {
+            uint256 share = 0;
+            
+            if (i < 10) {
+                share = availablePool * 5 / 100;  // 5% cada top 10
+            } else if (i < 50) {
+                share = availablePool * 1 / 100;  // 1% cada 11-50
+            } else {
+                share = availablePool * 5 / 1000; // 0.5% cada 51-100
+            }
+            
+            if (share > 0 && distributed + share <= availablePool) {
+                pendingReserveBonus[top100Traders[i]] += share;
+                totalPendingReserve += share;
+                distributed += share;
+                emit ReserveBonusPaid(top100Traders[i], share, EarningType.PERFORMANCE_BONUS);
+            }
+        }
+        
+        mlmReserveBalance -= distributed;
+        totalReserveDistributed += distributed;
+    }
+    
+    /**
+     * @notice Atualiza rankings de traders
+     */
+    function updateRankings(address[] calldata traders) external onlyRole(UPDATER_ROLE) {
+        delete top100Traders;
+        
+        for (uint256 i = 0; i < traders.length && i < 100; i++) {
+            top100Traders.push(traders[i]);
+            traderRanking[traders[i]] = i + 1;
+        }
+    }
+    
+    // ========== ADMIN FUNCTIONS ==========
+    
+    function toggleBetaMode() external onlyRole(DEFAULT_ADMIN_ROLE) {
+        betaMode = !betaMode;
+    }
+    
+    function pause() external onlyRole(DEFAULT_ADMIN_ROLE) {
+        _pause();
+    }
+    
+    function unpause() external onlyRole(DEFAULT_ADMIN_ROLE) {
+        _unpause();
+    }
+    
+    function pauseUser(address user) external onlyRole(DEFAULT_ADMIN_ROLE) {
+        userPaused[user] = true;
+    }
+    
+    function unpauseUser(address user) external onlyRole(DEFAULT_ADMIN_ROLE) {
+        userPaused[user] = false;
+    }
+    
+    // ========== VIEW FUNCTIONS ==========
+    
+    function getUserInfo(address user) external view returns (
+        bool isRegistered,
+        bool subscriptionActive,
+        uint256 totalEarned,
+        uint256 availableBalance,
+        Rank currentRank,
+        uint256 directReferrals,
+        uint256 consecutiveRenewals,
+        uint256 pendingBonus
+    ) {
+        User memory u = users[user];
+        return (
+            u.isRegistered,
+            u.subscriptionActive && block.timestamp <= u.subscriptionExpiration,
+            u.totalEarned,
+            u.totalEarned - u.totalWithdrawn,
+            u.currentRank,
+            u.directReferrals,
+            u.consecutiveRenewals,
+            pendingReserveBonus[user]
+        );
+    }
+    
+    function getPoolBalances() external view returns (
+        uint256 reserve,
+        uint256 liquidity,
+        uint256 infrastructure,
+        uint256 company,
+        uint256 totalUserLiabilities,
+        uint256 contractBalance
+    ) {
+        return (
+            mlmReserveBalance,
+            liquidityBalance,
+            infrastructureBalance,
+            companyBalance,
+            totalUserBalances + totalPendingReserve,
+            USDT.balanceOf(address(this))
+        );
+    }
+    
+    function getSolvencyStatus() external view returns (
+        bool isSolvent,
+        uint256 requiredBalance,
+        uint256 currentBalance,
+        uint256 surplus,
+        uint256 deficit
+    ) {
+        uint256 required = totalUserBalances + totalPendingReserve;
+        uint256 current = USDT.balanceOf(address(this));
+        
+        return (
+            current >= required,
+            required,
+            current,
+            current > required ? current - required : 0,
+            required > current ? required - current : 0
+        );
+    }
+    
+    function getSystemStats() external view returns (
+        uint256 _totalUsers,
+        uint256 _totalActive,
+        uint256 _totalMLMDistributed,
+        uint256 _totalReserveDistributed,
+        uint256 _totalVolume,
+        uint256 _contractBalance,
+        bool _betaMode
+    ) {
+        return (
+            totalUsers,
+            totalActiveSubscriptions,
+            totalMLMDistributed,
+            totalReserveDistributed,
+            totalVolumeProcessed,
+            USDT.balanceOf(address(this)),
+            betaMode
+        );
+    }
+}

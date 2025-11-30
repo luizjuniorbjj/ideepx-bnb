@@ -1,0 +1,95 @@
+{
+  "total_tests": 5,
+  "fraud_attempts_blocked": 3,
+  "fraud_attempts_successful": 2,
+  "critical_frauds": 1,
+  "high_frauds": 1,
+  "duration": 17.866862773895264,
+  "results": [
+    {
+      "test_name": "Fake Referral Network",
+      "fraud_type": "Circular Referrals",
+      "severity": "CRITICAL",
+      "attack_description": "Tentou criar rede circular A\u2192B\u2192C\u2192A",
+      "result": "Rede circular bloqueada pelo contrato",
+      "fraud_successful": false,
+      "evidence": "Erro: {'code': -32603, 'message': \"Error: VM Exception while processing transaction: reverted with custom error 'SponsorNotRegistered()'\", 'data': {'message': \"Error: VM Exception while processing transaction: reverted with custom error 'SponsorNotRegistered()'\", 'txHash': '0x83c90b9d0dba512027a986bf489ed36441be4cdc3c46925d626201bdd446d64e', 'data': '0x584ae9e5'}}",
+      "tx_hashes": [],
+      "timestamp": "2025-11-01T23:27:25.839378"
+    },
+    {
+      "test_name": "Double Spending",
+      "fraud_type": "USDT Double Spend",
+      "severity": "CRITICAL",
+      "attack_description": "Tentou ativar assinatura 2x com mesmo USDT",
+      "result": "Double spending bem-sucedido! CR\u00cdTICO!",
+      "fraud_successful": true,
+      "evidence": "Conseguiu gastar USDT duas vezes",
+      "tx_hashes": [
+        "759f9e0efb2efaca8f9683188b0fc454bab05ca2591eb988638454f6dd0e3719",
+        "5364fac2e98efaebf0f7f22036b9404e9a8143a4780c0664ffd9162280116c67",
+        "e5ffd241bdbaa4b9320035230881ae284716514aa8576b43269ef88ef438c970"
+      ],
+      "timestamp": "2025-11-01T23:27:27.056997"
+    },
+    {
+      "test_name": "Withdraw Before Payment",
+      "fraud_type": "Unauthorized Withdrawal",
+      "severity": "HIGH",
+      "attack_description": "Tentou sacar sem ter feito pagamentos",
+      "result": "Saque bloqueado corretamente",
+      "fraud_successful": false,
+      "evidence": "Erro: {'code': -32603, 'message': \"Error: VM Exception while processing transaction: reverted with reason string 'No active subscription'\", 'data': {'message': \"Error: VM Exception while processing transaction: reverted with reason string 'No active subscription'\", 'txHash': '0x7e1c97eff20e56c864b34d90a69dba7c38da9707f6853679b6fe4a82c6670b69', 'data': '0x08c379a0000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000164e6f2061637469766520737562736372697074696f6e00000000000000000000'}}",
+      "tx_hashes": [
+        "f526dc7700443e8f144fa8eb29ed5ef861d4f742fe6414d6a9d7a474c6beb537"
+      ],
+      "timestamp": "2025-11-01T23:27:30.282968"
+    },
+    {
+      "test_name": "Balance Transfer Exploit",
+      "fraud_type": "Balance Manipulation",
+      "severity": "HIGH",
+      "attack_description": "Tentou manipular saldo interno",
+      "result": "Sem saldo para testar",
+      "fraud_successful": false,
+      "evidence": "Nenhum saldo dispon\u00edvel",
+      "tx_hashes": [
+        "e41df2ee13e4f5b950358ffa412493c6a929447b9feef4ae4c1e66beed0a7313",
+        "3d01e2acaa633021a04fc25d8fd32a1c1dd09f4e313bf85ea4a6270900d9a839"
+      ],
+      "timestamp": "2025-11-01T23:27:31.485661"
+    },
+    {
+      "test_name": "Sybil Attack",
+      "fraud_type": "Multiple Fake Identities",
+      "severity": "HIGH",
+      "attack_description": "Criou 20 identidades falsas como referrals",
+      "result": "Conseguiu criar 20/20 identidades falsas!",
+      "fraud_successful": true,
+      "evidence": "Taxa de sucesso: 100.0%",
+      "tx_hashes": [
+        "25ed443f8c1654aaf8310f947aa15acb945bea71f704edec65ccc93fda5527ae",
+        "54d5f39ecac596bdf3e4273bd578737744ebe9580683cb1ffc6ea5b3f2ab892d",
+        "b2736baef32881392c17d998f74776545e3f96d86df9c95b8e40217c22095fba",
+        "3eacb741464fbf4b4e66d46768df3b5fb7679d136c100154e7a667589a41b419",
+        "1703892b15d7843d12b0a53389875b492f2a72fb070c5e194a0772261ee39945",
+        "9bcc8fc9dde75d5ee1ace22220a5755ec1f6a9bb73e3f386887835775b571726",
+        "13e91d714256b815845eb14eb862e8170e4b003a57aaa3a874c737750a7342c3",
+        "bf1d4c629912c1ef867c2ae43e6f7b5970ae208d50245b0e1f503def7004e38f",
+        "9150c6c1ceb26c16a686bbe1aa561b5a9ca1a64527c53beb2a34cbebcda0ece7",
+        "c0acf54f3f4cbde1d79e2149e61c6857e9b7a311e0acca28045dcbeb375d3e73",
+        "3141ba747b7413ecdb64ceac96b860b8d74a6c3abfc0a53d9f014baf85d0e736",
+        "d70b321d0d5ffe653d783f82c09b167c9b7edde0642ea62a29931a24f8027da1",
+        "b25f115c115fcf61897c0e2e16ffb2df6c4cf8821f61d130eda88e7e8bc08e89",
+        "151991250131575b6fa35a6ba0e8ccb72e86f651a714085a98f0fae80e7cf379",
+        "e198ec8b844d629b353ded784a9cd86a04760c9d5fecadab96efa9ab8bff6441",
+        "9be2e49cae5f13c82e69523f17ec9192a1ae0cf335fa9f2300b3370cef4e0bd1",
+        "7359bbb9bd65504f111eb2e150f23c06dfb20b94603d1dcd37ff9b09ba814812",
+        "be67022e1b916034270e2b88c99682648b4582feb871606d74d0f242dc209bf1",
+        "1419c5ce16c943f62d23f528597a6579b4425a400c8e745c708090cd30b9aa2c",
+        "2984f7aa79016150b7e7f80b5443fb761cf5ce78b17d45067ee693c8bc5a654d"
+      ],
+      "timestamp": "2025-11-01T23:27:36.063663"
+    }
+  ]
+}

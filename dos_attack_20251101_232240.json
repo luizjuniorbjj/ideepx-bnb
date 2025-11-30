@@ -1,0 +1,55 @@
+{
+  "total_tests": 3,
+  "system_survived_count": 2,
+  "system_failed_count": 1,
+  "critical_failures": 1,
+  "duration": 181.30231404304504,
+  "results": [
+    {
+      "test_name": "Transaction Spam",
+      "attack_type": "Mass Registration",
+      "severity": "HIGH",
+      "description": "50 registros simult\u00e2neos",
+      "result": "Sistema processou 50/50 (100.0%)",
+      "system_survived": true,
+      "metrics": {
+        "total": 50,
+        "successful": 50,
+        "failed": 0,
+        "duration": 5.904264450073242,
+        "tps": 8.468455372011624
+      },
+      "timestamp": "2025-11-01T23:19:44.970226"
+    },
+    {
+      "test_name": "Concurrent Withdrawals",
+      "attack_type": "Mass Withdrawal",
+      "severity": "CRITICAL",
+      "description": "10 saques simult\u00e2neos",
+      "result": "Sistema falhou: 0/10",
+      "system_survived": false,
+      "metrics": {
+        "total": 10,
+        "successful": 0,
+        "failed": 10,
+        "duration": 20.52199697494507
+      },
+      "timestamp": "2025-11-01T23:20:08.922906"
+    },
+    {
+      "test_name": "Rapid Fire Transactions",
+      "attack_type": "Sequential Spam",
+      "severity": "HIGH",
+      "description": "100 TXs sequenciais",
+      "result": "26/100 processadas em 147.3s",
+      "system_survived": true,
+      "metrics": {
+        "total": 100,
+        "successful": 26,
+        "duration": 147.31851148605347,
+        "tps": 0.1764883430991047
+      },
+      "timestamp": "2025-11-01T23:22:38.367288"
+    }
+  ]
+}

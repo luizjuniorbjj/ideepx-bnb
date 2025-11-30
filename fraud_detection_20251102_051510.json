@@ -1,0 +1,85 @@
+{
+  "total_tests": 5,
+  "fraud_attempts_blocked": 4,
+  "fraud_attempts_successful": 1,
+  "critical_frauds": 1,
+  "high_frauds": 0,
+  "duration": 39.01155066490173,
+  "results": [
+    {
+      "test_name": "Fake Referral Network",
+      "fraud_type": "Circular Referrals",
+      "severity": "CRITICAL",
+      "attack_description": "Tentou criar rede circular A\u2192B\u2192C\u2192A",
+      "result": "Rede circular bloqueada pelo contrato",
+      "fraud_successful": false,
+      "evidence": "Erro: {'code': -32603, 'message': \"Error: VM Exception while processing transaction: reverted with custom error 'SponsorNotRegistered()'\", 'data': {'message': \"Error: VM Exception while processing transaction: reverted with custom error 'SponsorNotRegistered()'\", 'txHash': '0xb890fd43f28dc36e918440ae1a6cd203d862c092260ac9fe280cc64d91c6f623', 'data': '0x584ae9e5'}}",
+      "tx_hashes": [],
+      "timestamp": "2025-11-02T05:14:38.593998"
+    },
+    {
+      "test_name": "Double Spending",
+      "fraud_type": "USDT Double Spend",
+      "severity": "CRITICAL",
+      "attack_description": "Tentou ativar assinatura 2x com mesmo USDT",
+      "result": "Double spending bem-sucedido! CR\u00cdTICO!",
+      "fraud_successful": true,
+      "evidence": "Conseguiu gastar USDT duas vezes",
+      "tx_hashes": [
+        "23e374d5eef5508b03b6a0cdc58a9cb5c062b75d911431b14d5cce3d32042a7d",
+        "cb280b4877c1142edd3853926237cb45085b5dcc845013fbe05f8057eadb512f",
+        "f6ff0931f942b3b13162887435de5a958227432bcc3382820c2af0ab20ad3eac"
+      ],
+      "timestamp": "2025-11-02T05:14:39.860346"
+    },
+    {
+      "test_name": "Withdraw Before Payment",
+      "fraud_type": "Unauthorized Withdrawal",
+      "severity": "HIGH",
+      "attack_description": "Tentou sacar sem ter feito pagamentos",
+      "result": "Saque bloqueado corretamente",
+      "fraud_successful": false,
+      "evidence": "Erro: {'code': -32603, 'message': \"Error: VM Exception while processing transaction: reverted with reason string 'No active subscription'\", 'data': {'message': \"Error: VM Exception while processing transaction: reverted with reason string 'No active subscription'\", 'txHash': '0x0660c76c0f40fcc9621eb1fbceb0331ac4bcd019cef309aeb1d1b013c56aed48', 'data': '0x08c379a0000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000164e6f2061637469766520737562736372697074696f6e00000000000000000000'}}",
+      "tx_hashes": [
+        "d9d429929b416c779af56b207e0c2fcd89eccf2184ab50a69d2ec892bbadb0df"
+      ],
+      "timestamp": "2025-11-02T05:14:43.135388"
+    },
+    {
+      "test_name": "Balance Transfer Exploit",
+      "fraud_type": "Balance Manipulation",
+      "severity": "HIGH",
+      "attack_description": "Tentou manipular saldo interno",
+      "result": "Sem saldo para testar",
+      "fraud_successful": false,
+      "evidence": "Nenhum saldo dispon\u00edvel",
+      "tx_hashes": [
+        "bd935c47ae28d171f29e9a8ebbda6cdd5d9eb1e0233a7b3138460bb8be07515a",
+        "60b5963f16bf3d2128faf5d3474b4fb90812d693ce29f07e59c0fc0e0e1d63ff"
+      ],
+      "timestamp": "2025-11-02T05:14:44.385308"
+    },
+    {
+      "test_name": "Sybil Attack",
+      "fraud_type": "Multiple Fake Identities",
+      "severity": "HIGH",
+      "attack_description": "Criou 20 identidades falsas como referrals",
+      "result": "Apenas 10/20 bem-sucedidas (beta limit funcionando)",
+      "fraud_successful": false,
+      "evidence": "Sistema limitou cria\u00e7\u00e3o em massa",
+      "tx_hashes": [
+        "74b9e9f34965e349d7b890f936cc68189a31e43411f36c49f7ce07abc9cfb53b",
+        "6625b645db8203baa07d8422d696a90b3c029c05ad5966e6bcd9b28f53db5cd6",
+        "fd2d096b580463f35c695eed66d0186232d7f4d545b431a79b25228fc33312f4",
+        "4d1d25dd8f61380cd6a7daeb4fdce227cea725bf97c7c02e6c52a7bcf958579c",
+        "1ac1a736d66e6fc278861413bbb545d5c87ca22f8bba1669e4f67fab663bbacb",
+        "3981e84ff55c4ce25d280cca736b7cce9e7b72f3af948de128637832ea645077",
+        "5a071ec526e5eea02092dccc308d503eba6b9fe58fa3af311022ac787d656f15",
+        "51e9bdf06e03a8e040e012e8ff8766de3483023a0a373ba403c31991dc3871da",
+        "f0524d1a71997d8d95d54d48eae2cfecd6bd21c9a6eeb5427ba267c68366b2a2",
+        "f36af44810ae7b16b6dd8f8d29ba61f6b9f0ead2e921f17beda32b0f4c2d306a"
+      ],
+      "timestamp": "2025-11-02T05:15:09.895404"
+    }
+  ]
+}

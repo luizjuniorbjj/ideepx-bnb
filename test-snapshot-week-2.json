@@ -1,0 +1,407 @@
+{
+  "version": "1.0.0",
+  "week": 1731888000,
+  "weekNumber": 2,
+  "weekStart": "2024-11-18T00:00:00Z",
+  "weekEnd": "2024-11-24T23:59:59Z",
+  "timestamp": 1731974400,
+  "generatedAt": "2024-11-14T00:00:00Z",
+
+  "summary": {
+    "totalUsers": 12,
+    "activeUsers": 10,
+    "inactiveUsers": 2,
+    "totalProfits": 15250.00,
+    "totalCommissions": 2481.25,
+    "totalPaid": 2481.25,
+    "currency": "USD"
+  },
+
+  "rulebook": {
+    "address": "0x7A09383b65c07dc525bA0aF1b63DBe14a375aa2B",
+    "ipfsCid": "bafkreicfkbecmhcrsxq4fvond5xvpiwosj3e7a7emocxhr2clidvgfgbii",
+    "contentHash": "0x949b2ae2debf7cdb74e38997ac9fbee2ea26a637ae8d639db86fc8845bf31f3b",
+    "version": "1.0.0"
+  },
+
+  "proofContract": {
+    "address": "0x620dA2A17Eb2C2fA39D03e47737f485D1C0194Aa",
+    "network": "bscTestnet",
+    "chainId": 97
+  },
+
+  "businessModel": {
+    "clientShare": 0.65,
+    "companyFee": 0.35,
+    "mlmBase": 0.25,
+    "description": "Cliente recebe 65%, Empresa 35%, MLM 25% do cliente (16.25% total)"
+  },
+
+  "users": [
+    {
+      "id": 1,
+      "wallet": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+      "name": "Pioneer",
+      "gmiAccount": "TEST001",
+      "profit": 2500.00,
+      "clientShare": 1625.00,
+      "companyFee": 875.00,
+      "mlmTotal": 406.25,
+      "commissions": {
+        "L1": { "amount": 195.00, "from": ["0x5Ac0dBf26C1901640c3bBDA44A88aBD07A2c5246", "0xA1B2C3D4E5F6789012345678901234567890ABCD", "0xB2C3D4E5F6789012345678901234567890ABCDEF"], "percentage": 0.08 },
+        "L2": { "amount": 73.13, "from": ["0xC7E8c78DB45628791B580cCB166eC46ED4D9AAE4", "0xC3D4E5F6789012345678901234567890ABCDEF01"], "percentage": 0.03 },
+        "L3": { "amount": 48.75, "from": ["0x002b8E08753E53dB3a68DFaDAFa189aEDc4Ab6Ec"], "percentage": 0.02 },
+        "L4": { "amount": 24.38, "from": ["0x7C8B0D4757a3c08E4720d2d4116a45cC0A9Dafa3"], "percentage": 0.01 },
+        "L5": { "amount": 24.38, "from": ["0x02E56740fAA26f819564A5a11ce8ab798B8F87aD"], "percentage": 0.01 },
+        "L6": { "amount": 16.25, "from": ["0xD4E5F6789012345678901234567890ABCDEF0123"], "percentage": 0.01 },
+        "L7": { "amount": 16.25, "from": ["0xE5F6789012345678901234567890ABCDEF012345"], "percentage": 0.01 },
+        "L8": { "amount": 8.13, "from": ["0xF6789012345678901234567890ABCDEF01234567"], "percentage": 0.005 }
+      },
+      "lai": {
+        "active": true,
+        "cost": 19.00,
+        "expiresAt": 1734566400,
+        "paidOn": "2024-11-08"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": true,
+        "directs": 6,
+        "volume": 8500.00,
+        "reason": "Qualified for L6-L10"
+      },
+      "netReceived": 2012.25,
+      "calculation": "1625.00 (client) + 406.25 (mlm) - 19.00 (lai)"
+    },
+    {
+      "id": 2,
+      "wallet": "0x5Ac0dBf26C1901640c3bBDA44A88aBD07A2c5246",
+      "name": "Alpha_Trader",
+      "gmiAccount": "TEST002",
+      "profit": 1800.00,
+      "clientShare": 1170.00,
+      "companyFee": 630.00,
+      "mlmTotal": 292.50,
+      "commissions": {
+        "L1": { "amount": 93.60, "from": ["0xC7E8c78DB45628791B580cCB166eC46ED4D9AAE4"], "percentage": 0.08 },
+        "L2": { "amount": 35.10, "from": ["0x002b8E08753E53dB3a68DFaDAFa189aEDc4Ab6Ec"], "percentage": 0.03 },
+        "L3": { "amount": 23.40, "from": ["0x7C8B0D4757a3c08E4720d2d4116a45cC0A9Dafa3"], "percentage": 0.02 },
+        "L4": { "amount": 11.70, "from": ["0x02E56740fAA26f819564A5a11ce8ab798B8F87aD"], "percentage": 0.01 }
+      },
+      "lai": {
+        "active": true,
+        "cost": 19.00,
+        "expiresAt": 1734566400,
+        "paidOn": "2024-11-08"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 3,
+        "volume": 3200.00,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 1443.50,
+      "calculation": "1170.00 (client) + 292.50 (mlm) - 19.00 (lai)"
+    },
+    {
+      "id": 3,
+      "wallet": "0xA1B2C3D4E5F6789012345678901234567890ABCD",
+      "name": "Beta_Investor",
+      "gmiAccount": "TEST003",
+      "profit": 1200.00,
+      "clientShare": 780.00,
+      "companyFee": 420.00,
+      "mlmTotal": 195.00,
+      "commissions": {
+        "L1": { "amount": 62.40, "from": ["0xC3D4E5F6789012345678901234567890ABCDEF01"], "percentage": 0.08 },
+        "L2": { "amount": 23.40, "from": ["0xD4E5F6789012345678901234567890ABCDEF0123"], "percentage": 0.03 }
+      },
+      "lai": {
+        "active": true,
+        "cost": 19.00,
+        "expiresAt": 1734566400,
+        "paidOn": "2024-11-08"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 2,
+        "volume": 1500.00,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 956.00,
+      "calculation": "780.00 (client) + 195.00 (mlm) - 19.00 (lai)"
+    },
+    {
+      "id": 4,
+      "wallet": "0xB2C3D4E5F6789012345678901234567890ABCDEF",
+      "name": "Gamma_Whale",
+      "gmiAccount": "TEST004",
+      "profit": 3500.00,
+      "clientShare": 2275.00,
+      "companyFee": 1225.00,
+      "mlmTotal": 568.75,
+      "commissions": {
+        "L1": { "amount": 182.00, "from": ["0xE5F6789012345678901234567890ABCDEF012345"], "percentage": 0.08 },
+        "L2": { "amount": 68.25, "from": ["0xF6789012345678901234567890ABCDEF01234567"], "percentage": 0.03 },
+        "L3": { "amount": 45.50, "from": ["0x06789012345678901234567890ABCDEF012345678"], "percentage": 0.02 }
+      },
+      "lai": {
+        "active": true,
+        "cost": 19.00,
+        "expiresAt": 1734566400,
+        "paidOn": "2024-11-08"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 4,
+        "volume": 4500.00,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 2824.75,
+      "calculation": "2275.00 (client) + 568.75 (mlm) - 19.00 (lai)"
+    },
+    {
+      "id": 5,
+      "wallet": "0xC7E8c78DB45628791B580cCB166eC46ED4D9AAE4",
+      "name": "Delta_Pro",
+      "gmiAccount": "TEST005",
+      "profit": 950.00,
+      "clientShare": 617.50,
+      "companyFee": 332.50,
+      "mlmTotal": 154.38,
+      "commissions": {
+        "L1": { "amount": 49.40, "from": ["0x002b8E08753E53dB3a68DFaDAFa189aEDc4Ab6Ec"], "percentage": 0.08 }
+      },
+      "lai": {
+        "active": true,
+        "cost": 19.00,
+        "expiresAt": 1734566400,
+        "paidOn": "2024-11-08"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 1,
+        "volume": 800.00,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 752.88,
+      "calculation": "617.50 (client) + 154.38 (mlm) - 19.00 (lai)"
+    },
+    {
+      "id": 6,
+      "wallet": "0xC3D4E5F6789012345678901234567890ABCDEF01",
+      "name": "Epsilon_Starter",
+      "gmiAccount": "TEST006",
+      "profit": 650.00,
+      "clientShare": 422.50,
+      "companyFee": 227.50,
+      "mlmTotal": 105.63,
+      "commissions": {
+        "L1": { "amount": 33.80, "from": ["0xD4E5F6789012345678901234567890ABCDEF0123"], "percentage": 0.08 }
+      },
+      "lai": {
+        "active": true,
+        "cost": 19.00,
+        "expiresAt": 1734566400,
+        "paidOn": "2024-11-08"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 1,
+        "volume": 550.00,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 509.13,
+      "calculation": "422.50 (client) + 105.63 (mlm) - 19.00 (lai)"
+    },
+    {
+      "id": 7,
+      "wallet": "0x002b8E08753E53dB3a68DFaDAFa189aEDc4Ab6Ec",
+      "name": "Zeta_Mid",
+      "gmiAccount": "TEST007",
+      "profit": 1100.00,
+      "clientShare": 715.00,
+      "companyFee": 385.00,
+      "mlmTotal": 178.75,
+      "commissions": {
+        "L1": { "amount": 57.20, "from": ["0x7C8B0D4757a3c08E4720d2d4116a45cC0A9Dafa3"], "percentage": 0.08 }
+      },
+      "lai": {
+        "active": true,
+        "cost": 19.00,
+        "expiresAt": 1734566400,
+        "paidOn": "2024-11-08"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 1,
+        "volume": 900.00,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 874.75,
+      "calculation": "715.00 (client) + 178.75 (mlm) - 19.00 (lai)"
+    },
+    {
+      "id": 8,
+      "wallet": "0xD4E5F6789012345678901234567890ABCDEF0123",
+      "name": "Eta_Grinder",
+      "gmiAccount": "TEST008",
+      "profit": 850.00,
+      "clientShare": 552.50,
+      "companyFee": 297.50,
+      "mlmTotal": 138.13,
+      "commissions": {
+        "L1": { "amount": 44.20, "from": ["0xE5F6789012345678901234567890ABCDEF012345"], "percentage": 0.08 }
+      },
+      "lai": {
+        "active": true,
+        "cost": 19.00,
+        "expiresAt": 1734566400,
+        "paidOn": "2024-11-08"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 1,
+        "volume": 700.00,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 671.63,
+      "calculation": "552.50 (client) + 138.13 (mlm) - 19.00 (lai)"
+    },
+    {
+      "id": 9,
+      "wallet": "0xE5F6789012345678901234567890ABCDEF012345",
+      "name": "Theta_Small",
+      "gmiAccount": "TEST009",
+      "profit": 450.00,
+      "clientShare": 292.50,
+      "companyFee": 157.50,
+      "mlmTotal": 73.13,
+      "commissions": {
+        "L1": { "amount": 23.40, "from": ["0xF6789012345678901234567890ABCDEF01234567"], "percentage": 0.08 }
+      },
+      "lai": {
+        "active": true,
+        "cost": 19.00,
+        "expiresAt": 1734566400,
+        "paidOn": "2024-11-08"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 1,
+        "volume": 350.00,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 346.63,
+      "calculation": "292.50 (client) + 73.13 (mlm) - 19.00 (lai)"
+    },
+    {
+      "id": 10,
+      "wallet": "0xF6789012345678901234567890ABCDEF01234567",
+      "name": "Iota_Newbie",
+      "gmiAccount": "TEST010",
+      "profit": 550.00,
+      "clientShare": 357.50,
+      "companyFee": 192.50,
+      "mlmTotal": 89.38,
+      "commissions": {
+        "L1": { "amount": 28.60, "from": ["0x06789012345678901234567890ABCDEF012345678"], "percentage": 0.08 }
+      },
+      "lai": {
+        "active": true,
+        "cost": 19.00,
+        "expiresAt": 1734566400,
+        "paidOn": "2024-11-08"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 1,
+        "volume": 450.00,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 427.88,
+      "calculation": "357.50 (client) + 89.38 (mlm) - 19.00 (lai)"
+    },
+    {
+      "id": 11,
+      "wallet": "0x7C8B0D4757a3c08E4720d2d4116a45cC0A9Dafa3",
+      "name": "Kappa_Inactive",
+      "gmiAccount": "TEST011",
+      "profit": 0.00,
+      "clientShare": 0.00,
+      "companyFee": 0.00,
+      "mlmTotal": 0.00,
+      "commissions": {},
+      "lai": {
+        "active": false,
+        "cost": 19.00,
+        "expiresAt": 1731888000,
+        "paidOn": "2024-10-15",
+        "status": "expired"
+      },
+      "qualified": {
+        "basic": false,
+        "advanced": false,
+        "directs": 0,
+        "volume": 0.00,
+        "reason": "LAI expired - no commissions"
+      },
+      "netReceived": 0.00,
+      "calculation": "LAI expired - no earnings"
+    },
+    {
+      "id": 12,
+      "wallet": "0x02E56740fAA26f819564A5a11ce8ab798B8F87aD",
+      "name": "Lambda_Paused",
+      "gmiAccount": "TEST012",
+      "profit": 0.00,
+      "clientShare": 0.00,
+      "companyFee": 0.00,
+      "mlmTotal": 0.00,
+      "commissions": {},
+      "lai": {
+        "active": false,
+        "cost": 19.00,
+        "expiresAt": 1730678400,
+        "paidOn": "2024-09-20",
+        "status": "expired"
+      },
+      "qualified": {
+        "basic": false,
+        "advanced": false,
+        "directs": 2,
+        "volume": 1200.00,
+        "reason": "LAI expired - no commissions"
+      },
+      "netReceived": 0.00,
+      "calculation": "LAI expired - no earnings"
+    }
+  ],
+
+  "validation": {
+    "totalProfitsCheck": 15250.00,
+    "totalCommissionsCheck": 2481.25,
+    "averageProfitPerActiveUser": 1525.00,
+    "highestProfit": 3500.00,
+    "lowestProfit": 450.00,
+    "qualifiedForAdvanced": 1,
+    "laiActive": 10,
+    "laiInactive": 2
+  },
+
+  "metadata": {
+    "generatedBy": "iDeepX Backend v1.0",
+    "calculationEngine": "Node.js Off-chain",
+    "ipfsStorage": "Pinata Cloud",
+    "notes": "Week 2 test snapshot with 12 users (10 active, 2 inactive LAI)"
+  }
+}

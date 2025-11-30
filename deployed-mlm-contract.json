@@ -1,0 +1,10 @@
+{
+  "contract": "iDeepXDistributionV2",
+  "address": "0xd1Ee3Dec38b2Adeaa3F724c9DCAc4E84B6e327C2",
+  "deployer": "0xEB2451A8dd58734134DD7Bde64A5f86725b75ef2",
+  "usdt": "0x8d06e1376F205Ca66E034be72F50c889321110fA",
+  "network": "BSC Testnet",
+  "chainId": 97,
+  "timestamp": "2025-11-05T05:04:30.503Z",
+  "txHash": "0xeb61eb9952c717b68557495de9c08353a96c11ef95ee411b07570c6a4a56f25c"
+}

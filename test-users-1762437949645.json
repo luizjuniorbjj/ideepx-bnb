@@ -1,0 +1,419 @@
+{
+  "timestamp": "2025-11-06T14:05:49.645Z",
+  "network": "bscTestnet",
+  "contracts": {
+    "main": "0x1dEdE431aa189fc5790c4837014192078A89870F",
+    "usdt": "0x89173cb21b8f8Ac8Bf6680c85541f5826B992C0f"
+  },
+  "pioneer": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+  "users": [
+    {
+      "id": 0,
+      "address": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+      "name": "PIONEER",
+      "level": 0,
+      "sponsor": null,
+      "isReal": true
+    },
+    {
+      "id": 1,
+      "address": "0x0c20B6807214731fc97164fF93347c5BB2acD1cd",
+      "name": "DIRECT_1",
+      "level": 1,
+      "sponsor": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+      "isReal": false
+    },
+    {
+      "id": 2,
+      "address": "0x84043FEA019d6bc9cbE2859a696652a4574B3434",
+      "name": "DIRECT_2",
+      "level": 1,
+      "sponsor": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+      "isReal": false
+    },
+    {
+      "id": 3,
+      "address": "0x68f7EfaEDAE1c004e64d374f00De5276A51f7fCF",
+      "name": "DIRECT_3",
+      "level": 1,
+      "sponsor": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+      "isReal": false
+    },
+    {
+      "id": 4,
+      "address": "0xA77B05454b4f9551766fA6466898ea47d5542835",
+      "name": "DIRECT_4",
+      "level": 1,
+      "sponsor": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+      "isReal": false
+    },
+    {
+      "id": 5,
+      "address": "0xc40402f55bf51B47120c7Eec2612EcF2dcD85A70",
+      "name": "DIRECT_5",
+      "level": 1,
+      "sponsor": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+      "isReal": false
+    },
+    {
+      "id": 6,
+      "address": "0x4D6da8D27370959D48BBFa524f9bA24A2418D8b8",
+      "name": "L2_1_1",
+      "level": 2,
+      "sponsor": "0x0c20B6807214731fc97164fF93347c5BB2acD1cd",
+      "isReal": false
+    },
+    {
+      "id": 7,
+      "address": "0x463849e1dE3a0362BD19508B79A5C265D160fb96",
+      "name": "L2_1_2",
+      "level": 2,
+      "sponsor": "0x0c20B6807214731fc97164fF93347c5BB2acD1cd",
+      "isReal": false
+    },
+    {
+      "id": 8,
+      "address": "0xe7ab4a7F50E10d1a8d21D71aE96656ec08fC4efE",
+      "name": "L2_2_1",
+      "level": 2,
+      "sponsor": "0x84043FEA019d6bc9cbE2859a696652a4574B3434",
+      "isReal": false
+    },
+    {
+      "id": 9,
+      "address": "0x2be4f8e06F0A130a85956c185990B8CB25387F70",
+      "name": "L2_2_2",
+      "level": 2,
+      "sponsor": "0x84043FEA019d6bc9cbE2859a696652a4574B3434",
+      "isReal": false
+    },
+    {
+      "id": 10,
+      "address": "0x3c98892Cc16A85183cBA91B584C59F5ab9963E4e",
+      "name": "L2_3_1",
+      "level": 2,
+      "sponsor": "0x68f7EfaEDAE1c004e64d374f00De5276A51f7fCF",
+      "isReal": false
+    },
+    {
+      "id": 11,
+      "address": "0x2228bf16fe1C4f33d0197a85EE1B831262324F9a",
+      "name": "L2_3_2",
+      "level": 2,
+      "sponsor": "0x68f7EfaEDAE1c004e64d374f00De5276A51f7fCF",
+      "isReal": false
+    },
+    {
+      "id": 12,
+      "address": "0xb39304dbB54696738D55350D063C87cb55FdeE88",
+      "name": "L2_4_1",
+      "level": 2,
+      "sponsor": "0xA77B05454b4f9551766fA6466898ea47d5542835",
+      "isReal": false
+    },
+    {
+      "id": 13,
+      "address": "0x0948015740ff67cFffDe7478AdCA64d91F5af2a6",
+      "name": "L2_4_2",
+      "level": 2,
+      "sponsor": "0xA77B05454b4f9551766fA6466898ea47d5542835",
+      "isReal": false
+    },
+    {
+      "id": 14,
+      "address": "0xCE5ff80090EEC4B3E91a20291870FDeA58155219",
+      "name": "L2_5_1",
+      "level": 2,
+      "sponsor": "0xc40402f55bf51B47120c7Eec2612EcF2dcD85A70",
+      "isReal": false
+    },
+    {
+      "id": 15,
+      "address": "0x662f6f8b231a046f3aF298420E6015E8eB90f39d",
+      "name": "L2_5_2",
+      "level": 2,
+      "sponsor": "0xc40402f55bf51B47120c7Eec2612EcF2dcD85A70",
+      "isReal": false
+    },
+    {
+      "id": 16,
+      "address": "0x939efC51Ee2D1c372f2E08EB0FB03be69E29337A",
+      "name": "L3_1",
+      "level": 3,
+      "sponsor": "0x4D6da8D27370959D48BBFa524f9bA24A2418D8b8",
+      "isReal": false
+    },
+    {
+      "id": 17,
+      "address": "0xa2a9Ec6bBa321B3379293b558a80dbC07194bf37",
+      "name": "L3_2",
+      "level": 3,
+      "sponsor": "0x463849e1dE3a0362BD19508B79A5C265D160fb96",
+      "isReal": false
+    },
+    {
+      "id": 18,
+      "address": "0x9D5b697C0942894d6abD1Acfa47838549e89A869",
+      "name": "L3_3",
+      "level": 3,
+      "sponsor": "0xe7ab4a7F50E10d1a8d21D71aE96656ec08fC4efE",
+      "isReal": false
+    },
+    {
+      "id": 19,
+      "address": "0x945c7077AeEb1E5ef1Dd053Ab3972ADD0c61C420",
+      "name": "L3_4",
+      "level": 3,
+      "sponsor": "0x2be4f8e06F0A130a85956c185990B8CB25387F70",
+      "isReal": false
+    },
+    {
+      "id": 20,
+      "address": "0x8b06DE3DD7729eEfc8518b956b23B75E3cC7560B",
+      "name": "L3_5",
+      "level": 3,
+      "sponsor": "0x3c98892Cc16A85183cBA91B584C59F5ab9963E4e",
+      "isReal": false
+    },
+    {
+      "id": 21,
+      "address": "0xF9537adb94aB9A9771ec9101490a70741806E8E1",
+      "name": "L3_6",
+      "level": 3,
+      "sponsor": "0x2228bf16fe1C4f33d0197a85EE1B831262324F9a",
+      "isReal": false
+    },
+    {
+      "id": 22,
+      "address": "0x9F7E7f92EA27eE4dA89D5013F310d7E46e022aCE",
+      "name": "L3_7",
+      "level": 3,
+      "sponsor": "0xb39304dbB54696738D55350D063C87cb55FdeE88",
+      "isReal": false
+    },
+    {
+      "id": 23,
+      "address": "0x1d615e41C0fb153866dC0d9216F59d1513D7d8a6",
+      "name": "L3_8",
+      "level": 3,
+      "sponsor": "0x0948015740ff67cFffDe7478AdCA64d91F5af2a6",
+      "isReal": false
+    },
+    {
+      "id": 24,
+      "address": "0xf71F0D1D7C818E01300BeEE1780a45875Ed36dE2",
+      "name": "L3_9",
+      "level": 3,
+      "sponsor": "0xCE5ff80090EEC4B3E91a20291870FDeA58155219",
+      "isReal": false
+    },
+    {
+      "id": 25,
+      "address": "0xb24B38ea981D5FF122b57Bb88a8E147A50352E0a",
+      "name": "L3_10",
+      "level": 3,
+      "sponsor": "0x662f6f8b231a046f3aF298420E6015E8eB90f39d",
+      "isReal": false
+    },
+    {
+      "id": 26,
+      "address": "0x4446f7f929E2b0dE11FBee6A5F8f876A65F85652",
+      "name": "L4_1",
+      "level": 4,
+      "sponsor": "0x939efC51Ee2D1c372f2E08EB0FB03be69E29337A",
+      "isReal": false
+    },
+    {
+      "id": 27,
+      "address": "0xCe94A922DaE94a2514F4F3A8952B6eA89E9b6837",
+      "name": "L4_2",
+      "level": 4,
+      "sponsor": "0xa2a9Ec6bBa321B3379293b558a80dbC07194bf37",
+      "isReal": false
+    },
+    {
+      "id": 28,
+      "address": "0x35eD7A6cA0De11A0D376b17A4d5e795E10248F98",
+      "name": "L4_3",
+      "level": 4,
+      "sponsor": "0x9D5b697C0942894d6abD1Acfa47838549e89A869",
+      "isReal": false
+    },
+    {
+      "id": 29,
+      "address": "0x0C075CD93DA003232BaD24BF4238223174866239",
+      "name": "L4_4",
+      "level": 4,
+      "sponsor": "0x945c7077AeEb1E5ef1Dd053Ab3972ADD0c61C420",
+      "isReal": false
+    },
+    {
+      "id": 30,
+      "address": "0x904b62c066648AFA8a82390c3f39D583b5f5dEb5",
+      "name": "L4_5",
+      "level": 4,
+      "sponsor": "0x8b06DE3DD7729eEfc8518b956b23B75E3cC7560B",
+      "isReal": false
+    },
+    {
+      "id": 31,
+      "address": "0x09208579d3027f51C75e5638371e20ad2327bc7d",
+      "name": "L4_6",
+      "level": 4,
+      "sponsor": "0xF9537adb94aB9A9771ec9101490a70741806E8E1",
+      "isReal": false
+    },
+    {
+      "id": 32,
+      "address": "0x1E48e445f1eb6f3cB2b3a5B3c4cA0ada66E69a72",
+      "name": "L4_7",
+      "level": 4,
+      "sponsor": "0x9F7E7f92EA27eE4dA89D5013F310d7E46e022aCE",
+      "isReal": false
+    },
+    {
+      "id": 33,
+      "address": "0xEDB687d36Fc4c8e1695951b5C614A0f72352fc45",
+      "name": "L4_8",
+      "level": 4,
+      "sponsor": "0x1d615e41C0fb153866dC0d9216F59d1513D7d8a6",
+      "isReal": false
+    },
+    {
+      "id": 34,
+      "address": "0xCA9710Dac4f6c701101464147f5E20a7a6093D6E",
+      "name": "L5_1",
+      "level": 5,
+      "sponsor": "0x4446f7f929E2b0dE11FBee6A5F8f876A65F85652",
+      "isReal": false
+    },
+    {
+      "id": 35,
+      "address": "0x4AC16B5EAa392816A117b1D740267000feAfBCF8",
+      "name": "L5_2",
+      "level": 5,
+      "sponsor": "0xCe94A922DaE94a2514F4F3A8952B6eA89E9b6837",
+      "isReal": false
+    },
+    {
+      "id": 36,
+      "address": "0x47687565F0d2658327D5541d554FE78AA98f0c6c",
+      "name": "L5_3",
+      "level": 5,
+      "sponsor": "0x35eD7A6cA0De11A0D376b17A4d5e795E10248F98",
+      "isReal": false
+    },
+    {
+      "id": 37,
+      "address": "0x850a5491E8Ef045ef135C871603DDc9A2fAcC7Cb",
+      "name": "L5_4",
+      "level": 5,
+      "sponsor": "0x0C075CD93DA003232BaD24BF4238223174866239",
+      "isReal": false
+    },
+    {
+      "id": 38,
+      "address": "0xbEB76090807c364236809505fcbAfd904f062560",
+      "name": "L5_5",
+      "level": 5,
+      "sponsor": "0x904b62c066648AFA8a82390c3f39D583b5f5dEb5",
+      "isReal": false
+    },
+    {
+      "id": 39,
+      "address": "0x67E465c6E7cAe6297069239C367924Cc9bA6a8FD",
+      "name": "L5_6",
+      "level": 5,
+      "sponsor": "0x09208579d3027f51C75e5638371e20ad2327bc7d",
+      "isReal": false
+    },
+    {
+      "id": 40,
+      "address": "0xdFB88680149AE5a54fA57911fCED3687de9f8EA9",
+      "name": "L6_1",
+      "level": 6,
+      "sponsor": "0xCA9710Dac4f6c701101464147f5E20a7a6093D6E",
+      "isReal": false
+    },
+    {
+      "id": 41,
+      "address": "0x2DE17AFeFA0c97F69c4e0A1d406dbe991446A65D",
+      "name": "L6_2",
+      "level": 6,
+      "sponsor": "0x4AC16B5EAa392816A117b1D740267000feAfBCF8",
+      "isReal": false
+    },
+    {
+      "id": 42,
+      "address": "0xE8fEEA3bC1DDbC5A6f1A2F8035AA8f24bBF60099",
+      "name": "L6_3",
+      "level": 6,
+      "sponsor": "0x47687565F0d2658327D5541d554FE78AA98f0c6c",
+      "isReal": false
+    },
+    {
+      "id": 43,
+      "address": "0x42Fab47775581Fd3697df58241c1c61aD88dcFDe",
+      "name": "L6_4",
+      "level": 6,
+      "sponsor": "0x850a5491E8Ef045ef135C871603DDc9A2fAcC7Cb",
+      "isReal": false
+    },
+    {
+      "id": 44,
+      "address": "0x331614A595E3D19709D8Df576cCbDEe31f995949",
+      "name": "L7_1",
+      "level": 7,
+      "sponsor": "0xdFB88680149AE5a54fA57911fCED3687de9f8EA9",
+      "isReal": false
+    },
+    {
+      "id": 45,
+      "address": "0xe73604E967A05C626536CF315c587dc2B8dF907f",
+      "name": "L7_2",
+      "level": 7,
+      "sponsor": "0x2DE17AFeFA0c97F69c4e0A1d406dbe991446A65D",
+      "isReal": false
+    },
+    {
+      "id": 46,
+      "address": "0x1fFBdCC202E46364AAc07bABB1b937F7d2731Dc7",
+      "name": "L7_3",
+      "level": 7,
+      "sponsor": "0xE8fEEA3bC1DDbC5A6f1A2F8035AA8f24bBF60099",
+      "isReal": false
+    },
+    {
+      "id": 47,
+      "address": "0x16C47B7336760f58c86bf5B56cCE5A8D4e2aC6fe",
+      "name": "L8_1",
+      "level": 8,
+      "sponsor": "0x331614A595E3D19709D8Df576cCbDEe31f995949",
+      "isReal": false
+    },
+    {
+      "id": 48,
+      "address": "0x4b855c8d261AC4d08670e184342142ed39498287",
+      "name": "L8_2",
+      "level": 8,
+      "sponsor": "0xe73604E967A05C626536CF315c587dc2B8dF907f",
+      "isReal": false
+    },
+    {
+      "id": 49,
+      "address": "0x9EbbF17fd716c95eBbF135deEA0bed2c231d3D3d",
+      "name": "L9_1",
+      "level": 9,
+      "sponsor": "0x16C47B7336760f58c86bf5B56cCE5A8D4e2aC6fe",
+      "isReal": false
+    },
+    {
+      "id": 50,
+      "address": "0xD1Dce47aAA745b496119ac5F9E76d0339f1167D0",
+      "name": "L10_1",
+      "level": 10,
+      "sponsor": "0x9EbbF17fd716c95eBbF135deEA0bed2c231d3D3d",
+      "isReal": false
+    }
+  ]
+}

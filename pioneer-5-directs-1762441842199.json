@@ -1,0 +1,52 @@
+{
+  "timestamp": "2025-11-06T15:10:42.199Z",
+  "network": "bscTestnet",
+  "pioneer": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+  "contracts": {
+    "usdt": "0x1A77b3eD262986aB97F3A2eF066f1f3127c3b0Cc",
+    "main": "0x2d436d57a9Fd7559E569977652A082dDC9510740"
+  },
+  "stats": {
+    "created": 5,
+    "funded": 5,
+    "registered": 0,
+    "activated": 0
+  },
+  "users": [
+    {
+      "id": 1,
+      "name": "DIRECT_1",
+      "address": "0xED4a94e63683E829FFa9413E239FEb72AC67e81D",
+      "privateKey": "0x21a1d9812b50e44e982df30f903cf895c89f64e65075d02d9e554537d0ca5dea",
+      "sponsor": "0x75d1a8ac59003088c60a20bde8953cbecfe41669"
+    },
+    {
+      "id": 2,
+      "name": "DIRECT_2",
+      "address": "0x9Ad091c104B98de24F17c27b852E5934BE896119",
+      "privateKey": "0xcab8bc095063d3b81d7e4f7359c171245909a6bc253ea9ecf72ba26aa780a5c6",
+      "sponsor": "0x75d1a8ac59003088c60a20bde8953cbecfe41669"
+    },
+    {
+      "id": 3,
+      "name": "DIRECT_3",
+      "address": "0xCE5402BCE2A5F813C0B6EC635FA318B11ECa3Fb6",
+      "privateKey": "0x813030bef0a07e85426d9dee48dcec0b87433944ab2fbac864c506abeed431d7",
+      "sponsor": "0x75d1a8ac59003088c60a20bde8953cbecfe41669"
+    },
+    {
+      "id": 4,
+      "name": "DIRECT_4",
+      "address": "0x5BB7EEE6ea8d6668F7F55C8c2A78abfcf937Cabb",
+      "privateKey": "0x13212cc4acfb0e33f41932df4bca64ef0062bfbde4c76ff37965007be6b06535",
+      "sponsor": "0x75d1a8ac59003088c60a20bde8953cbecfe41669"
+    },
+    {
+      "id": 5,
+      "name": "DIRECT_5",
+      "address": "0x82DA0744D89a58B78F84159a7f8baCA251Ef21D3",
+      "privateKey": "0x783afee8d12cf9e20b510828bcf987e82f18b93674d932f7d95deaad6b522db8",
+      "sponsor": "0x75d1a8ac59003088c60a20bde8953cbecfe41669"
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "total_tests": 7,
+  "vulnerabilities_found": 6,
+  "tests_passed": 1,
+  "critical_vulns": 1,
+  "duration": 7.897829055786133,
+  "results": [
+    {
+      "test_name": "Zero Address Registration",
+      "fuzz_type": "Null Pointer",
+      "severity": "CRITICAL",
+      "description": "Registro com address(0) como sponsor",
+      "input_value": "sponsor = 0x0000000000000000000000000000000000000000",
+      "result": "Permitiu registro com endere\u00e7o zero!",
+      "vulnerability_found": true,
+      "metrics": {
+        "tx_hash": "fc3582270b8aad82f7c4b33a0f0bc0e75f2c53bcd3f353124beac41df70482c4"
+      },
+      "timestamp": "2025-11-01T19:00:40.908584"
+    },
+    {
+      "test_name": "MAX_UINT8 Subscription",
+      "fuzz_type": "Integer Overflow",
+      "severity": "HIGH",
+      "description": "Ativa\u00e7\u00e3o com 255 meses",
+      "input_value": "months = 255",
+      "result": "Permitiu 255 meses (poss\u00edvel overflow em c\u00e1lculos)",
+      "vulnerability_found": true,
+      "metrics": {
+        "tx_hash": "f6a140ed0c2da71678e3f6a3891edc626b36473079a05d00fd2ecb829a622b76"
+      },
+      "timestamp": "2025-11-01T19:00:42.063529"
+    },
+    {
+      "test_name": "Zero Month Subscription",
+      "fuzz_type": "Zero Value",
+      "severity": "HIGH",
+      "description": "Ativa\u00e7\u00e3o com 0 meses",
+      "input_value": "months = 0",
+      "result": "Permitiu assinatura de 0 meses!",
+      "vulnerability_found": true,
+      "metrics": {
+        "tx_hash": "2afddca26e1e318e7689d7adce7df770287baec02121c77feab4bf8164ada6a2"
+      },
+      "timestamp": "2025-11-01T19:00:43.189735"
+    },
+    {
+      "test_name": "Self Sponsorship",
+      "fuzz_type": "Logic Error",
+      "severity": "HIGH",
+      "description": "Usu\u00e1rio se auto-patrocinando",
+      "input_value": "user = sponsor = 0x8A09B26043A97871CADbCf8B8D984f10a9aa99e3",
+      "result": "Permitiu auto-patroc\u00ednio!",
+      "vulnerability_found": true,
+      "metrics": {
+        "tx_hash": "0d832f7d3de1f2cefa184c53f0303d7063a9bf63647207d23120ece0e276322f"
+      },
+      "timestamp": "2025-11-01T19:00:44.302835"
+    },
+    {
+      "test_name": "Double Registration",
+      "fuzz_type": "State Inconsistency",
+      "severity": "MEDIUM",
+      "description": "Usu\u00e1rio se registra duas vezes",
+      "input_value": "register() x2",
+      "result": "Permitiu duplo registro!",
+      "vulnerability_found": true,
+      "metrics": {
+        "tx_hash": "67a4766d10c463a4b4741bd8760d539ee57d5c5ebf65e7508dbb99d4c78fc0c9"
+      },
+      "timestamp": "2025-11-01T19:00:45.431691"
+    },
+    {
+      "test_name": "Withdraw Without Balance",
+      "fuzz_type": "Underflow",
+      "severity": "MEDIUM",
+      "description": "Saque sem saldo dispon\u00edvel",
+      "input_value": "0",
+      "result": "Erro: Could not transact with/call contract function, is contract deployed correctly and chain synced?",
+      "vulnerability_found": false,
+      "metrics": {
+        "error": "Could not transact with/call contract function, is contract deployed correctly and chain synced?"
+      },
+      "timestamp": "2025-11-01T19:00:46.561455"
+    },
+    {
+      "test_name": "Unregistered User Operations",
+      "fuzz_type": "Access Control",
+      "severity": "HIGH",
+      "description": "Opera\u00e7\u00e3o sem estar registrado",
+      "input_value": "activateSubscription() sem register()",
+      "result": "Permitiu opera\u00e7\u00e3o sem registro!",
+      "vulnerability_found": true,
+      "metrics": {
+        "tx_hash": "c2aa2fd82ef3fb58ae39d597d8eb30a01080c60dccd8bf1eae3ea744a86a0f58"
+      },
+      "timestamp": "2025-11-01T19:00:47.679544"
+    }
+  ]
+}

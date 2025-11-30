@@ -1,0 +1,302 @@
+# 💎 iDeepX – Sistema de Performance e Distribuição (v3.1 Otimizado)
+
+---
+
+## 📘 Visão Geral
+
+O sistema **iDeepX** foi criado para conectar usuários à corretora **GMI Edge**, oferecendo acesso a **sinais de trading automáticos**, com **distribuição inteligente de lucros** e **estrutura meritocrática de rede**.  
+O modelo une **copy trading**, **performance comprovada** e **comissões automatizadas**.
+
+> **Diferencial Competitivo**: Distribuímos até **10.5% da performance real** - isso é **3-7x mais** que qualquer plataforma de copy trading tradicional!
+
+---
+
+## 🔗 1️⃣ Cadastro e Acesso Inicial
+
+O **cadastro no sistema iDeepX** é **exclusivamente via link de indicação**.  
+➡️ **Sem link de indicação, o cadastro é bloqueado.**
+
+Ao receber o **link de indicação**, o novo usuário:
+1. **Pode se cadastrar apenas através desse link.**  
+2. **Não paga nada** para se registrar.  
+3. Ganha acesso imediato aos:
+   - **Sinais disponíveis** para copiar;
+   - **Link de indicação pessoal** (após conectar sua conta GMI);
+   - **Link oficial da corretora GMI Edge:**  
+     👉 [https://gmi-ma.biz/account/register?token=Nzk5OTg2ZjA3MmQ0NGQyM2JkMDQxZjRkZmM5MTQxYjY%3D](https://gmi-ma.biz/account/register?token=Nzk5OTg2ZjA3MmQ0NGQyM2JkMDQxZjRkZmM5MTQxYjY%3D)
+
+---
+
+## 🦏 2️⃣ Cadastro na Corretora GMI Edge
+
+O usuário deve:
+1. **Acessar o link oficial GMI Edge** fornecido pelo sistema.  
+2. **Validar seus dados (KYC)**.  
+3. **Criar sua conta e inserir o código IB obrigatório:**  
+   👉 **`GMP52625`** *(para vincular à rede iDeepX)*  
+4. **Efetuar o primeiro depósito e copiar o sinal** desejado.
+
+> A iDeepX **não faz custódia de capital** – todas as operações ocorrem diretamente na **corretora GMI Edge**.
+
+---
+
+## 🔐 3️⃣ Acesso ao Dashboard iDeepX
+
+O login é feito **com a carteira USDT BEP20** usada no cadastro.  
+- O acesso é **único e intransferível**.  
+- Essa carteira é o **identificador principal** do usuário.  
+- Nenhum acesso pode ser alterado após o registro.
+
+---
+
+## ⚙️ 4️⃣ Conexão da Conta GMI Edge
+
+Após o login:
+- O usuário **conecta sua conta GMI Edge** ao sistema.  
+- Essa ação libera:
+  - **Link de indicação ativo**;  
+  - **Monitoramento de volume e performance**;  
+  - **Controle automático de níveis e comissões.**
+
+---
+
+## 💰 5️⃣ Tipos de Usuário no Sistema
+
+| Tipo | Descrição | Benefícios |
+|------|-----------|------------|
+| **Usuário Free** | Copia sinais e opera na GMI. | Recebe lucros diretos da corretora e **25% de suas indicações diretas**, pago **uma única vez** quando o indicado paga a **LAI**. **Não participa da rede.** |
+| **Usuário Ativo (com LAI)** | Paga a **Licença de Acesso Inteligente – LAI ($19/mês)**. | Participa das **comissões e da distribuição dos 30%** da performance fee. |
+
+---
+
+## 💳 6️⃣ Licença de Acesso Inteligente (LAI)
+
+- Custo: **$19/mês**  
+- Ativa o **acesso completo ao sistema iDeepX**  
+- Garante:
+  - Participação na **distribuição dos 30%**;  
+  - Habilitação dos **níveis 1 a 5 automaticamente**;  
+  - **Bônus único de 25%** para o patrocinador direto no primeiro pagamento.  
+- A **LAI precisa estar ativa** para o recebimento de qualquer bônus.
+
+---
+
+## 🧾 7️⃣ Estrutura de Distribuição dos 35% (Otimizada v3.1)
+
+| Grupo | % dos 35% | % do Total | Função |
+|-------|-----------|------------|--------|
+| **Liquidity Pool** | 5% | 1.75% | Fundo de garantias e novos projetos |
+| **Infrastructure** | 15% | 5.25% | Custos técnicos e operacionais |
+| **Company** | 35% | 12.25% | Margem e gestão da operação |
+| **MLM Distribuído** | 30% | 10.50% | Pagamentos diretos aos afiliados ativos |
+| **MLM Retido** | 15% | 5.25% | Lock e metas de fidelização |
+| **TOTAL** | 100% | 35.00% | - |
+
+> **Nota de Sustentabilidade**: A redução de 35% para 30% no MLM Distribuído garante maior margem de segurança operacional, mantendo ainda pagamentos **3-7x superiores** ao mercado tradicional.
+
+---
+
+## 🧭 8️⃣ Estrutura Unilevel de 10 Níveis (Ajustada)
+
+A performance fee de **30% dos 35%** é distribuída em até **10 níveis**, conforme a qualificação.
+
+| Nível | % dos 35% | % do Total | Condição | Requer LAI |
+|:-----:|:---------:|:----------:|:---------|:----------:|
+| 1 | 10% | 3.50% | Conexão GMI Edge | ✅ Sim |
+| 2 | 4% | 1.40% | Conexão GMI Edge | ✅ Sim |
+| 3 | 3% | 1.05% | Conexão GMI Edge | ✅ Sim |
+| 4 | 2% | 0.70% | Conexão GMI Edge | ✅ Sim |
+| 5 | 1% | 0.35% | Conexão GMI Edge | ✅ Sim |
+| 6 | 2% | 0.70% | 5 diretos + volume ≥ $5.000 | ✅ Sim |
+| 7 | 2% | 0.70% | 5 diretos + volume ≥ $5.000 | ✅ Sim |
+| 8 | 2% | 0.70% | 5 diretos + volume ≥ $5.000 | ✅ Sim |
+| 9 | 2% | 0.70% | 5 diretos + volume ≥ $5.000 | ✅ Sim |
+| 10 | 2% | 0.70% | 5 diretos + volume ≥ $5.000 | ✅ Sim |
+| **TOTAL** | **30%** | **10.50%** | - | - |
+
+---
+
+## 📊 Comparação de Atratividade no Mercado
+
+### Para um Indicador Direto (Nível 1):
+
+| Modelo | % Real da Performance | Ganho em $1M volume/5% perf |
+|--------|----------------------|------------------------------|
+| **eToro** | 0.5% | $250/mês |
+| **ZuluTrade** | 1.0% | $500/mês |
+| **PAMM típico** | 2.0% | $1,000/mês |
+| **iDeepX v3.1** | **3.5%** | **$1,750/mês** |
+
+✅ **iDeepX paga 3-7x mais que a concorrência tradicional!**
+
+---
+
+## 💠 9️⃣ Estrutura de Liberação de Níveis
+
+| Níveis | Condição | Volume mínimo | Requer LAI ativa | Ativação |
+|:------:|:---------|:-------------:|:----------------:|:--------:|
+| **1 a 5** | Conexão da conta GMI Edge | – | ✅ Sim | Automática |
+| **6 a 10** | Conexão GMI Edge + 5 diretos ativos + volume somado dos indicados diretos | $5.000 | ✅ Sim | Qualificação mensal |
+
+---
+
+## ⚠️ 🔟 Regras de Atividade
+
+- **Sem LAI ativa → nenhum pagamento é processado.**  
+- A inatividade suspende todos os bônus e comissões.  
+- Após renovação da LAI, os pagamentos voltam no novo ciclo (não retroativos).
+
+---
+
+## ♻️ 11️⃣ Sustentabilidade e Governança
+
+- Payout total controlado em **30%** (otimizado de 35%)
+- Margem de segurança aumentada para **35%** (company)
+- Fundo retido de **15%** para estabilidade  
+- Distribuição somente para **usuários ativos**  
+- Controle 100% automatizado por **carteira BEP20**  
+
+✅ Resultado: sistema **equilibrado, escalável e sustentável a longo prazo**.
+
+---
+
+## 📈 12️⃣ Simulação de Ganhos Reais
+
+### Cenário com $1M em volume e 5% de performance mensal:
+
+```
+Performance Total: $50,000
+35% para iDeepX: $17,500
+
+Distribuição:
+├─ Liquidity Pool (5%):     $875
+├─ Infrastructure (15%):     $2,625
+├─ Company (35%):            $6,125 (margem saudável)
+├─ MLM Distribuído (30%):    $5,250
+│   ├─ Nível 1 (10%):        $1,750
+│   ├─ Nível 2 (4%):         $700
+│   ├─ Nível 3 (3%):         $525
+│   ├─ Níveis 4-5 (3%):      $525
+│   └─ Níveis 6-10 (10%):    $1,750
+└─ MLM Retido (15%):         $2,625
+```
+
+---
+
+## 🔄 13️⃣ Fluxograma Completo – iDeepX v3.1
+
+```
+┌──────────────────────────────┐
+│ 🔗 Recebe link de indicação  │
+│ - Cadastro 100% gratuito     │
+│ - SOMENTE É POSSÍVEL CADASTRAR│
+│ ATRAVÉS DE UM LINK DE INDICAÇÃO│
+│ - Com sua carteira BEP20 única│
+│ - VISUALIZA SINAIS PARA COPIAR│
+│ - ESCOLHE O SINAL QUE DESEJA  │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│ 🦏 Cadastro na GMI Edge      │
+│ - Valida KYC                 │
+│ - Cria conta e deposita      │
+│ - INSERE O CÓDIGO IB: GMP52625│
+│ - Copia o sinal escolhido    │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│ 🧭 Dashboard iDeepX          │
+│ - Login com carteira BEP20   │
+│ - Conecta conta GMI Edge     │
+│ - RECEBE LINK PERSONALIZADO  │
+│ - INDICADOS QUE PAGAREM A LAI│
+│ GERAM 25% DE COMISSÃO ÚNICA  │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│ 💎 Ativa LAI ($19)           │
+│ - Garante acesso total       │
+│ - 25% bônus único ao sponsor │
+│ - Libera níveis 1 a 5        │
+│ - Participa dos 30% MLM      │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│ 💼 Qualificação Avançada     │
+│ - 5 diretos ativos + volume  │
+│ mínimo de $5.000             │
+│ - Libera níveis 6 a 10       │
+│ - Mantém condição mensal     │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│ 💵 Recebimento de Comissões  │
+│ - Requer LAI ativa           │
+│ - Processado mensalmente     │
+│ - Bloqueado se inativo       │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│ 🔄 Manutenção Mensal         │
+│ - Valida LAI e volume GMI    │
+│ - Reativa ou suspende bônus  │
+│ - Mantém rede qualificada    │
+└──────────────────────────────┘
+```
+
+---
+
+## 🎯 14️⃣ Vantagens Competitivas v3.1
+
+### Por que o iDeepX v3.1 é Superior:
+
+1. **Sustentabilidade Garantida**
+   - Margem de 35% para a empresa (era 25%)
+   - Buffer contra volatilidade do mercado
+   - Capacidade de investimento em melhorias
+
+2. **Ainda Extremamente Atrativo**
+   - 3.5% no nível 1 (vs 0.5% do eToro)
+   - 10.5% total distribuído (vs 2% média do mercado)
+   - Pagamentos verificáveis on-chain
+
+3. **Modelo Anti-Fragilidade**
+   - 15% retido para fidelização
+   - 5% liquidity pool para emergências
+   - Sistema pode sobreviver a meses negativos
+
+4. **Escalabilidade Comprovada**
+   - Suporta milhares de usuários
+   - Processamento automatizado via smart contracts
+   - Sem risco de colapso piramidal
+
+---
+
+## 🧭 15️⃣ Conclusão Final
+
+O **iDeepX v3.1 Otimizado** representa a evolução sustentável do modelo:
+- **Fluxo automatizado**: do cadastro à performance  
+- **Copy trading integrado à corretora GMI Edge**  
+- **Distribuição 30% otimizada e sustentável**  
+- **3-7x mais lucrativo que concorrência**
+- **Sistema preparado para escalar para milhares de usuários**
+- **Controle total via carteira BEP20 e IB fixo `GMP52625`**
+
+---
+
+© iDeepX – Sistema de Performance e Distribuição v3.1 Otimizado  
+*(30% Smart Distribution | Copy & Earn | Active License Required | IB: GMP52625 | 3-7x Market Returns)*
+
+---
+
+### 📌 Notas da Versão 3.1:
+- **Redução de 35% para 30% no MLM** para maior sustentabilidade
+- **Aumento de 25% para 35% na margem da empresa** para criar buffer operacional
+- **Redução de 20% para 15% no MLM Retido** mantendo incentivo de fidelização
+- **Manutenção da competitividade**: ainda 3-7x melhor que mercado tradicional

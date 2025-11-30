@@ -1,0 +1,21 @@
+{
+  "snapshotFile": "test-snapshot-week-1.json",
+  "ipfsHash": "QmcqWceCcqSpAWgvT3FWvzCs9d2noBxMenyGu7SfmYdgtk",
+  "timestamp": "2025-11-07T07:05:26.148Z",
+  "pinSize": 6654,
+  "week": 1731283200,
+  "weekNumber": 1,
+  "pinataUrl": "https://gateway.pinata.cloud/ipfs/QmcqWceCcqSpAWgvT3FWvzCs9d2noBxMenyGu7SfmYdgtk",
+  "uploadedAt": "2025-11-07T07:05:27.640Z",
+  "txHash": "0x67fdaf2ace3a3dd1f1d289712402aa15be51571d38445220e4b85f2812284695",
+  "blockNumber": 71536323,
+  "gasUsed": "300909",
+  "submittedAt": "2025-11-07T07:06:43.817Z",
+  "proofData": {
+    "weekTimestamp": 1731283200,
+    "totalUsers": 5,
+    "totalCommissions": 81250,
+    "totalProfits": 500000,
+    "finalized": false
+  }
+}

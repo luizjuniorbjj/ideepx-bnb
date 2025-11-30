@@ -1,0 +1,51 @@
+{
+  "total_tests": 3,
+  "system_survived_count": 2,
+  "system_failed_count": 1,
+  "critical_failures": 0,
+  "duration": 10.695426225662231,
+  "results": [
+    {
+      "test_name": "Transaction Spam",
+      "attack_type": "Mass Registration",
+      "severity": "HIGH",
+      "description": "50 registros simult\u00e2neos",
+      "result": "Erro: {'code': -32000, 'message': \"Nonce too low. Expected nonce to be 272 but got 271. Note that transactions can't be queued when automining.\", 'data': {'message': \"Nonce too low. Expected nonce to be 272 but got 271. Note that transactions can't be queued when automining.\", 'data': None}}",
+      "system_survived": false,
+      "metrics": {
+        "error": "{'code': -32000, 'message': \"Nonce too low. Expected nonce to be 272 but got 271. Note that transactions can't be queued when automining.\", 'data': {'message': \"Nonce too low. Expected nonce to be 272 but got 271. Note that transactions can't be queued when automining.\", 'data': None}}"
+      },
+      "timestamp": "2025-11-01T19:17:03.281650"
+    },
+    {
+      "test_name": "Concurrent Withdrawals",
+      "attack_type": "Mass Withdrawal",
+      "severity": "CRITICAL",
+      "description": "10 saques simult\u00e2neos",
+      "result": "Sistema processou 10/10",
+      "system_survived": true,
+      "metrics": {
+        "total": 10,
+        "successful": 10,
+        "failed": 0,
+        "duration": 0.2349865436553955
+      },
+      "timestamp": "2025-11-01T19:17:07.006308"
+    },
+    {
+      "test_name": "Rapid Fire Transactions",
+      "attack_type": "Sequential Spam",
+      "severity": "HIGH",
+      "description": "100 TXs sequenciais",
+      "result": "100/100 processadas em 2.4s",
+      "system_survived": true,
+      "metrics": {
+        "total": 100,
+        "successful": 100,
+        "duration": 2.421459913253784,
+        "tps": 41.29740056924055
+      },
+      "timestamp": "2025-11-01T19:17:11.554068"
+    }
+  ]
+}

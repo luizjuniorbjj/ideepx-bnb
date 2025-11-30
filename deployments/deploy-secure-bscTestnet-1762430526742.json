@@ -1,0 +1,22 @@
+{
+  "network": "bscTestnet",
+  "chainId": 97,
+  "contractAddress": "0x1dEdE431aa189fc5790c4837014192078A89870F",
+  "usdtAddress": "0x89173cb21b8f8Ac8Bf6680c85541f5826B992C0f",
+  "owner": "0xEB2451A8dd58734134DD7Bde64A5f86725b75ef2",
+  "isProduction": false,
+  "batchSize": "500",
+  "timelockDelay": "172800",
+  "deployedAt": "2025-11-06T12:02:06.741Z",
+  "deployer": "0xEB2451A8dd58734134DD7Bde64A5f86725b75ef2",
+  "securityFeatures": {
+    "batchProcessing": true,
+    "timelock": true,
+    "weeklyLimits": true,
+    "autoCleanup": true,
+    "gasRebate": true,
+    "circuitBreakers": true,
+    "zeroValidation": true,
+    "dustHandling": true
+  }
+}

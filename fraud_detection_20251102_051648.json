@@ -1,0 +1,76 @@
+{
+  "total_tests": 5,
+  "fraud_attempts_blocked": 4,
+  "fraud_attempts_successful": 1,
+  "critical_frauds": 1,
+  "high_frauds": 0,
+  "duration": 57.2691011428833,
+  "results": [
+    {
+      "test_name": "Fake Referral Network",
+      "fraud_type": "Circular Referrals",
+      "severity": "CRITICAL",
+      "attack_description": "Tentou criar rede circular A\u2192B\u2192C\u2192A",
+      "result": "Rede circular bloqueada pelo contrato",
+      "fraud_successful": false,
+      "evidence": "Erro: {'code': -32603, 'message': \"Error: VM Exception while processing transaction: reverted with custom error 'SponsorNotRegistered()'\", 'data': {'message': \"Error: VM Exception while processing transaction: reverted with custom error 'SponsorNotRegistered()'\", 'txHash': '0xe19e4f1d61ebcb0795c09f78e85a7523e879156a493799a656e98f9aeff92056', 'data': '0x584ae9e5'}}",
+      "tx_hashes": [],
+      "timestamp": "2025-11-02T05:15:57.742558"
+    },
+    {
+      "test_name": "Double Spending",
+      "fraud_type": "USDT Double Spend",
+      "severity": "CRITICAL",
+      "attack_description": "Tentou ativar assinatura 2x com mesmo USDT",
+      "result": "Double spending bem-sucedido! CR\u00cdTICO!",
+      "fraud_successful": true,
+      "evidence": "Conseguiu gastar USDT duas vezes",
+      "tx_hashes": [
+        "151fa3c2096a4826d50925085c634cb4e5449fa0147cf759920905673dae4642",
+        "3fb7cd3bac86a3386ba5c55aec2dca597a90cb2f1f9b37fd0c10709104a61e9d",
+        "823b90febc9708b05eb7afaa7f03418ee05897f00c38af32661d0b542772bfe1"
+      ],
+      "timestamp": "2025-11-02T05:15:58.979227"
+    },
+    {
+      "test_name": "Withdraw Before Payment",
+      "fraud_type": "Unauthorized Withdrawal",
+      "severity": "HIGH",
+      "attack_description": "Tentou sacar sem ter feito pagamentos",
+      "result": "Saque bloqueado corretamente",
+      "fraud_successful": false,
+      "evidence": "Erro: {'code': -32603, 'message': \"Error: VM Exception while processing transaction: reverted with reason string 'No active subscription'\", 'data': {'message': \"Error: VM Exception while processing transaction: reverted with reason string 'No active subscription'\", 'txHash': '0xaa5e47c19e3223ec9047137e9a6cda6e8de9a9b07c95892cd280aeddc8f6c140', 'data': '0x08c379a0000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000164e6f2061637469766520737562736372697074696f6e00000000000000000000'}}",
+      "tx_hashes": [
+        "7bfc65c0994ff1bc7055d022913ddee832b049dd47a2a4d81f4b8692a4864911"
+      ],
+      "timestamp": "2025-11-02T05:16:02.237349"
+    },
+    {
+      "test_name": "Balance Transfer Exploit",
+      "fraud_type": "Balance Manipulation",
+      "severity": "HIGH",
+      "attack_description": "Tentou manipular saldo interno",
+      "result": "Sem saldo para testar",
+      "fraud_successful": false,
+      "evidence": "Nenhum saldo dispon\u00edvel",
+      "tx_hashes": [
+        "3eb29304c507e86e46885378f46e602137cae11937b145c961f13aac66605ab9",
+        "f9ae7507a7be4fed9ac56279bf03fdfdeb26515c787bb6200776b13ad59f8e6e"
+      ],
+      "timestamp": "2025-11-02T05:16:03.467646"
+    },
+    {
+      "test_name": "Sybil Attack",
+      "fraud_type": "Multiple Fake Identities",
+      "severity": "HIGH",
+      "attack_description": "Criou 20 identidades falsas como referrals",
+      "result": "Apenas 1/20 bem-sucedidas (beta limit funcionando)",
+      "fraud_successful": false,
+      "evidence": "Sistema limitou cria\u00e7\u00e3o em massa",
+      "tx_hashes": [
+        "56e018e14196573b87a1ef8eeb0360365636f7270671361c69f1b8522d0cc26c"
+      ],
+      "timestamp": "2025-11-02T05:16:47.263085"
+    }
+  ]
+}

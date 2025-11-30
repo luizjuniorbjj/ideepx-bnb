@@ -1,0 +1,277 @@
+{
+    "user": {
+        "id": "6741b43d-5c91-46f7-922e-f19943fc5a79",
+        "walletAddress": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+        "accountHash": null,
+        "simulationId": null,
+        "active": true,
+        "kycStatus": 1,
+        "subscriptionExpiry": 1765025752,
+        "sponsorId": null,
+        "sponsorAddress": null,
+        "maxLevel": 10,
+        "monthlyVolume": "8500.00",
+        "totalVolume": "25000.00",
+        "totalEarned": "1250.75",
+        "totalWithdrawn": "0.00",
+        "internalBalance": "1231.75",
+        "lastWithdrawMonth": 0,
+        "withdrawnThisMonth": "0.00",
+        "createdAt": "2025-11-06T00:59:41.312Z",
+        "updatedAt": "2025-11-09T15:03:20.097Z",
+        "sponsor": null,
+        "referrals": [
+            {
+                "id": "9888b213-6809-4ea5-93af-2945238cfc62",
+                "walletAddress": "0x5d3286982dbf3206535237e6adea63b736250d65",
+                "accountHash": null,
+                "simulationId": null,
+                "active": true,
+                "kycStatus": 1,
+                "subscriptionExpiry": 1764420952,
+                "sponsorId": "6741b43d-5c91-46f7-922e-f19943fc5a79",
+                "sponsorAddress": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+                "maxLevel": 5,
+                "monthlyVolume": "1800.00",
+                "totalVolume": "4500.00",
+                "totalEarned": "270.00",
+                "totalWithdrawn": "27.00",
+                "internalBalance": "243.00",
+                "lastWithdrawMonth": 0,
+                "withdrawnThisMonth": "0.00",
+                "createdAt": "2025-11-07T15:10:27.957Z",
+                "updatedAt": "2025-11-09T15:03:20.290Z"
+            },
+            {
+                "id": "f841b1f9-c66a-4d91-a962-50faa85a76ef",
+                "walletAddress": "0xe31f2e5845742a26fc220b3ea4d0a81e305466ac",
+                "accountHash": null,
+                "simulationId": null,
+                "active": true,
+                "kycStatus": 0,
+                "subscriptionExpiry": 1765285847,
+                "sponsorId": "6741b43d-5c91-46f7-922e-f19943fc5a79",
+                "sponsorAddress": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+                "maxLevel": 5,
+                "monthlyVolume": "2000.00",
+                "totalVolume": "5000.00",
+                "totalEarned": "300.00",
+                "totalWithdrawn": "30.00",
+                "internalBalance": "270.00",
+                "lastWithdrawMonth": 0,
+                "withdrawnThisMonth": "0.00",
+                "createdAt": "2025-11-07T15:10:28.087Z",
+                "updatedAt": "2025-11-09T15:03:20.298Z"
+            },
+            {
+                "id": "391d7f53-68e0-4d5b-a39d-742a0d173c08",
+                "walletAddress": "0xdb72a86e30328e425043f7649987a4dee6704b40",
+                "accountHash": null,
+                "simulationId": null,
+                "active": true,
+                "kycStatus": 1,
+                "subscriptionExpiry": 1764420952,
+                "sponsorId": "6741b43d-5c91-46f7-922e-f19943fc5a79",
+                "sponsorAddress": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+                "maxLevel": 5,
+                "monthlyVolume": "2200.00",
+                "totalVolume": "5500.00",
+                "totalEarned": "330.00",
+                "totalWithdrawn": "33.00",
+                "internalBalance": "297.00",
+                "lastWithdrawMonth": 0,
+                "withdrawnThisMonth": "0.00",
+                "createdAt": "2025-11-07T15:10:28.209Z",
+                "updatedAt": "2025-11-09T15:03:20.306Z"
+            },
+            {
+                "id": "fbe70c44-d9f3-42c6-b356-b9ab2079248d",
+                "walletAddress": "0xb1f0d7c4639cf8518af9ae8915cb77a7f76e45fa",
+                "accountHash": null,
+                "simulationId": null,
+                "active": true,
+                "kycStatus": 1,
+                "subscriptionExpiry": 1764420952,
+                "sponsorId": "6741b43d-5c91-46f7-922e-f19943fc5a79",
+                "sponsorAddress": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+                "maxLevel": 5,
+                "monthlyVolume": "2400.00",
+                "totalVolume": "6000.00",
+                "totalEarned": "360.00",
+                "totalWithdrawn": "36.00",
+                "internalBalance": "324.00",
+                "lastWithdrawMonth": 0,
+                "withdrawnThisMonth": "0.00",
+                "createdAt": "2025-11-07T15:10:28.338Z",
+                "updatedAt": "2025-11-09T15:03:20.313Z"
+            },
+            {
+                "id": "f60dcaed-a693-4e78-bf5f-4bb594b5950e",
+                "walletAddress": "0x7eb0d47fec43fa0270a23c715cc5d47b995f28cd",
+                "accountHash": null,
+                "simulationId": null,
+                "active": true,
+                "kycStatus": 1,
+                "subscriptionExpiry": 1764420952,
+                "sponsorId": "6741b43d-5c91-46f7-922e-f19943fc5a79",
+                "sponsorAddress": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+                "maxLevel": 5,
+                "monthlyVolume": "1500.00",
+                "totalVolume": "3750.00",
+                "totalEarned": "225.00",
+                "totalWithdrawn": "22.50",
+                "internalBalance": "202.50",
+                "lastWithdrawMonth": 0,
+                "withdrawnThisMonth": "0.00",
+                "createdAt": "2025-11-07T15:10:28.463Z",
+                "updatedAt": "2025-11-09T15:03:20.320Z"
+            }
+        ],
+        "directReferralsCount": 13
+    },
+    "mlmStats": {
+        "totalEarned": 0,
+        "commissionsCount": 0,
+        "byLevel": {
+            "level1": 0,
+            "level2": 0,
+            "level3": 0,
+            "level4": 0,
+            "level5": 0,
+            "level6": 0,
+            "level7": 0,
+            "level8": 0,
+            "level9": 0,
+            "level10": 0
+        },
+        "networkSize": 50,
+        "maxLevel": 10,
+        "directReferrals": 5
+    },
+    "eligibility": {
+        "userId": "6741b43d-5c91-46f7-922e-f19943fc5a79",
+        "walletAddress": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+        "currentMaxLevel": 10,
+        "recommendedMaxLevel": 10,
+        "qualifies": true,
+        "requirements": {
+            "directs": {
+                "required": 5,
+                "current": 5,
+                "met": true
+            },
+            "volume": {
+                "required": 5000,
+                "current": 24750,
+                "met": true
+            }
+        },
+        "needsUpdate": false
+    },
+    "referrals": [
+        {
+            "walletAddress": "0x0000000000000000000000000000000000000004",
+            "active": true,
+            "totalEarned": "375.00",
+            "monthlyVolume": "2500.00",
+            "maxLevel": 5,
+            "createdAt": "2025-11-09T03:35:19.697Z"
+        },
+        {
+            "walletAddress": "0x0000000000000000000000000000000000000001",
+            "active": true,
+            "totalEarned": "345.00",
+            "monthlyVolume": "2300.00",
+            "maxLevel": 5,
+            "createdAt": "2025-11-09T03:35:19.692Z"
+        },
+        {
+            "walletAddress": "0x0000000000000000000000000000000000000005",
+            "active": true,
+            "totalEarned": "315.00",
+            "monthlyVolume": "2100.00",
+            "maxLevel": 5,
+            "createdAt": "2025-11-09T03:35:19.574Z"
+        },
+        {
+            "walletAddress": "0x0000000000000000000000000000000000000003",
+            "active": true,
+            "totalEarned": "285.00",
+            "monthlyVolume": "1900.00",
+            "maxLevel": 5,
+            "createdAt": "2025-11-09T03:35:19.496Z"
+        },
+        {
+            "walletAddress": "0x0000000000000000000000000000000000000002",
+            "active": true,
+            "totalEarned": "255.00",
+            "monthlyVolume": "1700.00",
+            "maxLevel": 5,
+            "createdAt": "2025-11-09T03:35:19.490Z"
+        },
+        {
+            "walletAddress": "0x7eb0d47fec43fa0270a23c715cc5d47b995f28cd",
+            "active": true,
+            "totalEarned": "225.00",
+            "monthlyVolume": "1500.00",
+            "maxLevel": 5,
+            "createdAt": "2025-11-07T15:10:28.463Z"
+        },
+        {
+            "walletAddress": "0xb1f0d7c4639cf8518af9ae8915cb77a7f76e45fa",
+            "active": true,
+            "totalEarned": "360.00",
+            "monthlyVolume": "2400.00",
+            "maxLevel": 5,
+            "createdAt": "2025-11-07T15:10:28.338Z"
+        },
+        {
+            "walletAddress": "0xdb72a86e30328e425043f7649987a4dee6704b40",
+            "active": true,
+            "totalEarned": "330.00",
+            "monthlyVolume": "2200.00",
+            "maxLevel": 5,
+            "createdAt": "2025-11-07T15:10:28.209Z"
+        },
+        {
+            "walletAddress": "0xe31f2e5845742a26fc220b3ea4d0a81e305466ac",
+            "active": true,
+            "totalEarned": "300.00",
+            "monthlyVolume": "2000.00",
+            "maxLevel": 5,
+            "createdAt": "2025-11-07T15:10:28.087Z"
+        },
+        {
+            "walletAddress": "0x5d3286982dbf3206535237e6adea63b736250d65",
+            "active": true,
+            "totalEarned": "270.00",
+            "monthlyVolume": "1800.00",
+            "maxLevel": 5,
+            "createdAt": "2025-11-07T15:10:27.957Z"
+        },
+        {
+            "walletAddress": "0xabb62baf80f80ab728c942d33b3fd018549b1d99",
+            "active": true,
+            "totalEarned": "240.00",
+            "monthlyVolume": "1600.00",
+            "maxLevel": 5,
+            "createdAt": "2025-11-06T00:59:42.001Z"
+        },
+        {
+            "walletAddress": "0x0d2a3f370821923519d7c3f9a87a5928b3d15ba1",
+            "active": true,
+            "totalEarned": "210.00",
+            "monthlyVolume": "1400.00",
+            "maxLevel": 5,
+            "createdAt": "2025-11-06T00:59:41.768Z"
+        },
+        {
+            "walletAddress": "0xfdcb4f77e13aed3fca71aabc5908d90240cc5a9e",
+            "active": true,
+            "totalEarned": "180.00",
+            "monthlyVolume": "1200.00",
+            "maxLevel": 5,
+            "createdAt": "2025-11-06T00:59:41.535Z"
+        }
+    ]
+}

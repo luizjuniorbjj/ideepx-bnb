@@ -1,0 +1,26 @@
+{
+  "network": "BSC Testnet",
+  "chainId": "97",
+  "timestamp": "2025-11-04T04:17:24.536Z",
+  "deployer": "0x29061a4c6A0C4aedc79A24f37553F6B9fe8Fec5F",
+  "contracts": {
+    "iDeepXCoreV10": "0x0f26974B54adA5114d802dDDc14aD59C3998f8d3",
+    "USDT": "0x337610d27c682E347C9cD60BD4b3b107C9d34dDd"
+  },
+  "config": {
+    "subscriptionFee": "19000000",
+    "subscriptionDuration": "2592000",
+    "minWithdrawal": "50000000",
+    "maxWithdrawalPerTx": "10000000000",
+    "maxWithdrawalPerMonth": "30000000000",
+    "maxTreasuryPerDay": "50000000000",
+    "minSolvencyBps": "11000"
+  },
+  "roles": {
+    "admin": "0x29061a4c6A0C4aedc79A24f37553F6B9fe8Fec5F",
+    "DEFAULT_ADMIN_ROLE": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "UPDATER_ROLE": "0x73e573f9566d61418a34d5de3ff49360f9c51fec37f7486551670290f6285dab",
+    "DISTRIBUTOR_ROLE": "0xfbd454f36a7e1a388bd6fc3ab10d434aa4578f811acbbcf33afb1c697486313c",
+    "TREASURY_ROLE": "0xe1dcbdb91df27212a29bc27177c840cf2f819ecf2187432e1fac86c2dd5dfca9"
+  }
+}

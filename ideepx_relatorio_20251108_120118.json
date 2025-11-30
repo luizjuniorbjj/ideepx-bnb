@@ -1,0 +1,483 @@
+{
+  "timestamp": "2025-11-08T12:01:18.539377",
+  "titulo": "Simula\u00e7\u00e3o iDeepX - Modelo Proporcional",
+  "parametros": {
+    "lucro_mensal_medio": 0.15,
+    "pool_mlm_percentual": 0.25,
+    "lai_mensal": 19,
+    "niveis": {
+      "1": 0.32,
+      "2": 0.12,
+      "3": 0.08,
+      "4": 0.04,
+      "5": 0.04,
+      "6": 0.08,
+      "7": 0.08,
+      "8": 0.08,
+      "9": 0.08,
+      "10": 0.08
+    }
+  },
+  "cenarios": {
+    "equilibrada": {
+      "resumo_geral": {
+        "total_clientes": 1000,
+        "capital_total": 8139420.46,
+        "lucro_mensal_total": 1220913.069,
+        "pool_mlm_total": 305228.26725,
+        "pool_por_nivel": {
+          "1": 97673.04552,
+          "2": 36627.392069999994,
+          "3": 24418.26138,
+          "4": 12209.13069,
+          "5": 12209.13069,
+          "6": 24418.26138,
+          "7": 24418.26138,
+          "8": 24418.26138,
+          "9": 24418.26138,
+          "10": 24418.26138
+        }
+      },
+      "distribuicao_por_nivel": {},
+      "top_earners": [
+        {
+          "posicao": 1,
+          "nome": "Cliente_1",
+          "capital_proprio": 418.05,
+          "total_comissao": 36807.66,
+          "lucro_liquido": 36788.66,
+          "roi_percentual": 193624.53
+        },
+        {
+          "posicao": 2,
+          "nome": "Cliente_2",
+          "capital_proprio": 565.11,
+          "total_comissao": 32707.14,
+          "lucro_liquido": 32688.14,
+          "roi_percentual": 172042.82
+        },
+        {
+          "posicao": 3,
+          "nome": "Cliente_3",
+          "capital_proprio": 8723.18,
+          "total_comissao": 18431.37,
+          "lucro_liquido": 18412.37,
+          "roi_percentual": 96907.21
+        },
+        {
+          "posicao": 4,
+          "nome": "Cliente_7",
+          "capital_proprio": 923.47,
+          "total_comissao": 14597.0,
+          "lucro_liquido": 14578.0,
+          "roi_percentual": 76726.33
+        },
+        {
+          "posicao": 5,
+          "nome": "Cliente_10",
+          "capital_proprio": 835.56,
+          "total_comissao": 14379.39,
+          "lucro_liquido": 14360.39,
+          "roi_percentual": 75581.01
+        },
+        {
+          "posicao": 6,
+          "nome": "Cliente_4",
+          "capital_proprio": 112.06,
+          "total_comissao": 11024.86,
+          "lucro_liquido": 11005.86,
+          "roi_percentual": 57925.58
+        },
+        {
+          "posicao": 7,
+          "nome": "Cliente_23",
+          "capital_proprio": 409.11,
+          "total_comissao": 8579.58,
+          "lucro_liquido": 8560.58,
+          "roi_percentual": 45055.68
+        },
+        {
+          "posicao": 8,
+          "nome": "Cliente_24",
+          "capital_proprio": 642.15,
+          "total_comissao": 7791.32,
+          "lucro_liquido": 7772.32,
+          "roi_percentual": 40906.97
+        },
+        {
+          "posicao": 9,
+          "nome": "Cliente_5",
+          "capital_proprio": 57055.68,
+          "total_comissao": 7163.07,
+          "lucro_liquido": 7144.07,
+          "roi_percentual": 37600.37
+        },
+        {
+          "posicao": 10,
+          "nome": "Cliente_6",
+          "capital_proprio": 657.14,
+          "total_comissao": 5797.08,
+          "lucro_liquido": 5778.08,
+          "roi_percentual": 30410.93
+        }
+      ],
+      "perfis_exemplo": {
+        "iniciante": {
+          "capital_proprio": 732.31,
+          "total_indicados": 0,
+          "total_comissao": 0,
+          "lucro_liquido": -19,
+          "roi_percentual": -100.0,
+          "detalhamento_niveis": {}
+        },
+        "medio": {
+          "capital_proprio": 32262.89,
+          "total_indicados": 0,
+          "total_comissao": 0,
+          "lucro_liquido": -19,
+          "roi_percentual": -100.0,
+          "detalhamento_niveis": {}
+        },
+        "top": {
+          "capital_proprio": 510.64,
+          "total_indicados": 4,
+          "total_comissao": 574.9,
+          "lucro_liquido": 555.9,
+          "roi_percentual": 2925.79,
+          "detalhamento_niveis": {
+            "1": {
+              "capital_sob_gestao": 3537.68,
+              "comissao": 42.45
+            },
+            "2": {
+              "capital_sob_gestao": 72584.86,
+              "comissao": 326.75
+            },
+            "3": {
+              "capital_sob_gestao": 67428.1,
+              "comissao": 204.02
+            },
+            "4": {
+              "capital_sob_gestao": 1079.63,
+              "comissao": 1.68
+            }
+          }
+        }
+      }
+    },
+    "top_heavy": {
+      "resumo_geral": {
+        "total_clientes": 1000,
+        "capital_total": 12681645.0,
+        "lucro_mensal_total": 1902246.75,
+        "pool_mlm_total": 475561.6875,
+        "pool_por_nivel": {
+          "1": 152179.74,
+          "2": 57067.4025,
+          "3": 38044.935,
+          "4": 19022.4675,
+          "5": 19022.4675,
+          "6": 38044.935,
+          "7": 38044.935,
+          "8": 38044.935,
+          "9": 38044.935,
+          "10": 38044.935
+        }
+      },
+      "distribuicao_por_nivel": {},
+      "top_earners": [
+        {
+          "posicao": 1,
+          "nome": "Cliente_1",
+          "capital_proprio": 108404.52,
+          "total_comissao": 169108.27,
+          "lucro_liquido": 169089.27,
+          "roi_percentual": 889943.53
+        },
+        {
+          "posicao": 2,
+          "nome": "Cliente_4",
+          "capital_proprio": 191285.88,
+          "total_comissao": 53248.21,
+          "lucro_liquido": 53229.21,
+          "roi_percentual": 280153.74
+        },
+        {
+          "posicao": 3,
+          "nome": "Cliente_8",
+          "capital_proprio": 59656.67,
+          "total_comissao": 20254.54,
+          "lucro_liquido": 20235.54,
+          "roi_percentual": 106502.84
+        },
+        {
+          "posicao": 4,
+          "nome": "Cliente_6",
+          "capital_proprio": 172426.06,
+          "total_comissao": 15947.58,
+          "lucro_liquido": 15928.58,
+          "roi_percentual": 83834.63
+        },
+        {
+          "posicao": 5,
+          "nome": "Cliente_3",
+          "capital_proprio": 139215.16,
+          "total_comissao": 15470.91,
+          "lucro_liquido": 15451.91,
+          "roi_percentual": 81325.86
+        },
+        {
+          "posicao": 6,
+          "nome": "Cliente_10",
+          "capital_proprio": 59852.85,
+          "total_comissao": 12146.26,
+          "lucro_liquido": 12127.26,
+          "roi_percentual": 63827.68
+        },
+        {
+          "posicao": 7,
+          "nome": "Cliente_14",
+          "capital_proprio": 133599.93,
+          "total_comissao": 10005.03,
+          "lucro_liquido": 9986.03,
+          "roi_percentual": 52558.06
+        },
+        {
+          "posicao": 8,
+          "nome": "Cliente_11",
+          "capital_proprio": 115877.26,
+          "total_comissao": 9652.79,
+          "lucro_liquido": 9633.79,
+          "roi_percentual": 50704.18
+        },
+        {
+          "posicao": 9,
+          "nome": "Cliente_2",
+          "capital_proprio": 61472.53,
+          "total_comissao": 8705.43,
+          "lucro_liquido": 8686.43,
+          "roi_percentual": 45718.07
+        },
+        {
+          "posicao": 10,
+          "nome": "Cliente_15",
+          "capital_proprio": 176200.43,
+          "total_comissao": 8559.78,
+          "lucro_liquido": 8540.78,
+          "roi_percentual": 44951.46
+        }
+      ],
+      "perfis_exemplo": {
+        "iniciante": {
+          "capital_proprio": 564.21,
+          "total_indicados": 0,
+          "total_comissao": 0,
+          "lucro_liquido": -19,
+          "roi_percentual": -100.0,
+          "detalhamento_niveis": {}
+        },
+        "medio": {
+          "capital_proprio": 3002.74,
+          "total_indicados": 0,
+          "total_comissao": 0,
+          "lucro_liquido": -19,
+          "roi_percentual": -100.0,
+          "detalhamento_niveis": {}
+        },
+        "top": {
+          "capital_proprio": 2088.03,
+          "total_indicados": 2,
+          "total_comissao": 218.15,
+          "lucro_liquido": 199.15,
+          "roi_percentual": 1048.15,
+          "detalhamento_niveis": {
+            "1": {
+              "capital_sob_gestao": 6750.2,
+              "comissao": 81.7
+            },
+            "2": {
+              "capital_sob_gestao": 12911.91,
+              "comissao": 62.72
+            },
+            "3": {
+              "capital_sob_gestao": 15234.87,
+              "comissao": 61.81
+            },
+            "4": {
+              "capital_sob_gestao": 4066.05,
+              "comissao": 11.92
+            }
+          }
+        }
+      }
+    },
+    "base_heavy": {
+      "resumo_geral": {
+        "total_clientes": 1000,
+        "capital_total": 1661067.37,
+        "lucro_mensal_total": 249160.1055,
+        "pool_mlm_total": 62290.026375,
+        "pool_por_nivel": {
+          "1": 19932.80844,
+          "2": 7474.803165,
+          "3": 4983.20211,
+          "4": 2491.601055,
+          "5": 2491.601055,
+          "6": 4983.20211,
+          "7": 4983.20211,
+          "8": 4983.20211,
+          "9": 4983.20211,
+          "10": 4983.20211
+        }
+      },
+      "distribuicao_por_nivel": {},
+      "top_earners": [
+        {
+          "posicao": 1,
+          "nome": "Cliente_1",
+          "capital_proprio": 38691.0,
+          "total_comissao": 11959.49,
+          "lucro_liquido": 11940.49,
+          "roi_percentual": 62844.68
+        },
+        {
+          "posicao": 2,
+          "nome": "Cliente_2",
+          "capital_proprio": 27674.21,
+          "total_comissao": 9559.31,
+          "lucro_liquido": 9540.31,
+          "roi_percentual": 50212.17
+        },
+        {
+          "posicao": 3,
+          "nome": "Cliente_3",
+          "capital_proprio": 30577.49,
+          "total_comissao": 7553.45,
+          "lucro_liquido": 7534.45,
+          "roi_percentual": 39655.01
+        },
+        {
+          "posicao": 4,
+          "nome": "Cliente_4",
+          "capital_proprio": 48915.57,
+          "total_comissao": 3350.99,
+          "lucro_liquido": 3331.99,
+          "roi_percentual": 17536.77
+        },
+        {
+          "posicao": 5,
+          "nome": "Cliente_12",
+          "capital_proprio": 5003.58,
+          "total_comissao": 3037.42,
+          "lucro_liquido": 3018.42,
+          "roi_percentual": 15886.44
+        },
+        {
+          "posicao": 6,
+          "nome": "Cliente_13",
+          "capital_proprio": 5940.09,
+          "total_comissao": 1231.6,
+          "lucro_liquido": 1212.6,
+          "roi_percentual": 6382.08
+        },
+        {
+          "posicao": 7,
+          "nome": "Cliente_6",
+          "capital_proprio": 32974.98,
+          "total_comissao": 1165.15,
+          "lucro_liquido": 1146.15,
+          "roi_percentual": 6032.35
+        },
+        {
+          "posicao": 8,
+          "nome": "Cliente_20",
+          "capital_proprio": 10681.31,
+          "total_comissao": 1047.0,
+          "lucro_liquido": 1028.0,
+          "roi_percentual": 5410.5
+        },
+        {
+          "posicao": 9,
+          "nome": "Cliente_8",
+          "capital_proprio": 21079.05,
+          "total_comissao": 885.18,
+          "lucro_liquido": 866.18,
+          "roi_percentual": 4558.86
+        },
+        {
+          "posicao": 10,
+          "nome": "Cliente_14",
+          "capital_proprio": 12300.7,
+          "total_comissao": 713.71,
+          "lucro_liquido": 694.71,
+          "roi_percentual": 3656.39
+        }
+      ],
+      "perfis_exemplo": {
+        "iniciante": {
+          "capital_proprio": 989.56,
+          "total_indicados": 0,
+          "total_comissao": 0,
+          "lucro_liquido": -19,
+          "roi_percentual": -100.0,
+          "detalhamento_niveis": {}
+        },
+        "medio": {
+          "capital_proprio": 1610.03,
+          "total_indicados": 1,
+          "total_comissao": 1.38,
+          "lucro_liquido": -17.62,
+          "roi_percentual": -92.76,
+          "detalhamento_niveis": {
+            "1": {
+              "capital_sob_gestao": 111.94,
+              "comissao": 1.38
+            }
+          }
+        },
+        "top": {
+          "capital_proprio": 738.73,
+          "total_indicados": 3,
+          "total_comissao": 57.74,
+          "lucro_liquido": 38.74,
+          "roi_percentual": 203.88,
+          "detalhamento_niveis": {
+            "1": {
+              "capital_sob_gestao": 2865.49,
+              "comissao": 35.21
+            },
+            "2": {
+              "capital_sob_gestao": 3104.07,
+              "comissao": 14.58
+            },
+            "3": {
+              "capital_sob_gestao": 2414.16,
+              "comissao": 7.95
+            }
+          }
+        }
+      }
+    }
+  },
+  "conclusoes": {
+    "viabilidade": "APROVADO",
+    "pontos_fortes": [
+      "Distribui\u00e7\u00e3o 100% do pool",
+      "Incentiva capta\u00e7\u00e3o de maior capital",
+      "ROI positivo para todos os perfis",
+      "Escalabilidade natural",
+      "Transpar\u00eancia total"
+    ],
+    "riscos": [
+      "Complexidade inicial de entendimento",
+      "Depend\u00eancia de grandes investidores",
+      "Necessidade de educa\u00e7\u00e3o da rede"
+    ],
+    "recomendacoes": [
+      "Implementar dashboard em tempo real",
+      "Criar simulador para prospects",
+      "Desenvolver material educacional",
+      "Estabelecer programa de mentoria"
+    ]
+  }
+}

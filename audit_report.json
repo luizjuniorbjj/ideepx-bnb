@@ -1,0 +1,39 @@
+{
+  "contract": "contracts/iDeepXUnifiedSecure.sol",
+  "hash": "4489462b1e4c2d78b142de36aa8bf55f0df819d965194f7097a4a5a2aa8ba74d",
+  "timestamp": 1762429586.9050229,
+  "vulnerabilities": [
+    {
+      "severity": "MEDIUM",
+      "title": "Front-running Risk in claim",
+      "description": "Function claim vulnerable to MEV attacks",
+      "location": "function claim",
+      "recommendation": "Implement commit-reveal scheme or use flashbots",
+      "poc": "\n                        // Commit-reveal pattern:\n                        mapping(address => bytes32) commits;\n                        function commit(bytes32 hash) external {\n                            commits[msg.sender] = hash;\n                        }\n                        function reveal(uint256 value, uint256 nonce) external {\n                            require(keccak256(abi.encode(value, nonce)) == commits[msg.sender]);\n                        }\n                        "
+    },
+    {
+      "severity": "MEDIUM",
+      "title": "High Centralization Risk",
+      "description": "Contract has 21 owner-only functions",
+      "location": "Multiple functions",
+      "recommendation": "Consider decentralizing with DAO or multisig",
+      "poc": "Use Gnosis Safe or implement TimelockController"
+    },
+    {
+      "severity": "LOW",
+      "title": "Storage Access in Loop",
+      "description": "Storage variables accessed in loop",
+      "location": "Loop operations",
+      "recommendation": "Cache storage variables in memory",
+      "poc": "\n                uint256 cached = storageVar; // Cache before loop\n                for(...) {\n                    // Use cached instead of storageVar\n                }\n                "
+    },
+    {
+      "severity": "INFO",
+      "title": "Multiple Storage Reads",
+      "description": "Multiple reads of same storage slot",
+      "location": "Storage access",
+      "recommendation": "Cache storage reads in memory variables",
+      "poc": "User memory user = users[msg.sender];"
+    }
+  ]
+}

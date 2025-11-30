@@ -1,0 +1,1426 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_usdtAddress",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_liquidityPool",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_infrastructureWallet",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_companyWallet",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "inputs": [],
+    "name": "ArrayLengthMismatch",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "BatchSizeExceeded",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "BelowMinimumWithdrawal",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "EnforcedPause",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ExpectedPause",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidAddress",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidAmount",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "NoEarningsToWithdraw",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "owner",
+        "type": "address"
+      }
+    ],
+    "name": "OwnableInvalidOwner",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      }
+    ],
+    "name": "OwnableUnauthorizedAccount",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ReentrancyGuardReentrantCall",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "SponsorNotRegistered",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "SubscriptionAlreadyActive",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "SubscriptionNotActive",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "TransferFailed",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "UserAlreadyRegistered",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "UserIsPaused",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "UserNotRegistered",
+    "type": "error"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "bool",
+        "name": "betaMode",
+        "type": "bool"
+      }
+    ],
+    "name": "BetaModeToggled",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "sponsor",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "newUser",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "DirectBonusPaid",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "EarningsWithdrawn",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "recipient",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "from",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "level",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "MLMCommissionFailed",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "recipient",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "from",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "level",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "MLMCommissionPaid",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "previousOwner",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "OwnershipTransferred",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      }
+    ],
+    "name": "Paused",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "mlmAmount",
+        "type": "uint256"
+      }
+    ],
+    "name": "PerformanceFeeDistributed",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "pool",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "poolType",
+        "type": "string"
+      }
+    ],
+    "name": "PoolDistribution",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "expirationTimestamp",
+        "type": "uint256"
+      }
+    ],
+    "name": "SubscriptionActivated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "expiredAt",
+        "type": "uint256"
+      }
+    ],
+    "name": "SubscriptionExpired",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "newExpirationTimestamp",
+        "type": "uint256"
+      }
+    ],
+    "name": "SubscriptionRenewed",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      }
+    ],
+    "name": "Unpaused",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      }
+    ],
+    "name": "UserPaused",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "sponsor",
+        "type": "address"
+      }
+    ],
+    "name": "UserRegistered",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      }
+    ],
+    "name": "UserUnpaused",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "liquidity",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "infrastructure",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "company",
+        "type": "address"
+      }
+    ],
+    "name": "WalletsUpdated",
+    "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "COMPANY_PERCENTAGE",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "DIRECT_BONUS",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "INFRASTRUCTURE_PERCENTAGE",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "LIQUIDITY_PERCENTAGE",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "MAX_BATCH_SIZE",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "MAX_HISTORY_PER_USER",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "MIN_WITHDRAWAL",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "MLM_LEVELS",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "MLM_POOL_PERCENTAGE",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "SUBSCRIPTION_DURATION",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "SUBSCRIPTION_FEE",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "USDT",
+    "outputs": [
+      {
+        "internalType": "contract IERC20",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address[]",
+        "name": "clients",
+        "type": "address[]"
+      },
+      {
+        "internalType": "uint256[]",
+        "name": "amounts",
+        "type": "uint256[]"
+      }
+    ],
+    "name": "batchProcessPerformanceFees",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "betaMode",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "performanceFee",
+        "type": "uint256"
+      }
+    ],
+    "name": "calculateMLMDistribution",
+    "outputs": [
+      {
+        "internalType": "uint256[10]",
+        "name": "levelCommissions",
+        "type": "uint256[10]"
+      },
+      {
+        "internalType": "uint256",
+        "name": "totalMLM",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "liquidity",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "infrastructure",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "company",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "clientPerformances",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "totalFeesGenerated",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "totalFeesDistributed",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "lastFeeTimestamp",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "feeCount",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "companyWallet",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      }
+    ],
+    "name": "deactivateSubscription",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address[]",
+        "name": "userAddresses",
+        "type": "address[]"
+      }
+    ],
+    "name": "expireSubscriptions",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getActiveMLMPercentages",
+    "outputs": [
+      {
+        "internalType": "uint256[10]",
+        "name": "",
+        "type": "uint256[10]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "count",
+        "type": "uint256"
+      }
+    ],
+    "name": "getEarningHistory",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "timestamp",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "amount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "fromClient",
+            "type": "address"
+          },
+          {
+            "internalType": "uint8",
+            "name": "level",
+            "type": "uint8"
+          },
+          {
+            "internalType": "enum iDeepXDistributionV2.EarningType",
+            "name": "earningType",
+            "type": "uint8"
+          }
+        ],
+        "internalType": "struct iDeepXDistributionV2.Earning[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      }
+    ],
+    "name": "getNetworkStats",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "totalDirects",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "totalEarned",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "totalWithdrawn",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "availableBalance",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct iDeepXDistributionV2.NetworkStats",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      }
+    ],
+    "name": "getQuickStats",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "totalEarned",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "totalWithdrawn",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "availableBalance",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "directReferrals",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bool",
+        "name": "subscriptionActive",
+        "type": "bool"
+      },
+      {
+        "internalType": "uint256",
+        "name": "daysUntilExpiry",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getSystemStats",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "_totalUsers",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_totalActiveSubscriptions",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_totalMLMDistributed",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bool",
+        "name": "_betaMode",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "userAddress",
+        "type": "address"
+      }
+    ],
+    "name": "getUpline",
+    "outputs": [
+      {
+        "internalType": "address[10]",
+        "name": "",
+        "type": "address[10]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "userAddress",
+        "type": "address"
+      }
+    ],
+    "name": "getUserInfo",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "wallet",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "sponsor",
+        "type": "address"
+      },
+      {
+        "internalType": "bool",
+        "name": "isRegistered",
+        "type": "bool"
+      },
+      {
+        "internalType": "bool",
+        "name": "subscriptionActive",
+        "type": "bool"
+      },
+      {
+        "internalType": "uint256",
+        "name": "subscriptionTimestamp",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "subscriptionExpiration",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "totalEarned",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "totalWithdrawn",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "directReferrals",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "infrastructureWallet",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      }
+    ],
+    "name": "isSubscriptionActive",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "liquidityPool",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "mlmPercentagesBeta",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "mlmPercentagesPermanent",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "owner",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "pause",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      }
+    ],
+    "name": "pauseUser",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "paused",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "sponsorWallet",
+        "type": "address"
+      }
+    ],
+    "name": "registerAndSubscribe",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "renewSubscription",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "renounceOwnership",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "sponsorWallet",
+        "type": "address"
+      }
+    ],
+    "name": "selfRegister",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "selfSubscribe",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "toggleBetaMode",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "totalActiveSubscriptions",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "totalMLMDistributed",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "totalUsers",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "totalWithdrawn",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "transferOwnership",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "unpause",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      }
+    ],
+    "name": "unpauseUser",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_liquidityPool",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_infrastructureWallet",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_companyWallet",
+        "type": "address"
+      }
+    ],
+    "name": "updateWallets",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "userPaused",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "users",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "wallet",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "sponsor",
+        "type": "address"
+      },
+      {
+        "internalType": "bool",
+        "name": "isRegistered",
+        "type": "bool"
+      },
+      {
+        "internalType": "bool",
+        "name": "subscriptionActive",
+        "type": "bool"
+      },
+      {
+        "internalType": "uint256",
+        "name": "subscriptionTimestamp",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "subscriptionExpiration",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "totalEarned",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "totalWithdrawn",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "directReferrals",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "withdrawEarnings",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "withdrawPartial",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]

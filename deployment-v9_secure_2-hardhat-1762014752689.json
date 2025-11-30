@@ -1,0 +1,26 @@
+{
+  "version": "V9_SECURE_2",
+  "network": "hardhat",
+  "contractAddress": "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
+  "usdtAddress": "0x337610d27c682E347C9cD60BD4b3b107C9d34dDd",
+  "multisig": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+  "liquidityPool": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+  "infrastructureWallet": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+  "companyWallet": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+  "deployer": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+  "deploymentTime": "2025-11-01T16:32:32.689Z",
+  "blockNumber": 2,
+  "subscriptionFee": "19",
+  "features": {
+    "circuitBreaker": "110%/130%",
+    "depositCap": "$100k",
+    "maxBetaUsers": 100,
+    "timelock": "24h",
+    "withdrawalLimits": {
+      "users": "$10k/tx, $50k/month",
+      "pools": "$10k/day, $50k/month"
+    },
+    "emergencyReserve": "1%",
+    "addressRedirects": true
+  }
+}

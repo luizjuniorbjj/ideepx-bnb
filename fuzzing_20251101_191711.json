@@ -1,0 +1,100 @@
+{
+  "total_tests": 7,
+  "vulnerabilities_found": 3,
+  "tests_passed": 4,
+  "critical_vulns": 1,
+  "duration": 7.655301570892334,
+  "results": [
+    {
+      "test_name": "Zero Address Registration",
+      "fuzz_type": "Null Pointer",
+      "severity": "CRITICAL",
+      "description": "Registro com address(0) como sponsor",
+      "input_value": "sponsor = 0x0000000000000000000000000000000000000000",
+      "result": "Permitiu registro com endere\u00e7o zero!",
+      "vulnerability_found": true,
+      "metrics": {
+        "tx_hash": "47c0ec151d32103872cbb54b5789af766e9fccc351a489066998b83fad147f53"
+      },
+      "timestamp": "2025-11-01T19:17:03.917303"
+    },
+    {
+      "test_name": "MAX_UINT8 Subscription",
+      "fuzz_type": "Integer Overflow",
+      "severity": "HIGH",
+      "description": "Ativa\u00e7\u00e3o com 255 meses",
+      "input_value": "months = 255",
+      "result": "Permitiu 255 meses (poss\u00edvel overflow em c\u00e1lculos)",
+      "vulnerability_found": true,
+      "metrics": {
+        "tx_hash": "fd5ac20eab35c8e022581cdde7c553eca038dcabc5b16c617a1f1f0672f46f3a"
+      },
+      "timestamp": "2025-11-01T19:17:05.073141"
+    },
+    {
+      "test_name": "Zero Month Subscription",
+      "fuzz_type": "Zero Value",
+      "severity": "HIGH",
+      "description": "Ativa\u00e7\u00e3o com 0 meses",
+      "input_value": "0",
+      "result": "Erro: {'code': -32000, 'message': \"Nonce too low. Expected nonce to be 292 but got 291. Note that transactions can't be queued when automining.\", 'data': {'message': \"Nonce too low. Expected nonce to be 292 but got 291. Note that transactions can't be queued when automining.\", 'data': None}}",
+      "vulnerability_found": false,
+      "metrics": {
+        "error": "{'code': -32000, 'message': \"Nonce too low. Expected nonce to be 292 but got 291. Note that transactions can't be queued when automining.\", 'data': {'message': \"Nonce too low. Expected nonce to be 292 but got 291. Note that transactions can't be queued when automining.\", 'data': None}}"
+      },
+      "timestamp": "2025-11-01T19:17:06.090879"
+    },
+    {
+      "test_name": "Self Sponsorship",
+      "fuzz_type": "Logic Error",
+      "severity": "HIGH",
+      "description": "Usu\u00e1rio se auto-patrocinando",
+      "input_value": "self",
+      "result": "Erro: {'code': -32000, 'message': \"Nonce too low. Expected nonce to be 304 but got 303. Note that transactions can't be queued when automining.\", 'data': {'message': \"Nonce too low. Expected nonce to be 304 but got 303. Note that transactions can't be queued when automining.\", 'data': None}}",
+      "vulnerability_found": false,
+      "metrics": {
+        "error": "{'code': -32000, 'message': \"Nonce too low. Expected nonce to be 304 but got 303. Note that transactions can't be queued when automining.\", 'data': {'message': \"Nonce too low. Expected nonce to be 304 but got 303. Note that transactions can't be queued when automining.\", 'data': None}}"
+      },
+      "timestamp": "2025-11-01T19:17:07.112424"
+    },
+    {
+      "test_name": "Double Registration",
+      "fuzz_type": "State Inconsistency",
+      "severity": "MEDIUM",
+      "description": "Usu\u00e1rio se registra duas vezes",
+      "input_value": "register() x2",
+      "result": "Erro: {'code': -32000, 'message': \"Nonce too low. Expected nonce to be 316 but got 315. Note that transactions can't be queued when automining.\", 'data': {'message': \"Nonce too low. Expected nonce to be 316 but got 315. Note that transactions can't be queued when automining.\", 'data': None}}",
+      "vulnerability_found": false,
+      "metrics": {
+        "error": "{'code': -32000, 'message': \"Nonce too low. Expected nonce to be 316 but got 315. Note that transactions can't be queued when automining.\", 'data': {'message': \"Nonce too low. Expected nonce to be 316 but got 315. Note that transactions can't be queued when automining.\", 'data': None}}"
+      },
+      "timestamp": "2025-11-01T19:17:08.172193"
+    },
+    {
+      "test_name": "Withdraw Without Balance",
+      "fuzz_type": "Underflow",
+      "severity": "MEDIUM",
+      "description": "Saque sem saldo dispon\u00edvel",
+      "input_value": "0",
+      "result": "Erro: Could not transact with/call contract function, is contract deployed correctly and chain synced?",
+      "vulnerability_found": false,
+      "metrics": {
+        "error": "Could not transact with/call contract function, is contract deployed correctly and chain synced?"
+      },
+      "timestamp": "2025-11-01T19:17:09.315134"
+    },
+    {
+      "test_name": "Unregistered User Operations",
+      "fuzz_type": "Access Control",
+      "severity": "HIGH",
+      "description": "Opera\u00e7\u00e3o sem estar registrado",
+      "input_value": "activateSubscription() sem register()",
+      "result": "Permitiu opera\u00e7\u00e3o sem registro!",
+      "vulnerability_found": true,
+      "metrics": {
+        "tx_hash": "9bfa5019f2efc43138b7199be929ed4ae7fa06bf8c847fa14ec27563e12391d3"
+      },
+      "timestamp": "2025-11-01T19:17:10.444997"
+    }
+  ]
+}

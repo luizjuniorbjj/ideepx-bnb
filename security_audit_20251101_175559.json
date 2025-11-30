@@ -1,0 +1,97 @@
+{
+  "total_tests": 7,
+  "critical_vulnerabilities": 2,
+  "high_vulnerabilities": 2,
+  "medium_vulnerabilities": 0,
+  "low_vulnerabilities": 0,
+  "exploitable_count": 4,
+  "tests_passed": 3,
+  "tests_failed": 4,
+  "duration": 7.554556608200073,
+  "results": [
+    {
+      "test_name": "Access Control - Owner Functions",
+      "vulnerability": "Unauthorized Access",
+      "severity": "CRITICAL",
+      "expected_behavior": "Deve reverter com 'Ownable: caller is not the owner'",
+      "actual_behavior": "Atacante conseguiu transferir ownership!",
+      "exploitable": true,
+      "tx_hash": "4f5b745d7e7953bb0a57c247551af4b9f0f46d03431f49bfa813b021f98dd22a",
+      "gas_used": 22080,
+      "error_message": null,
+      "timestamp": "2025-11-01T17:55:52.210492"
+    },
+    {
+      "test_name": "Access Control - Multisig Functions",
+      "vulnerability": "Unauthorized Emergency Pause",
+      "severity": "CRITICAL",
+      "expected_behavior": "Deve reverter com 'Not multisig'",
+      "actual_behavior": "Atacante conseguiu pausar o contrato!",
+      "exploitable": true,
+      "tx_hash": "465beb4894df2a2a1c8ec75e59ac75d45685d6bbd6cec1987dff36417b7dad8f",
+      "gas_used": 21160,
+      "error_message": null,
+      "timestamp": "2025-11-01T17:55:53.301281"
+    },
+    {
+      "test_name": "Reentrancy Protection",
+      "vulnerability": "Reentrancy Attack",
+      "severity": "CRITICAL",
+      "expected_behavior": "Deve bloquear chamadas recursivas",
+      "actual_behavior": "Erro durante teste: Could not transact with/call contract function, is contract deployed correctly and chain synced?",
+      "exploitable": false,
+      "tx_hash": null,
+      "gas_used": null,
+      "error_message": "Could not transact with/call contract function, is contract deployed correctly and chain synced?",
+      "timestamp": "2025-11-01T17:55:54.410603"
+    },
+    {
+      "test_name": "Integer Overflow Protection",
+      "vulnerability": "Integer Overflow",
+      "severity": "HIGH",
+      "expected_behavior": "Deve reverter ao tentar sacar mais do que dispon\u00edvel",
+      "actual_behavior": "Conseguiu sacar valor absurdo!",
+      "exploitable": true,
+      "tx_hash": "cdb4c88963e142a9bc98ef00ac6f1af65c3387de19a5a83db53fc4be35a1fba9",
+      "gas_used": 22440,
+      "error_message": null,
+      "timestamp": "2025-11-01T17:55:55.531778"
+    },
+    {
+      "test_name": "Circuit Breaker Bypass",
+      "vulnerability": "Circuit Breaker Ineffective",
+      "severity": "CRITICAL",
+      "expected_behavior": "Deve bloquear saques quando CB ativado",
+      "actual_behavior": "Erro durante teste: Could not transact with/call contract function, is contract deployed correctly and chain synced?",
+      "exploitable": false,
+      "tx_hash": null,
+      "gas_used": null,
+      "error_message": "Could not transact with/call contract function, is contract deployed correctly and chain synced?",
+      "timestamp": "2025-11-01T17:55:56.540575"
+    },
+    {
+      "test_name": "Beta Mode Bypass",
+      "vulnerability": "Beta Mode Restrictions",
+      "severity": "MEDIUM",
+      "expected_behavior": "Deve bloquear dep\u00f3sitos que excedem limite",
+      "actual_behavior": "Erro durante teste: Could not transact with/call contract function, is contract deployed correctly and chain synced?",
+      "exploitable": false,
+      "tx_hash": null,
+      "gas_used": null,
+      "error_message": "Could not transact with/call contract function, is contract deployed correctly and chain synced?",
+      "timestamp": "2025-11-01T17:55:57.548551"
+    },
+    {
+      "test_name": "Withdrawal Limits",
+      "vulnerability": "Withdrawal Limit Bypass",
+      "severity": "HIGH",
+      "expected_behavior": "Deve bloquear saques > $10k",
+      "actual_behavior": "Conseguiu sacar acima do limite!",
+      "exploitable": true,
+      "tx_hash": "d4585ea6af53e8e17b82ed38bfad06469588015b08f6dc317aa1896b321dab9f",
+      "gas_used": null,
+      "error_message": null,
+      "timestamp": "2025-11-01T17:55:58.682219"
+    }
+  ]
+}

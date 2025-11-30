@@ -1,0 +1,627 @@
+// ============================================================================
+// Schema Prisma - iDeepX Backend V10 - SQLite Compatible
+// ============================================================================
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// ============================================================================
+// USUÁRIOS
+// ============================================================================
+
+model User {
+  id                String   @id @default(uuid())
+  walletAddress     String   @unique
+  accountHash       String?  @unique
+
+  // Simulation tracking
+  simulationId      String?  // Se não for null, é usuário de simulação
+
+  // Status
+  active            Boolean  @default(false)
+  kycStatus         Int      @default(0)
+  subscriptionExpiry Int     @default(0)
+
+  // MLM
+  sponsorId         String?
+  sponsor           User?    @relation("Sponsorship", fields: [sponsorId], references: [id], onDelete: SetNull)
+  referrals         User[]   @relation("Sponsorship")
+  sponsorAddress    String?
+  maxLevel          Int      @default(0)
+
+  // Métricas (armazenadas como String para valores grandes)
+  monthlyVolume     String   @default("0")
+  totalVolume       String   @default("0")
+  totalEarned       String   @default("0")
+  totalWithdrawn    String   @default("0")
+  internalBalance   String   @default("0")
+
+  // Controle de saques (V10 sync)
+  lastWithdrawMonth Int      @default(0)      // Mês ordinal (ts / 30 days)
+  withdrawnThisMonth String  @default("0")    // USDT sacado este mês
+
+  // Timestamps
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  // Relations
+  gmiAccount        GmiAccount?
+  metrics           UserMetric[]
+  performances      PerformanceRecord[]
+  commissions       MlmCommission[]
+  transactions      Transaction[]
+  tradingAccounts   TradingAccount[]
+}
+
+// ============================================================================
+// MÉTRICAS POR MÊS
+// ============================================================================
+
+model UserMetric {
+  id                String   @id @default(uuid())
+  userId            String
+  user              User     @relation(fields: [userId], references: [id])
+
+  // Período
+  month             Int      // 202411, 202412, etc
+  year              Int
+
+  // Volume e PnL
+  volume            String   @default("0")
+  trades            Int      @default(0)
+  winRate           String   @default("0")
+  pnl               String   @default("0")
+
+  // MLM
+  directReferrals   Int      @default(0)
+  networkVolume     String   @default("0")
+
+  // Timestamps
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  @@unique([userId, month, year])
+}
+
+// ============================================================================
+// PERFORMANCE FEES
+// ============================================================================
+
+model PerformanceRecord {
+  id                String   @id @default(uuid())
+  userId            String
+  user              User     @relation(fields: [userId], references: [id])
+
+  // Período
+  month             Int
+  year              Int
+  periodStart       DateTime
+  periodEnd         DateTime
+
+  // Performance
+  profitUsd         String   // 65%
+  feeUsd            String   // 35%
+
+  // Split
+  clientShare       String
+  mlmPool           String
+  companyShare      String
+
+  // Status
+  processed         Boolean  @default(false)
+  distributed       Boolean  @default(false)
+  distributedAt     DateTime?
+
+  // Timestamps
+  createdAt         DateTime @default(now())
+
+  @@unique([userId, month, year])
+}
+
+// ============================================================================
+// COMISSÕES MLM
+// ============================================================================
+
+model MlmCommission {
+  id                String   @id @default(uuid())
+  userId            String
+  user              User     @relation(fields: [userId], references: [id])
+
+  // Origem
+  fromUserId        String   // Quem gerou a comissão
+  performanceId     String   // PerformanceRecord relacionado
+
+  // Level
+  level             Int      // 1-10
+  percentage        String   // 8%, 3%, etc
+  amount            String
+
+  // Status
+  paid              Boolean  @default(false)
+  paidAt            DateTime?
+  txHash            String?
+
+  // Timestamps
+  createdAt         DateTime @default(now())
+}
+
+// ============================================================================
+// TRANSAÇÕES
+// ============================================================================
+
+model Transaction {
+  id                String   @id @default(uuid())
+  userId            String?
+  user              User?    @relation(fields: [userId], references: [id])
+
+  // Tipo
+  type              String   // subscription, withdrawal, mlm_payment, etc
+  status            String   // pending, confirmed, failed
+
+  // Valores
+  amountUsd         String
+
+  // Blockchain
+  txHash            String?  @unique
+  blockNumber       Int?
+
+  // Timestamps
+  createdAt         DateTime @default(now())
+}
+
+// ============================================================================
+// SYNC LOGS
+// ============================================================================
+
+model SyncLog {
+  id                String   @id @default(uuid())
+
+  // Sync
+  syncType          String   // users, metrics, etc
+  status            String   // success, error
+  message           String?
+  recordsProcessed  Int      @default(0)
+
+  // Timestamps
+  createdAt         DateTime @default(now())
+}
+
+// ============================================================================
+// GMI ACCOUNT
+// ============================================================================
+
+model GmiAccount {
+  id                String   @id @default(uuid())
+  userId            String   @unique
+  user              User     @relation(fields: [userId], references: [id])
+
+  // Dados MT5/MT4
+  accountNumber     String
+  server            String
+  platform          String   @default("MT5") // MT5 ou MT4
+  encryptedPayload  String
+  accountHash       String
+
+  // Dados de Trading (atualizados pelo EA)
+  balance           String   @default("0")
+  equity            String   @default("0")
+  monthlyVolume     String   @default("0")
+  monthlyProfit     String   @default("0")
+  monthlyLoss       String   @default("0")
+  totalTrades       Int      @default(0)
+
+  // Status
+  connected         Boolean  @default(false)
+  lastSyncAt        DateTime?
+
+  // Timestamps
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  // Relations
+  tradingStats      TradingStat[]
+}
+
+// ============================================================================
+// TRADING STATISTICS (Histórico mensal de trading)
+// ============================================================================
+
+model TradingStat {
+  id                String   @id @default(uuid())
+  gmiAccountId      String
+  gmiAccount        GmiAccount @relation(fields: [gmiAccountId], references: [id])
+
+  // Período
+  month             Int      // 202411, 202412, etc
+  year              Int
+
+  // Estatísticas do mês
+  volume            String   @default("0")
+  profit            String   @default("0")
+  loss              String   @default("0")
+  netProfit         String   @default("0")
+  trades            Int      @default(0)
+  winRate           String   @default("0")
+
+  // Timestamps
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  @@unique([gmiAccountId, month, year])
+}
+
+// ============================================================================
+// WITHDRAWALS (Histórico de Saques)
+// ============================================================================
+
+model Withdrawal {
+  id                String   @id @default(uuid())
+  userAddress       String
+  amount            String   // USDT amount
+  txHash            String?
+  status            String   // pending, completed, failed
+
+  // Timestamps
+  createdAt         DateTime @default(now())
+  completedAt       DateTime?
+
+  @@index([userAddress])
+  @@index([status])
+  @@index([createdAt])
+}
+
+// ============================================================================
+// SUBSCRIPTIONS (Histórico de Assinaturas)
+// ============================================================================
+
+model Subscription {
+  id                String   @id @default(uuid())
+  userAddress       String
+  type              String   // new, renewal
+  amount            String   // $19 USDT
+  expiresAt         DateTime
+  txHash            String?
+
+  // Timestamps
+  createdAt         DateTime @default(now())
+
+  @@index([userAddress])
+  @@index([expiresAt])
+  @@index([createdAt])
+}
+
+// ============================================================================
+// ADMIN ACTIONS (Logs de Ações do Administrador)
+// ============================================================================
+
+model AdminAction {
+  id                String   @id @default(uuid())
+  adminAddress      String
+  action            String   // process_fees, pause_user, toggle_beta, etc
+  targetUser        String?
+  amount            String?
+  details           String?  // JSON stringified
+  txHash            String?
+
+  // Timestamps
+  createdAt         DateTime @default(now())
+
+  @@index([adminAddress])
+  @@index([createdAt])
+}
+
+// ============================================================================
+// SYSTEM METRICS (Métricas Diárias do Sistema)
+// ============================================================================
+
+model SystemMetrics {
+  id                      String   @id @default(uuid())
+  date                    DateTime @unique
+
+  // Usuários
+  totalUsers              Int
+  activeUsers             Int
+  newUsers                Int
+
+  // Financeiro
+  totalMLMDistributed     String
+  totalFeesProcessed      String
+  totalWithdrawn          String
+
+  // Pools
+  liquidityPoolBalance    String
+  infraPoolBalance        String
+  companyPoolBalance      String
+
+  // Timestamps
+  createdAt               DateTime @default(now())
+
+  @@index([date])
+}
+
+// ============================================================================
+// POOLS (Saldos dos Pools em Tempo Real)
+// ============================================================================
+
+model Pool {
+  id                String   @id @default(uuid())
+  poolType          String   // liquidity, infrastructure, company
+  address           String   @unique
+
+  // Saldos
+  currentBalance    String
+  totalReceived     String
+  totalSpent        String   @default("0")
+
+  // Timestamps
+  lastUpdate        DateTime @default(now())
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}
+
+// ============================================================================
+// NOTIFICATIONS (Notificações para Usuários)
+// ============================================================================
+
+model Notification {
+  id                String   @id @default(uuid())
+  userAddress       String
+  type              String   // commission_received, subscription_expiring, withdrawal_completed, etc
+  title             String
+  message           String
+  read              Boolean  @default(false)
+
+  // Dados adicionais (JSON stringified)
+  metadata          String?
+
+  // Timestamps
+  createdAt         DateTime @default(now())
+
+  @@index([userAddress])
+  @@index([read])
+  @@index([createdAt])
+}
+
+// ============================================================================
+// SIMULATIONS (Histórico de Simulações MLM)
+// ============================================================================
+
+model Simulation {
+  id                    String   @id @default(uuid())
+  timestamp             DateTime @default(now())
+
+  // Parâmetros da simulação
+  totalClients          Int
+  totalCapital          String   // USDT
+  poolMlm               String   // USDT mensal
+
+  // Resultado TOP performer (ROOT)
+  topId                 Int
+  topName               String
+  topWallet             String?
+  topLevel              Int      @default(0)
+  topDirect             Int      @default(0)
+  topNetwork            Int
+  topDepth              Int      @default(0)
+  topCommission         String
+  topLai                String   @default("19")
+  topProfit             String
+  topRoi                String
+  topStatus             String   @default("Lucrativo")
+
+  // Estatísticas gerais
+  totalCommissions      String
+  maxNetwork            Int
+  perfectDistribution   Boolean  @default(true)
+  registeredBackend     Int      @default(0)
+
+  // Metadados
+  files                 String   // JSON: {html, tree, csv, txt}
+  distribution          String   // JSON: {0: 10, 1: 50, ...}
+
+  // Timestamps
+  createdAt             DateTime @default(now())
+
+  @@index([timestamp])
+  @@index([totalClients])
+  @@index([topRoi])
+}
+
+// ============================================================================
+// MT5 TRADING ACCOUNTS - Sistema de Monitoramento Multi-Conta
+// ============================================================================
+
+model TradingAccount {
+  id                  String   @id @default(uuid())
+  userId              String
+  user                User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  // Identificação
+  accountAlias        String   // "GMI Edge", "Doo Prime Cent"
+  brokerName          String   // "GMI Markets", "Doo Prime"
+
+  // Credenciais MT5
+  login               String   // Account number
+  server              String   // Server name
+  platform            String   @default("MT5") // "MT5" ou "MT4"
+
+  // Status
+  status              String   @default("PENDING")
+  // PENDING | CONNECTED | DISCONNECTED | ERROR | SUSPENDED
+
+  // Status de Remoção (Controle de Admin)
+  removalStatus       String   @default("ACTIVE")
+  // ACTIVE | PENDING_REMOVAL | APPROVED_FOR_REMOVAL | REJECTED
+
+  connected           Boolean  @default(false)
+  lastError           String?
+  lastHeartbeat       DateTime?
+
+  // Dados atuais (último snapshot)
+  balance             String   @default("0")
+  equity              String   @default("0")
+  margin              String   @default("0")
+  freeMargin          String   @default("0")
+  marginLevel         String   @default("0")
+
+  // Posições
+  openTrades          Int      @default(0)
+  openPL              String   @default("0")
+
+  // P/L por período
+  dayPL               String   @default("0")
+  weekPL              String   @default("0")
+  monthPL             String   @default("0")
+  totalPL             String   @default("0")
+
+  // Timestamps
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+  lastSnapshotAt      DateTime?
+
+  // Relacionamentos
+  credentials         TradingAccountCredential?
+  snapshots           AccountSnapshot[]
+
+  @@unique([userId, login, server])
+  @@index([userId])
+  @@index([status])
+  @@index([lastHeartbeat])
+}
+
+model TradingAccountCredential {
+  tradingAccountId    String   @id
+  tradingAccount      TradingAccount @relation(fields: [tradingAccountId], references: [id], onDelete: Cascade)
+
+  encryptedPassword   String   // Senha criptografada AES-256
+
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+}
+
+model AccountSnapshot {
+  id                  Int      @id @default(autoincrement())
+  tradingAccountId    String
+  tradingAccount      TradingAccount @relation(fields: [tradingAccountId], references: [id], onDelete: Cascade)
+
+  capturedAt          DateTime @default(now())
+
+  // Dados da conta
+  balance             String
+  equity              String
+  margin              String
+  freeMargin          String
+  marginLevel         String
+
+  // Posições
+  openTrades          Int
+  openPL              String
+
+  // P/L
+  dayPL               String
+  weekPL              String
+  monthPL             String
+  totalPL             String
+
+  @@index([tradingAccountId])
+  @@index([capturedAt])
+}
+
+// ============================================================================
+// MT5 BROKERS - Catálogo de Corretoras
+// ============================================================================
+
+model Broker {
+  id                  String   @id @default(uuid())
+
+  // Identificação
+  name                String   @unique // "GMI Markets", "DooPrime"
+  displayName         String   // "GMI Markets" (para exibição)
+  logoUrl             String?  // URL do logo da corretora
+
+  // Info
+  website             String?
+  supportsMT5         Boolean  @default(true)
+  supportsMT4         Boolean  @default(false)
+
+  // Status
+  active              Boolean  @default(true)
+
+  // Timestamps
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+
+  // Relacionamentos
+  servers             BrokerServer[]
+
+  @@index([active])
+}
+
+model BrokerServer {
+  id                  String   @id @default(uuid())
+  brokerId            String
+  broker              Broker   @relation(fields: [brokerId], references: [id], onDelete: Cascade)
+
+  // Servidor MT5
+  serverName          String   // "GMI Trading Platform Demo", "GMI-Live Server"
+  serverAddress       String   // "gmi-demo.mt5.com:443"
+
+  // Tipo
+  isDemo              Boolean  @default(false)
+  isLive              Boolean  @default(true)
+
+  // Status
+  active              Boolean  @default(true)
+
+  // Timestamps
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+
+  @@unique([brokerId, serverName])
+  @@index([brokerId])
+  @@index([active])
+}
+
+// ============================================================================
+// ACCOUNT REMOVAL REQUESTS - Solicitações de Remoção de Conta MT5
+// ============================================================================
+
+model AccountRemovalRequest {
+  id                  String   @id @default(uuid())
+  tradingAccountId    String
+  userId              String
+  userWalletAddress   String
+
+  // Dados da conta (para histórico)
+  accountLogin        String
+  accountServer       String
+  accountAlias        String
+  brokerName          String
+
+  // Motivo da solicitação
+  reason              String?  // Motivo fornecido pelo cliente
+
+  // Status
+  status              String   @default("PENDING")
+  // PENDING | APPROVED | REJECTED
+
+  // Decisão do Admin
+  reviewedBy          String?  // Endereço da carteira do admin
+  reviewedAt          DateTime?
+  rejectionReason     String?  // Motivo da rejeição (se aplicável)
+
+  // Timestamps
+  requestedAt         DateTime @default(now())
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+
+  @@index([userId])
+  @@index([status])
+  @@index([requestedAt])
+}

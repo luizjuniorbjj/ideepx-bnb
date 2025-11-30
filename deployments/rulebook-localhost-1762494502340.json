@@ -1,0 +1,12 @@
+{
+  "contract": "iDeepXRulebookImmutable",
+  "network": "localhost",
+  "chainId": "31337",
+  "address": "0xfc073209b7936A771F77F63D42019a3a93311869",
+  "ipfsCid": "QmExamplePlanHash123",
+  "contentHash": "0x949b2ae2debf7cdb74e38997ac9fbee2ea26a637ae8d639db86fc8845bf31f3b",
+  "deployedAt": "2025-11-07T05:50:06.000Z",
+  "deployer": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+  "txHash": "0x399c82329cb94f40cfe05cb7f9e945e485673af53482a754ca8471099bea696f",
+  "blockNumber": 714
+}

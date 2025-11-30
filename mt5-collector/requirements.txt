@@ -1,0 +1,21 @@
+# ============================================================================
+# MT5 COLLECTOR - PYTHON DEPENDENCIES
+# ============================================================================
+
+# MT5 Integration
+MetaTrader5>=5.0.47
+
+# Database
+prisma==0.11.0
+
+# Encryption
+cryptography==41.0.7
+
+# Environment
+python-dotenv==1.0.0
+
+# Utilities
+pytz==2023.3
+
+# Windows GUI (para minimizar janela MT5)
+pywin32>=306

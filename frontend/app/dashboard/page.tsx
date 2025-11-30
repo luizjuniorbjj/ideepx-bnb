@@ -19,13 +19,50 @@ import {
   Wallet, TrendingUp, Calendar, Lock, Unlock,
   DollarSign, Network, Activity, Shield, Users,
   CheckCircle, XCircle, Zap, ChevronRight, AlertCircle,
-  Clock, Award, AlertOctagon, Info, ChevronDown, ChevronUp, Target
+  Clock, Award, AlertOctagon, Info, ChevronDown, ChevronUp, Target, Rocket
 } from 'lucide-react'
 import { toast } from 'sonner'
+import {
+  MOCK_USER_DATA,
+  enableDemoMode,
+  disableDemoMode,
+  mockActivateNetworkUser,
+  mockActivateWithBalance,
+  mockLoadInactiveUsers
+} from '@/lib/mockData'
+import { OnboardingModal } from '@/components/OnboardingModal'
 
 export default function Dashboard() {
   const { address, isConnected } = useAccount()
   const router = useRouter()
+
+  // Modo Demonstração
+  const [isDemoMode, setIsDemoMode] = useState(false)
+
+  // Modal de Onboarding
+  const [showOnboarding, setShowOnboarding] = useState(false)
+
+  // Carregar estado do modo demo
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const demoMode = localStorage.getItem('DEMO_MODE') === 'true'
+      setIsDemoMode(demoMode)
+    }
+  }, [])
+
+  // Verificar se deve mostrar onboarding automaticamente
+  useEffect(() => {
+    if (typeof window !== 'undefined' && isConnected) {
+      const onboardingCompleted = localStorage.getItem('ONBOARDING_COMPLETED')
+      // Mostrar onboarding se nunca foi completado
+      if (!onboardingCompleted) {
+        // Delay de 2s para dar tempo do usuário ver o dashboard
+        setTimeout(() => {
+          setShowOnboarding(true)
+        }, 2000)
+      }
+    }
+  }, [isConnected])
 
   // Dados do backend (otimizado - 1 requisição)
   const {
@@ -61,22 +98,59 @@ export default function Dashboard() {
   const [activatingUser, setActivatingUser] = useState<string | null>(null)
   const [showAllLevels, setShowAllLevels] = useState(false)
 
-  // Redirecionar se não conectado
+  // Usar dados mockados se modo demo estiver ativo
+  const displayData = isDemoMode ? {
+    internalBalance: MOCK_USER_DATA.internalBalance,
+    totalCommissions: MOCK_USER_DATA.totalCommissions,
+    directReferrals: MOCK_USER_DATA.directReferrals,
+    activeDirectsCount: MOCK_USER_DATA.activeDirectsCount,
+    combinedVolume: MOCK_USER_DATA.combinedVolume,
+    mlmStats: MOCK_USER_DATA.mlmStats,
+    eligibility: MOCK_USER_DATA.eligibility,
+    canUnlock: MOCK_USER_DATA.eligibility.canUnlock
+  } : {
+    internalBalance: backendInternalBalance,
+    totalCommissions: backendTotalCommissions,
+    directReferrals: backendDirectReferrals,
+    activeDirectsCount: backendActiveDirectsCount,
+    combinedVolume: backendCombinedVolume,
+    mlmStats: mlmStats,
+    eligibility: eligibility,
+    canUnlock: backendCanUnlock
+  }
+
+  // Função para toggle demo mode
+  const toggleDemoMode = () => {
+    if (isDemoMode) {
+      disableDemoMode()
+    } else {
+      enableDemoMode()
+    }
+  }
+
+  // Redirecionar se não conectado (exceto em modo demo)
   useEffect(() => {
     const isE2ETesting = typeof window !== 'undefined' && localStorage.getItem('E2E_TESTING') === 'true'
-    if (!isConnected && !isE2ETesting) {
+    if (!isConnected && !isE2ETesting && !isDemoMode) {
       router.push('/')
     }
-  }, [isConnected, router])
+  }, [isConnected, router, isDemoMode])
 
   // Carregar usuários inativos
   const loadInactiveUsers = async () => {
-    if (!address) return
+    if (!address && !isDemoMode) return
 
     try {
       setLoadingInactive(true)
-      const response = await api.getNetworkInactive(address)
-      setInactiveUsers(response.inactive || [])
+
+      // Usar mock em modo demo
+      if (isDemoMode) {
+        const response = await mockLoadInactiveUsers()
+        setInactiveUsers(response.inactive || [])
+      } else {
+        const response = await api.getNetworkInactive(address)
+        setInactiveUsers(response.inactive || [])
+      }
     } catch (error: any) {
       toast.error('Erro ao carregar inativos: ' + error.message)
     } finally {
@@ -92,14 +166,22 @@ export default function Dashboard() {
 
   // Ativar membro da rede
   const handleActivateNetworkUser = async (targetAddress: string) => {
-    if (!address) return
+    if (!address && !isDemoMode) return
 
     try {
       setActivatingUser(targetAddress)
-      await api.activateNetworkUser(address, targetAddress)
-      toast.success('Assinatura ativada com sucesso!')
-      loadInactiveUsers()
-      refetchBackend()
+
+      // Usar mock em modo demo
+      if (isDemoMode) {
+        const result = await mockActivateNetworkUser(targetAddress)
+        toast.success('✅ ' + result.message)
+        loadInactiveUsers() // Recarregar lista
+      } else {
+        await api.activateNetworkUser(address, targetAddress)
+        toast.success('Assinatura ativada com sucesso!')
+        loadInactiveUsers()
+        refetchBackend()
+      }
     } catch (error: any) {
       toast.error('Erro ao ativar: ' + error.message)
     } finally {
@@ -110,23 +192,33 @@ export default function Dashboard() {
   // Ativar com saldo interno
   const handleActivateWithBalance = async () => {
     try {
-      await activateWithBalance()
-      toast.success('Assinatura renovada!')
-      refetchBackend()
-      refetchUser()
+      // Usar mock em modo demo
+      if (isDemoMode) {
+        const result = await mockActivateWithBalance()
+        toast.success('✅ ' + result.message)
+        // Simular atualização de saldo
+        setTimeout(() => {
+          toast.info(`💰 Novo saldo: $${result.newBalance}`)
+        }, 500)
+      } else {
+        await activateWithBalance()
+        toast.success('Assinatura renovada!')
+        refetchBackend()
+        refetchUser()
+      }
     } catch (error: any) {
       toast.error('Erro ao renovar: ' + error.message)
     }
   }
 
-  // Não renderizar se não conectado
+  // Não renderizar se não conectado (exceto em modo demo)
   const isE2ETesting = typeof window !== 'undefined' && localStorage.getItem('E2E_TESTING') === 'true'
-  if (!isConnected && !isE2ETesting) {
+  if (!isConnected && !isE2ETesting && !isDemoMode) {
     return null
   }
 
-  // Loading state
-  if (process.env.NODE_ENV === 'development' && loadingUser && !backendData) {
+  // Loading state (pular em modo demo)
+  if (process.env.NODE_ENV === 'development' && loadingUser && !backendData && !isDemoMode) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-violet-950 flex items-center justify-center">
         <div className="text-white text-xl">🔄 Carregando...</div>
@@ -138,12 +230,12 @@ export default function Dashboard() {
   const isDev = process.env.NODE_ENV === 'development'
   const sourceData = isDev ? (backendData || userData) : (userData || backendData)
 
-  const isActive = sourceData?.active ?? false
-  const maxLevel = sourceData?.maxLevel ?? 0
-  const monthlyVolume = parseFloat(sourceData?.monthlyVolume ?? '0')
-  const internalBalance = parseFloat(sourceData?.internalBalance ?? '0')
-  const subscriptionExpiry = sourceData?.subscriptionExpiry ?? 0
-  const withdrawnThisMonth = parseFloat(sourceData?.withdrawnThisMonth ?? '0')
+  const isActive = isDemoMode ? MOCK_USER_DATA.isActive : (sourceData?.active ?? false)
+  const maxLevel = isDemoMode ? 10 : (sourceData?.maxLevel ?? 0)
+  const monthlyVolume = isDemoMode ? parseFloat(MOCK_USER_DATA.networkVolume.replace(/,/g, '')) : parseFloat(sourceData?.monthlyVolume ?? '0')
+  const internalBalance = isDemoMode ? parseFloat(MOCK_USER_DATA.internalBalance.replace(/,/g, '')) : parseFloat(sourceData?.internalBalance ?? '0')
+  const subscriptionExpiry = isDemoMode ? (Math.floor(Date.now() / 1000) + 86400 * 25) : (sourceData?.subscriptionExpiry ?? 0)
+  const withdrawnThisMonth = isDemoMode ? 150.00 : parseFloat(sourceData?.withdrawnThisMonth ?? '0')
 
   // Calcular dias até expirar
   const now = Math.floor(Date.now() / 1000)
@@ -151,20 +243,62 @@ export default function Dashboard() {
   const isSubscriptionActive = subscriptionExpiry > now
 
   // Estatísticas MLM
-  const totalCommissions = backendTotalCommissions
-  const directReferrals = backendDirectReferrals
-  const totalNetwork = mlmStats?.networkSize ?? 0
+  const totalCommissions = isDemoMode ? parseFloat(MOCK_USER_DATA.totalCommissions.replace(/,/g, '')) : backendTotalCommissions
+  const directReferrals = isDemoMode ? MOCK_USER_DATA.directReferrals : backendDirectReferrals
+  const totalNetwork = isDemoMode ? MOCK_USER_DATA.totalNetwork : (mlmStats?.networkSize ?? 0)
 
   // Elegibilidade
-  const canUnlock = backendCanUnlock
-  const recommendedMaxLevel = eligibility?.recommendedMaxLevel ?? 5
-  const activeDirectsCount = backendActiveDirectsCount
-  const combinedVolume = backendCombinedVolume
+  const canUnlock = isDemoMode ? MOCK_USER_DATA.eligibility.canUnlock : backendCanUnlock
+  const recommendedMaxLevel = isDemoMode ? 10 : (eligibility?.recommendedMaxLevel ?? 5)
+  const activeDirectsCount = isDemoMode ? MOCK_USER_DATA.activeDirectsCount : backendActiveDirectsCount
+  const combinedVolume = isDemoMode ? parseFloat(MOCK_USER_DATA.combinedVolume.replace(/,/g, '')) : backendCombinedVolume
 
   const isSystemHealthy = (solvencyRatio ?? 0) >= 110
 
   return (
     <PageLayout>
+      {/* Modal de Onboarding */}
+      <OnboardingModal
+        isOpen={showOnboarding}
+        onClose={() => setShowOnboarding(false)}
+      />
+
+      {/* Botões de Ação (Topo) */}
+      <div className="flex items-center justify-between gap-4 mb-4">
+        {/* Botão Onboarding */}
+        <button
+          onClick={() => setShowOnboarding(true)}
+          className="px-4 py-2 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-medium text-sm rounded-lg transition-all shadow-lg shadow-blue-500/30 flex items-center gap-2"
+        >
+          <Rocket className="w-4 h-4" />
+          Como Começar
+        </button>
+
+        {/* Botão Modo Demonstração */}
+        <button
+          onClick={toggleDemoMode}
+          className={`px-4 py-2 rounded-lg font-medium text-sm transition-all ${
+            isDemoMode
+              ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg shadow-purple-500/50'
+              : 'bg-slate-800/50 text-gray-400 hover:bg-slate-700/50 border border-slate-700'
+          }`}
+        >
+          {isDemoMode ? '🎭 Modo Demo ATIVO' : '🎭 Ativar Modo Demo'}
+        </button>
+      </div>
+
+      {/* Alerta Modo Demonstração */}
+      {isDemoMode && (
+        <GlassCard className="p-4 border-purple-500/30 bg-purple-500/10 mb-4">
+          <div className="flex items-center gap-3">
+            <Info className="w-5 h-5 text-purple-400 flex-shrink-0" />
+            <p className="text-purple-300 text-sm font-medium">
+              Modo Demonstração Ativo - Os dados exibidos são simulados para visualização
+            </p>
+          </div>
+        </GlassCard>
+      )}
+
       {/* Alerta Circuit Breaker */}
       {circuitBreakerActive && (
         <GlassCard className="p-4 border-red-500/30 bg-red-500/10">
@@ -743,7 +877,7 @@ export default function Dashboard() {
         <GlassCard
           hover
           className="p-4 cursor-pointer group"
-          onClick={() => router.push('/gmi-hedge')}
+          onClick={() => router.push('/mt5')}
         >
           <div className="flex items-center justify-between mb-3">
             <div className="p-2 rounded-xl bg-blue-500/10">
@@ -751,8 +885,8 @@ export default function Dashboard() {
             </div>
             <ChevronRight className="w-4 h-4 text-gray-500 group-hover:text-white transition-all" />
           </div>
-          <h3 className="text-white font-semibold text-sm mb-1">GMI Edge</h3>
-          <p className="text-gray-400 text-xs mb-2">The Edge Platform</p>
+          <h3 className="text-white font-semibold text-sm mb-1">Conexão MT5</h3>
+          <p className="text-gray-400 text-xs mb-2">Conecte suas contas</p>
           <p className="text-gray-300 text-xs">
             Trading automático
           </p>

@@ -1,0 +1,233 @@
+{
+  "version": "1.0.0",
+  "name": "iDeepX MLM Commission Plan",
+  "created": "2025-01-11",
+  "blockchain": "BNB Smart Chain",
+  "token": "USDT BEP-20",
+
+  "description": {
+    "pt-br": "Plano de comissões MLM 10 níveis para sistema de copy trading iDeepX",
+    "en": "10-level MLM commission plan for iDeepX copy trading system"
+  },
+
+  "business_model": {
+    "client_profit_share": {
+      "percentage": 65.0,
+      "description": "Cliente recebe 65% do lucro líquido gerado"
+    },
+    "company_performance_fee": {
+      "percentage": 35.0,
+      "description": "Empresa recebe 35% como performance fee"
+    },
+    "mlm_commission_base": {
+      "percentage": 25.0,
+      "base": "client_profit_share",
+      "description": "MLM recebe 25% do que o cliente recebeu (16.25% do lucro total)",
+      "calculation": "lucro_liquido × 0.65 × 0.25 = 16.25% do lucro total"
+    }
+  },
+
+  "exemplo_calculo": {
+    "lucro_liquido": 100.00,
+    "cliente_recebe": 65.00,
+    "empresa_recebe": 35.00,
+    "mlm_total": 16.25,
+    "cliente_liquido_final": 48.75,
+    "nota": "Cliente paga comissões da sua parte, não da empresa"
+  },
+
+  "niveis_mlm": {
+    "total_levels": 10,
+    "total_percentage": 25.0,
+    "levels": {
+      "1": {
+        "percentual": 8.0,
+        "sobre": "client_profit_share",
+        "calculo_real": "lucro × 0.65 × 0.08",
+        "exemplo_100": 5.20
+      },
+      "2": {
+        "percentual": 3.0,
+        "sobre": "client_profit_share",
+        "calculo_real": "lucro × 0.65 × 0.03",
+        "exemplo_100": 1.95
+      },
+      "3": {
+        "percentual": 2.0,
+        "sobre": "client_profit_share",
+        "calculo_real": "lucro × 0.65 × 0.02",
+        "exemplo_100": 1.30
+      },
+      "4": {
+        "percentual": 1.0,
+        "sobre": "client_profit_share",
+        "calculo_real": "lucro × 0.65 × 0.01",
+        "exemplo_100": 0.65
+      },
+      "5": {
+        "percentual": 1.0,
+        "sobre": "client_profit_share",
+        "calculo_real": "lucro × 0.65 × 0.01",
+        "exemplo_100": 0.65
+      },
+      "6": {
+        "percentual": 2.0,
+        "sobre": "client_profit_share",
+        "calculo_real": "lucro × 0.65 × 0.02",
+        "exemplo_100": 1.30,
+        "requer_qualificacao_avancada": true
+      },
+      "7": {
+        "percentual": 2.0,
+        "sobre": "client_profit_share",
+        "calculo_real": "lucro × 0.65 × 0.02",
+        "exemplo_100": 1.30,
+        "requer_qualificacao_avancada": true
+      },
+      "8": {
+        "percentual": 2.0,
+        "sobre": "client_profit_share",
+        "calculo_real": "lucro × 0.65 × 0.02",
+        "exemplo_100": 1.30,
+        "requer_qualificacao_avancada": true
+      },
+      "9": {
+        "percentual": 2.0,
+        "sobre": "client_profit_share",
+        "calculo_real": "lucro × 0.65 × 0.02",
+        "exemplo_100": 1.30,
+        "requer_qualificacao_avancada": true
+      },
+      "10": {
+        "percentual": 2.0,
+        "sobre": "client_profit_share",
+        "calculo_real": "lucro × 0.65 × 0.02",
+        "exemplo_100": 1.30,
+        "requer_qualificacao_avancada": true
+      }
+    }
+  },
+
+  "requisitos": {
+    "lai": {
+      "valor": 19.00,
+      "moeda": "USD",
+      "periodo": "mensal",
+      "nome": "Licença de Acesso Inteligente",
+      "obrigatorio": true,
+      "descricao": "Sem LAI ativa = sem direito a comissões"
+    },
+
+    "qualificacao_basica": {
+      "niveis": [1, 2, 3, 4, 5],
+      "requisitos": {
+        "lai_ativa": true,
+        "sponsor_valido": true
+      }
+    },
+
+    "qualificacao_avancada": {
+      "niveis": [6, 7, 8, 9, 10],
+      "requisitos": {
+        "lai_ativa": true,
+        "sponsor_valido": true,
+        "minimo_diretos_ativos": 5,
+        "volume_minimo_mensal": {
+          "valor": 5000.00,
+          "moeda": "USD",
+          "descricao": "Volume total da rede (soma de lucros dos downlines)"
+        }
+      }
+    }
+  },
+
+  "regras_distribuicao": {
+    "frequencia": "semanal",
+    "dia_calculo": "domingo",
+    "dia_pagamento": "segunda",
+    "metodo": "batch_usdt_transfer",
+    "batch_size": 100,
+    "gas_optimization": true
+  },
+
+  "estrutura_performance_fee": {
+    "total": 35.0,
+    "distribuicao_empresa": {
+      "operacional": 12.0,
+      "infraestrutura": 8.0,
+      "desenvolvimento": 7.0,
+      "lucro": 8.0
+    }
+  },
+
+  "validacao": {
+    "soma_niveis_1_5": 15.0,
+    "soma_niveis_6_10": 10.0,
+    "total_mlm": 25.0,
+    "validacao_matematica": "OK - soma = 25%"
+  },
+
+  "custos_operacionais_estimados": {
+    "blockchain": "BSC Mainnet",
+    "deploy_inicial": {
+      "rulebook": 0.60,
+      "proof": 1.35,
+      "total": 1.95,
+      "moeda": "USD",
+      "frequencia": "uma_vez"
+    },
+    "operacao_semanal": {
+      "submit_proof": 0.36,
+      "finalize_week": 0.09,
+      "total": 0.45,
+      "moeda": "USD"
+    },
+    "operacao_anual": {
+      "smart_contracts": 23.40,
+      "pagamentos_usdt_batch_200_users": 93.60,
+      "ipfs_pinata_pro": 240.00,
+      "total_com_ipfs": 357.00,
+      "total_sem_ipfs": 117.00,
+      "moeda": "USD"
+    },
+    "per_user_200": {
+      "com_ipfs": 1.78,
+      "sem_ipfs": 0.58,
+      "moeda": "USD",
+      "periodo": "anual"
+    },
+    "observacao": "Custos diminuem com escala. Com 1000 users: ~$0.50/user/ano"
+  },
+
+  "integracao_tecnica": {
+    "smart_contracts": {
+      "rulebook": "iDeepXRulebookImmutable.sol",
+      "proof": "iDeepXProof.sol"
+    },
+    "backend": {
+      "trading_api": "GMI Edge API",
+      "calculo_comissoes": "off-chain",
+      "armazenamento_snapshots": "IPFS via Pinata",
+      "banco_dados": "PostgreSQL",
+      "automacao": "cron jobs"
+    },
+    "frontend": {
+      "framework": "Next.js",
+      "wallet": "Web3",
+      "visualizacao": "MLM tree + earnings dashboard"
+    }
+  },
+
+  "referencias_contratuais": {
+    "ipfs_gateway": "https://gateway.pinata.cloud/ipfs/",
+    "bscscan": "https://bscscan.com",
+    "usdt_bep20": "0x55d398326f99059fF775485246999027B3197955"
+  },
+
+  "metadata": {
+    "author": "iDeepX Development Team",
+    "license": "Proprietary",
+    "ultima_atualizacao": "2025-01-11",
+    "status": "production_ready"
+  }
+}

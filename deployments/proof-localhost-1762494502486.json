@@ -1,0 +1,15 @@
+{
+  "contract": "iDeepXProofFinal",
+  "network": "localhost",
+  "chainId": "31337",
+  "address": "0xb4e9A5BC64DC07f890367F72941403EEd7faDCbB",
+  "owner": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+  "backend": "0x29061a4c6A0C4aedc79A24f37553F6B9fe8Fec5F",
+  "rulebookAddress": "0xfc073209b7936A771F77F63D42019a3a93311869",
+  "planIpfsCid": "QmExamplePlanHash123",
+  "planContentHash": "0x949b2ae2debf7cdb74e38997ac9fbee2ea26a637ae8d639db86fc8845bf31f3b",
+  "deployedAt": "2025-11-07T05:48:22.486Z",
+  "deployer": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+  "txHash": "0x0e85ea280f6decec9ee71d96f107ae3a8ababefdcd80baf33b8100a613f23261",
+  "blockNumber": 715
+}

@@ -1,0 +1,233 @@
+{
+  "version": "1.0.0",
+  "week": 1731283200,
+  "weekNumber": 1,
+  "weekStart": "2024-11-11T00:00:00Z",
+  "weekEnd": "2024-11-17T23:59:59Z",
+  "timestamp": 1731369600,
+  "generatedAt": "2024-11-07T00:00:00Z",
+
+  "summary": {
+    "totalUsers": 5,
+    "activeUsers": 5,
+    "totalProfits": 5000.00,
+    "totalCommissions": 812.50,
+    "totalPaid": 812.50,
+    "currency": "USD"
+  },
+
+  "rulebook": {
+    "address": "0x7A09383b65c07dc525bA0aF1b63DBe14a375aa2B",
+    "ipfsCid": "bafkreicfkbecmhcrsxq4fvond5xvpiwosj3e7a7emocxhr2clidvgfgbii",
+    "contentHash": "0x949b2ae2debf7cdb74e38997ac9fbee2ea26a637ae8d639db86fc8845bf31f3b",
+    "version": "1.0.0"
+  },
+
+  "proofContract": {
+    "address": "0x620dA2A17Eb2C2fA39D03e47737f485D1C0194Aa",
+    "network": "bscTestnet",
+    "chainId": 97
+  },
+
+  "businessModel": {
+    "clientShare": 0.65,
+    "companyFee": 0.35,
+    "mlmBase": 0.25,
+    "description": "Cliente recebe 65%, Empresa 35%, MLM 25% do cliente (16.25% total)"
+  },
+
+  "users": [
+    {
+      "id": 1,
+      "wallet": "0x75d1a8ac59003088c60a20bde8953cbecfe41669",
+      "name": "Pioneer",
+      "gmiAccount": "TEST001",
+      "profit": 1000.00,
+      "clientShare": 650.00,
+      "companyFee": 350.00,
+      "mlmTotal": 162.50,
+      "commissions": {
+        "L1": { "amount": 52.00, "from": "0x5Ac0dBf26C1901640c3bBDA44A88aBD07A2c5246", "percentage": 0.08 },
+        "L2": { "amount": 19.50, "from": "0xC7E8c78DB45628791B580cCB166eC46ED4D9AAE4", "percentage": 0.03 },
+        "L3": { "amount": 13.00, "from": "0x002b8E08753E53dB3a68DFaDAFa189aEDc4Ab6Ec", "percentage": 0.02 },
+        "L4": { "amount": 6.50, "from": "0x7C8B0D4757a3c08E4720d2d4116a45cC0A9Dafa3", "percentage": 0.01 },
+        "L5": { "amount": 6.50, "from": "0x02E56740fAA26f819564A5a11ce8ab798B8F87aD", "percentage": 0.01 }
+      },
+      "lai": {
+        "active": true,
+        "cost": 19.00,
+        "expiresAt": 1733961600,
+        "paidOn": "2024-11-01"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 5,
+        "volume": 4000.00,
+        "reason": "Needs $5000 volume for advanced"
+      },
+      "netReceived": 793.50,
+      "calculation": "650.00 (client) + 162.50 (mlm) - 19.00 (lai)"
+    },
+    {
+      "id": 2,
+      "wallet": "0x5Ac0dBf26C1901640c3bBDA44A88aBD07A2c5246",
+      "name": "Direct_1",
+      "gmiAccount": "TEST002",
+      "profit": 1000.00,
+      "clientShare": 650.00,
+      "companyFee": 350.00,
+      "mlmTotal": 162.50,
+      "commissions": {
+        "L1": { "amount": 52.00, "from": "0xC7E8c78DB45628791B580cCB166eC46ED4D9AAE4", "percentage": 0.08 },
+        "L2": { "amount": 19.50, "from": "0x002b8E08753E53dB3a68DFaDAFa189aEDc4Ab6Ec", "percentage": 0.03 }
+      },
+      "lai": {
+        "active": true,
+        "cost": 19.00,
+        "expiresAt": 1733961600,
+        "paidOn": "2024-11-01"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 2,
+        "volume": 2000.00,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 864.00,
+      "calculation": "650.00 (client) + 233.00 (mlm) - 19.00 (lai)"
+    },
+    {
+      "id": 3,
+      "wallet": "0xC7E8c78DB45628791B580cCB166eC46ED4D9AAE4",
+      "name": "Direct_2",
+      "gmiAccount": "TEST003",
+      "profit": 1000.00,
+      "clientShare": 650.00,
+      "companyFee": 350.00,
+      "mlmTotal": 162.50,
+      "commissions": {
+        "L1": { "amount": 52.00, "from": "0x002b8E08753E53dB3a68DFaDAFa189aEDc4Ab6Ec", "percentage": 0.08 }
+      },
+      "lai": {
+        "active": true,
+        "cost": 19.00,
+        "expiresAt": 1733961600,
+        "paidOn": "2024-11-01"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 1,
+        "volume": 1000.00,
+        "reason": "Needs 5 directs for advanced"
+      },
+      "netReceived": 735.00,
+      "calculation": "650.00 (client) + 104.00 (mlm) - 19.00 (lai)"
+    },
+    {
+      "id": 4,
+      "wallet": "0x002b8E08753E53dB3a68DFaDAFa189aEDc4Ab6Ec",
+      "name": "Direct_3",
+      "gmiAccount": "TEST004",
+      "profit": 1000.00,
+      "clientShare": 650.00,
+      "companyFee": 350.00,
+      "mlmTotal": 0.00,
+      "commissions": {},
+      "lai": {
+        "active": true,
+        "cost": 19.00,
+        "expiresAt": 1733961600,
+        "paidOn": "2024-11-01"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 0,
+        "volume": 0.00,
+        "reason": "No downline yet"
+      },
+      "netReceived": 631.00,
+      "calculation": "650.00 (client) + 0.00 (mlm) - 19.00 (lai)"
+    },
+    {
+      "id": 5,
+      "wallet": "0x7C8B0D4757a3c08E4720d2d4116a45cC0A9Dafa3",
+      "name": "Direct_4",
+      "gmiAccount": "TEST005",
+      "profit": 1000.00,
+      "clientShare": 650.00,
+      "companyFee": 350.00,
+      "mlmTotal": 0.00,
+      "commissions": {},
+      "lai": {
+        "active": true,
+        "cost": 19.00,
+        "expiresAt": 1733961600,
+        "paidOn": "2024-11-01"
+      },
+      "qualified": {
+        "basic": true,
+        "advanced": false,
+        "directs": 0,
+        "volume": 0.00,
+        "reason": "No downline yet"
+      },
+      "netReceived": 631.00,
+      "calculation": "650.00 (client) + 0.00 (mlm) - 19.00 (lai)"
+    }
+  ],
+
+  "mlmBreakdown": {
+    "L1": {
+      "totalPaid": 260.00,
+      "recipients": 4,
+      "percentage": 0.08
+    },
+    "L2": {
+      "totalPaid": 97.50,
+      "recipients": 2,
+      "percentage": 0.03
+    },
+    "L3": {
+      "totalPaid": 13.00,
+      "recipients": 1,
+      "percentage": 0.02
+    },
+    "L4": {
+      "totalPaid": 6.50,
+      "recipients": 1,
+      "percentage": 0.01
+    },
+    "L5": {
+      "totalPaid": 6.50,
+      "recipients": 1,
+      "percentage": 0.01
+    },
+    "L6": { "totalPaid": 0.00, "recipients": 0, "percentage": 0.02 },
+    "L7": { "totalPaid": 0.00, "recipients": 0, "percentage": 0.02 },
+    "L8": { "totalPaid": 0.00, "recipients": 0, "percentage": 0.02 },
+    "L9": { "totalPaid": 0.00, "recipients": 0, "percentage": 0.02 },
+    "L10": { "totalPaid": 0.00, "recipients": 0, "percentage": 0.02 }
+  },
+
+  "validation": {
+    "totalClientShares": 3250.00,
+    "totalCompanyFees": 1750.00,
+    "totalMLMCommissions": 383.50,
+    "totalLAICosts": 95.00,
+    "totalNetPayments": 3654.50,
+    "checksumPassed": true,
+    "notes": "All calculations verified according to Rulebook v1.0.0"
+  },
+
+  "metadata": {
+    "generatedBy": "iDeepX Backend Test v1.0",
+    "calculationEngine": "Manual Test",
+    "rulebookVersion": "1.0.0",
+    "proofVersion": "1.0.0",
+    "notes": "Test snapshot for Quick Test validation"
+  }
+}

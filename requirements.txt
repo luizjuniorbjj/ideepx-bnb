@@ -1,0 +1,33 @@
+# iDeepX V9_SECURE - Intelligent Test Bot
+# Python Dependencies
+
+# Web3 e Blockchain
+web3==6.11.3
+eth-account==0.10.0
+eth-utils==2.3.1
+hexbytes==0.3.1
+
+# Async
+aiohttp==3.9.1
+asyncio==3.4.3
+
+# Utilities
+python-dotenv==1.0.0
+python-dateutil==2.8.2
+
+# Data & Analysis
+pandas==2.1.4
+numpy==1.26.2
+
+# Logging & Monitoring
+colorlog==6.8.0
+tqdm==4.66.1
+
+# Reports
+jinja2==3.1.2
+matplotlib==3.8.2
+seaborn==0.13.0
+
+# Testing
+pytest==7.4.3
+pytest-asyncio==0.21.1

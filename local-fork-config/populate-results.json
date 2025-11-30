@@ -1,0 +1,27 @@
+{
+  "timestamp": "2025-11-06T09:26:01.488Z",
+  "config": {
+    "contractAddress": "0xeC1BB74f5799811c0c1Bff94Ef76Fb40abccbE4a",
+    "usdtAddress": "0x666432Ccb747B2220875cE185f487Ed53677faC9"
+  },
+  "results": {
+    "registered": 30,
+    "withLAI": 23,
+    "qualified": 0,
+    "errors": 0
+  },
+  "levels": {
+    "L0": 7,
+    "L5": 23,
+    "L10": 0
+  },
+  "financial": {
+    "totalLAIPaid": "437.0",
+    "totalBonusPaid": "109.25",
+    "usersWithBonus": 6
+  },
+  "contract": {
+    "totalUsers": "30",
+    "currentWeek": "0"
+  }
+}

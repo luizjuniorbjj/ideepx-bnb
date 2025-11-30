@@ -1,0 +1,15 @@
+{
+  "contract": "iDeepXProofFinal",
+  "network": "bscTestnet",
+  "chainId": "97",
+  "address": "0x620dA2A17Eb2C2fA39D03e47737f485D1C0194Aa",
+  "owner": "0xEB2451A8dd58734134DD7Bde64A5f86725b75ef2",
+  "backend": "0x29061a4c6A0C4aedc79A24f37553F6B9fe8Fec5F",
+  "rulebookAddress": "0x7A09383b65c07dc525bA0aF1b63DBe14a375aa2B",
+  "planIpfsCid": "bafkreicfkbecmhcrsxq4fvond5xvpiwosj3e7a7emocxhr2clidvgfgbii",
+  "planContentHash": "0x949b2ae2debf7cdb74e38997ac9fbee2ea26a637ae8d639db86fc8845bf31f3b",
+  "deployedAt": "2025-11-07T06:08:12.337Z",
+  "deployer": "0xEB2451A8dd58734134DD7Bde64A5f86725b75ef2",
+  "txHash": "0x5bc21d28f9a431f8e4305047dfafa5e2e5bf6129d77865bc1e848d3ea51f423d",
+  "blockNumber": null
+}

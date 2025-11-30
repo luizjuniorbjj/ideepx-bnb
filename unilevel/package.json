@@ -1,0 +1,67 @@
+{
+  "name": "ideepx-smart-contracts",
+  "version": "1.0.0",
+  "description": "iDeepX Proof - Smart Contract for transparent commission tracking",
+  "main": "index.js",
+  "scripts": {
+    "test": "hardhat test",
+    "test:gas": "REPORT_GAS=true hardhat test",
+    "compile": "hardhat compile",
+    "clean": "hardhat clean",
+    "node": "hardhat node",
+    
+    "check:balance": "hardhat run scripts/check-balance.js",
+    "check:balance:bsc": "hardhat run scripts/check-balance.js --network bsc",
+    "check:balance:bscTestnet": "hardhat run scripts/check-balance.js --network bscTestnet",
+    
+    "deploy:rulebook:localhost": "hardhat run scripts/deploy-rulebook.js --network localhost",
+    "deploy:rulebook:bscTestnet": "hardhat run scripts/deploy-rulebook.js --network bscTestnet",
+    "deploy:rulebook:bsc": "hardhat run scripts/deploy-rulebook.js --network bsc",
+    
+    "deploy:proof:localhost": "hardhat run scripts/deploy-proof.js --network localhost",
+    "deploy:proof:bscTestnet": "hardhat run scripts/deploy-proof.js --network bscTestnet",
+    "deploy:proof:bsc": "hardhat run scripts/deploy-proof.js --network bsc",
+    
+    "deploy:localhost": "hardhat run scripts/deploy.js --network localhost",
+    "deploy:bscTestnet": "hardhat run scripts/deploy.js --network bscTestnet",
+    "deploy:bsc": "hardhat run scripts/deploy.js --network bsc",
+    "deploy:mumbai": "hardhat run scripts/deploy.js --network mumbai",
+    "deploy:polygon": "hardhat run scripts/deploy.js --network polygon",
+    
+    "verify:bscTestnet": "hardhat verify --network bscTestnet",
+    "verify:bsc": "hardhat verify --network bsc",
+    "verify:mumbai": "hardhat verify --network mumbai",
+    "verify:polygon": "hardhat verify --network polygon"
+  },
+  "keywords": [
+    "ethereum",
+    "smart-contract",
+    "solidity",
+    "blockchain",
+    "transparency",
+    "ipfs"
+  ],
+  "author": "iDeepX Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-chai-matchers": "^2.0.0",
+    "@nomicfoundation/hardhat-ethers": "^3.0.0",
+    "@nomicfoundation/hardhat-network-helpers": "^1.0.0",
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@nomicfoundation/hardhat-verify": "^2.0.0",
+    "@typechain/ethers-v6": "^0.5.0",
+    "@typechain/hardhat": "^9.0.0",
+    "@types/chai": "^4.2.0",
+    "@types/mocha": ">=9.1.0",
+    "chai": "^4.2.0",
+    "dotenv": "^16.3.1",
+    "ethers": "^6.4.0",
+    "hardhat": "^2.19.0",
+    "hardhat-gas-reporter": "^1.0.8",
+    "solidity-coverage": "^0.8.0",
+    "typechain": "^8.3.0"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.0"
+  }
+}

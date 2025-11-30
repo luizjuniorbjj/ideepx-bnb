@@ -1,0 +1,12 @@
+{
+  "contract": "iDeepXRulebookImmutable",
+  "network": "bscTestnet",
+  "chainId": "97",
+  "address": "0x7A09383b65c07dc525bA0aF1b63DBe14a375aa2B",
+  "ipfsCid": "bafkreicfkbecmhcrsxq4fvond5xvpiwosj3e7a7emocxhr2clidvgfgbii",
+  "contentHash": "0x949b2ae2debf7cdb74e38997ac9fbee2ea26a637ae8d639db86fc8845bf31f3b",
+  "deployedAt": "2025-11-07T06:07:05.000Z",
+  "deployer": "0xEB2451A8dd58734134DD7Bde64A5f86725b75ef2",
+  "txHash": "0x4f2c91ead19fb804823d923a1bc256b792a6407b91bae705118f2980b85ccd61",
+  "blockNumber": null
+}

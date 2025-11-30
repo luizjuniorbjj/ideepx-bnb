@@ -1,0 +1,45 @@
+{
+  "total_tests": 3,
+  "system_survived_count": 0,
+  "system_failed_count": 3,
+  "critical_failures": 1,
+  "duration": 6.066695213317871,
+  "results": [
+    {
+      "test_name": "Transaction Spam",
+      "attack_type": "Mass Registration",
+      "severity": "HIGH",
+      "description": "50 registros simult\u00e2neos",
+      "result": "Erro: 'NonceFix' object has no attribute 'increment_nonce'",
+      "system_survived": false,
+      "metrics": {
+        "error": "'NonceFix' object has no attribute 'increment_nonce'"
+      },
+      "timestamp": "2025-11-01T23:18:50.628954"
+    },
+    {
+      "test_name": "Concurrent Withdrawals",
+      "attack_type": "Mass Withdrawal",
+      "severity": "CRITICAL",
+      "description": "10 saques simult\u00e2neos",
+      "result": "Erro: 'NonceFix' object has no attribute 'increment_nonce'",
+      "system_survived": false,
+      "metrics": {
+        "error": "'NonceFix' object has no attribute 'increment_nonce'"
+      },
+      "timestamp": "2025-11-01T23:18:52.648711"
+    },
+    {
+      "test_name": "Rapid Fire Transactions",
+      "attack_type": "Sequential Spam",
+      "severity": "HIGH",
+      "description": "100 TXs sequenciais",
+      "result": "Erro: 'NonceFix' object has no attribute 'increment_nonce'",
+      "system_survived": false,
+      "metrics": {
+        "error": "'NonceFix' object has no attribute 'increment_nonce'"
+      },
+      "timestamp": "2025-11-01T23:18:54.674799"
+    }
+  ]
+}

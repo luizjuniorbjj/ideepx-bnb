@@ -1,0 +1,212 @@
+[
+  {
+    "inputs": [{"name": "sponsorWallet", "type": "address"}],
+    "name": "registerWithSponsor",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [{"name": "months", "type": "uint8"}],
+    "name": "activateSubscriptionWithUSDT",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [{"name": "months", "type": "uint8"}],
+    "name": "activateSubscriptionWithBalance",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {"name": "months", "type": "uint8"},
+      {"name": "balanceAmount", "type": "uint256"}
+    ],
+    "name": "activateSubscriptionMixed",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "withdrawAllEarnings",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {"name": "to", "type": "address"},
+      {"name": "amount", "type": "uint256"}
+    ],
+    "name": "transferBalance",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "claimReserveBonus",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "requestRankUpgrade",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [{"name": "user", "type": "address"}],
+    "name": "getUserInfo",
+    "outputs": [
+      {"name": "isRegistered", "type": "bool"},
+      {"name": "subscriptionActive", "type": "bool"},
+      {"name": "availableBalance", "type": "uint256"},
+      {"name": "subscriptionExpiration", "type": "uint256"},
+      {"name": "currentRank", "type": "uint8"}
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getSystemStats",
+    "outputs": [
+      {"name": "_totalUsers", "type": "uint256"},
+      {"name": "_totalActive", "type": "uint256"},
+      {"name": "_contractBalance", "type": "uint256"},
+      {"name": "_betaMode", "type": "bool"}
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getSolvencyRatio",
+    "outputs": [{"name": "", "type": "uint256"}],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getSecurityStatus",
+    "outputs": [
+      {"name": "_emergencyReserve", "type": "uint256"},
+      {"name": "_circuitBreakerActive", "type": "bool"},
+      {"name": "_solvencyRatio", "type": "uint256"}
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "checkAndUpdateCircuitBreaker",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [{"name": "months", "type": "uint8"}],
+    "name": "getSubscriptionCost",
+    "outputs": [{"name": "", "type": "uint256"}],
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "circuitBreakerActive",
+    "outputs": [{"name": "", "type": "bool"}],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "emergencyReserve",
+    "outputs": [{"name": "", "type": "uint256"}],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "betaMode",
+    "outputs": [{"name": "", "type": "bool"}],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "totalUsers",
+    "outputs": [{"name": "", "type": "uint256"}],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "MAX_BETA_USERS",
+    "outputs": [{"name": "", "type": "uint256"}],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "SUBSCRIPTION_FEE",
+    "outputs": [{"name": "", "type": "uint256"}],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "DIRECT_BONUS",
+    "outputs": [{"name": "", "type": "uint256"}],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "FAST_START_BONUS",
+    "outputs": [{"name": "", "type": "uint256"}],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "MAX_WITHDRAWAL_PER_TX",
+    "outputs": [{"name": "", "type": "uint256"}],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "MAX_WITHDRAWAL_PER_MONTH",
+    "outputs": [{"name": "", "type": "uint256"}],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "totalUserBalances",
+    "outputs": [{"name": "", "type": "uint256"}],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "totalPendingReserve",
+    "outputs": [{"name": "", "type": "uint256"}],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "USDT",
+    "outputs": [{"name": "", "type": "address"}],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]

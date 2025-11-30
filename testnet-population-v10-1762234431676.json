@@ -1,0 +1,243 @@
+{
+  "metadata": {
+    "network": "BSC Testnet",
+    "chainId": 97,
+    "timestamp": "2025-11-04T01:31:39.726Z",
+    "contract": "0xe678A271c096EF9CFE296243e022deaFBE05f4Ea",
+    "usdt": "0xf484a22555113Cebac616bC84451Bf04085097b8",
+    "owner": "0x29061a4c6A0C4aedc79A24f37553F6B9fe8Fec5F",
+    "totalClients": 20,
+    "registeredClients": 0
+  },
+  "config": {
+    "contractAddress": "0xe678A271c096EF9CFE296243e022deaFBE05f4Ea",
+    "usdtAddress": "0xf484a22555113Cebac616bC84451Bf04085097b8",
+    "ownerAddress": "0x29061a4c6A0C4aedc79A24f37553F6B9fe8Fec5F",
+    "totalClients": 20,
+    "bnbPerClient": "0.003",
+    "usdtPerClient": "100",
+    "subscriptionFee": "29"
+  },
+  "wallets": [
+    {
+      "index": 1,
+      "address": "0xA2921d64Cd8C7BC5B4acbC20420238356199f649",
+      "privateKey": "0xd84f2e9e47681764aacab3104324596832083e53b4432c4bcc218ae76233e6fe",
+      "registered": false,
+      "sponsor": null,
+      "error": "contract.connect(...).registerAndSubscribe is not a function",
+      "activatedByAdmin": true,
+      "subscribed": true
+    },
+    {
+      "index": 2,
+      "address": "0x6687f123ec8aC813a38B5B19277f9166a3E7FA04",
+      "privateKey": "0xf9a31be189467fa9c10e75823966cb056622737e788d6431747221b2819b8fe2",
+      "registered": false,
+      "sponsor": null,
+      "error": "contract.connect(...).registerAndSubscribe is not a function",
+      "activatedByAdmin": true,
+      "subscribed": true
+    },
+    {
+      "index": 3,
+      "address": "0x88BF8671cD49b32992cEf3Ca9854ca5bF57bB2dD",
+      "privateKey": "0x207830fbdf44f82c4d9a44ba968c51ba9165dc42351340ec43018ffb22d3c4c1",
+      "registered": false,
+      "sponsor": null,
+      "error": "contract.connect(...).registerAndSubscribe is not a function",
+      "activatedByAdmin": true,
+      "subscribed": true
+    },
+    {
+      "index": 4,
+      "address": "0xE748e24c7C28B747db8Ffc7A3D2A6eC52a5a88a2",
+      "privateKey": "0x5ab1a4d93fdf913ad9ae9aac609a800d0dd30d2a9156b990e71e4c05624f0758",
+      "registered": false,
+      "sponsor": null,
+      "error": "contract.connect(...).registerAndSubscribe is not a function",
+      "activatedByAdmin": true,
+      "subscribed": true
+    },
+    {
+      "index": 5,
+      "address": "0x11CdbD8FDf028664b43A0d572ae1e9a21b76Cc9C",
+      "privateKey": "0x3ddc447eafcab89c00fd61eae5c43ab385b880c1ed6fdf938f3fb1de0ee7681a",
+      "registered": false,
+      "sponsor": null,
+      "error": "contract.connect(...).registerAndSubscribe is not a function",
+      "activatedByAdmin": true,
+      "subscribed": true
+    },
+    {
+      "index": 6,
+      "address": "0x80bEDf136454683EBEeDb7223901536332BbA373",
+      "privateKey": "0x1366ee81f558a77e9033ae3e4b0335e6e53ee3af05442704f4afa7a538de8475",
+      "registered": false,
+      "sponsor": null,
+      "error": "contract.connect(...).registerAndSubscribe is not a function",
+      "activatedByAdmin": true,
+      "subscribed": true
+    },
+    {
+      "index": 7,
+      "address": "0xa8c09eCC8fB65Ac2159047488d2ef5f622D9E90D",
+      "privateKey": "0x294088fce51f4b6e47e61f82dfd006e656f1448202653e1cf80e30c6eea49881",
+      "registered": false,
+      "sponsor": null,
+      "error": "contract.connect(...).registerAndSubscribe is not a function",
+      "activatedByAdmin": true,
+      "subscribed": true
+    },
+    {
+      "index": 8,
+      "address": "0x438E151993e46de67Fff09cE50e45BDa0F80A3eB",
+      "privateKey": "0x4bd8e891fafcf19bcdb971f3aaa6551cd4118f2edc43c0d91642280b31e8c5b7",
+      "registered": false,
+      "sponsor": null,
+      "error": "contract.connect(...).registerAndSubscribe is not a function",
+      "activatedByAdmin": true,
+      "subscribed": true
+    },
+    {
+      "index": 9,
+      "address": "0x38159aC08728f89A55C8cC7e6023C752B6BE3187",
+      "privateKey": "0xfceb58ae4e1ab1a30e8929ef8383c67c8bd5c7d1d6bd9d7a5ff792661ef30faf",
+      "registered": false,
+      "sponsor": null,
+      "error": "contract.connect(...).registerAndSubscribe is not a function",
+      "activatedByAdmin": true,
+      "subscribed": true
+    },
+    {
+      "index": 10,
+      "address": "0xcF07212381E3856f2e131AD8d7fEd3d8c8ed08f7",
+      "privateKey": "0xaca1b1fc020fd252c2e126cebe936e5367181cff0e67bffdd860df4cb9870ce3",
+      "registered": false,
+      "sponsor": null,
+      "error": "contract.connect(...).registerAndSubscribe is not a function",
+      "activatedByAdmin": true,
+      "subscribed": true
+    },
+    {
+      "index": 11,
+      "address": "0x978e31FcdDEED8b6254912F0c442E5b0DADc1124",
+      "privateKey": "0x6220775ca584ae2b5435da6dbeb139fbef26a11f6449c7e24a17a013e74f2a48",
+      "registered": false,
+      "sponsor": null,
+      "error": "contract.connect(...).registerAndSubscribe is not a function",
+      "activatedByAdmin": true,
+      "subscribed": true
+    },
+    {
+      "index": 12,
+      "address": "0x230559C19AeFfB26B61182Ac86b237AD4C8685C4",
+      "privateKey": "0xfffccaa243915884341d120ea12eedb6712aac11c604bf89965c4568cb333b2f",
+      "registered": false,
+      "sponsor": null,
+      "error": "contract.connect(...).registerAndSubscribe is not a function",
+      "activatedByAdmin": true,
+      "subscribed": true
+    },
+    {
+      "index": 13,
+      "address": "0x495EcA157ccCDEDA9562DE3E880E9D5929A61221",
+      "privateKey": "0xdfc539a0eab11d0a42043eb7dd1f09b85f10495b1a978e3f3b8b7c656293420b",
+      "registered": false,
+      "sponsor": null,
+      "error": "contract.connect(...).registerAndSubscribe is not a function",
+      "activatedByAdmin": true,
+      "subscribed": true
+    },
+    {
+      "index": 14,
+      "address": "0x2fc3a348Cd3F2530F15cF6Ea2f11EAE7eD57a489",
+      "privateKey": "0xa924a229337e2506e38a40c00d44d90864d682c2c17068f760bf9f91eb84ef07",
+      "registered": false,
+      "sponsor": null,
+      "error": "contract.connect(...).registerAndSubscribe is not a function",
+      "activatedByAdmin": true,
+      "subscribed": true
+    },
+    {
+      "index": 15,
+      "address": "0x95E8B458863dB4Da6A3495B1d167D4D55F088FD2",
+      "privateKey": "0x99a05a767ecd75609b9c4ffaf1bab7d062322516d492d4617c8613e523b2c9ca",
+      "registered": false,
+      "sponsor": null,
+      "error": "contract.connect(...).registerAndSubscribe is not a function",
+      "activatedByAdmin": true,
+      "subscribed": true
+    },
+    {
+      "index": 16,
+      "address": "0x006a002877072B48EFe188eEA1Ff719345D3587F",
+      "privateKey": "0x5f5a9f2aa36207f35dba1c534945dc18bf8362c7d867efaf28c18ff32f4d177c",
+      "registered": false,
+      "sponsor": null,
+      "error": "contract.connect(...).registerAndSubscribe is not a function",
+      "activatedByAdmin": true,
+      "subscribed": true
+    },
+    {
+      "index": 17,
+      "address": "0x75c2Af5C7C8B5fAaD4Bfe53e5d491b321222c612",
+      "privateKey": "0xe378b384c36ecf7fca2cff1c894d7586e69b85d5231b7ec725c8c0a5c80efcbd",
+      "registered": false,
+      "sponsor": null,
+      "error": "contract.connect(...).registerAndSubscribe is not a function",
+      "activatedByAdmin": true,
+      "subscribed": true
+    },
+    {
+      "index": 18,
+      "address": "0xC70bB378285c62c14801384098AC57D99e509475",
+      "privateKey": "0x41d4d4a1247066b9a553e45bea36370e78f2889ef37a99ad78666b4f8b538116",
+      "registered": false,
+      "sponsor": null,
+      "error": "contract.connect(...).registerAndSubscribe is not a function",
+      "activatedByAdmin": true,
+      "subscribed": true
+    },
+    {
+      "index": 19,
+      "address": "0x94E7168cF39ade421bd544B41C4700348727b817",
+      "privateKey": "0x089f3be95f65090910536cd4538c38ff3d5e1b5820e9168d8e1f4f01ae59f76c",
+      "registered": false,
+      "sponsor": null,
+      "error": "contract.connect(...).registerAndSubscribe is not a function",
+      "activatedByAdmin": true,
+      "subscribed": true
+    },
+    {
+      "index": 20,
+      "address": "0x19007fC555aceD09D167f229f9423043D175Cc6d",
+      "privateKey": "0x286285ee5e15fa9e8047d0e8e3445a0efb1eaa06372c444c1eab88f15b323c7a",
+      "registered": false,
+      "sponsor": null,
+      "error": "contract.connect(...).registerAndSubscribe is not a function",
+      "activatedByAdmin": true,
+      "subscribed": true
+    }
+  ],
+  "summary": {
+    "totalBnbSpent": "0.0642",
+    "totalUsdtDistributed": 2000,
+    "totalSubscriptions": 0,
+    "successRate": "0.0%"
+  },
+  "v10_metadata": {
+    "contractV10": "0x9F8bB784f96ADd0B139e90E652eDe926da3c3653",
+    "usdtAddress": "0x8d06e1376F205Ca66E034be72F50c889321110fA",
+    "timestamp": "2025-11-04T05:33:51.676Z",
+    "activatedByAdmin": 20,
+    "subscribed": 20
+  },
+  "v10_summary": {
+    "totalActivated": 20,
+    "totalSubscribed": 20,
+    "subscriptionFee": "19",
+    "totalRevenue": 380,
+    "successRate": "100.0%"
+  }
+}

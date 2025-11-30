@@ -1,0 +1,28 @@
+# Prettier Ignore - Humanization Rules
+# Arquivos que podem ter formatação customizada (humanização permitida)
+
+# Build outputs
+.next/
+out/
+node_modules/
+.cache/
+
+# Arquivos humanizados - NÃO formatar automaticamente
+# (desenvolvedores escolhem estilo)
+
+# Landing page
+app/page.tsx
+
+# Componentes UI não-críticos
+components/Logo.tsx
+components/ConnectButton.tsx
+components/Footer.tsx
+components/Header.tsx
+
+# Simulações
+app/simulations/**/*.tsx
+
+# Exemplos e documentação
+docs/**/*.md
+*.example.js
+*.example.ts

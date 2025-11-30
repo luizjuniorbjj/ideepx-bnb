@@ -1,0 +1,36 @@
+{
+  "network": "bscMainnet",
+  "chainId": 56,
+  "timestamp": "2025-11-02T16:46:55.497Z",
+  "deployer": "0xEB2451A8dd58734134DD7Bde64A5f86725b75ef2",
+  "contracts": {
+    "core": "0xA64bD448aEECed62d02F0deb8305ecd30f79fb54",
+    "mlm": "0xf49092DC8A288263E6d22e2a0A8aaA0F25d801da",
+    "governance": "0x57ea5e1E49190B9EC2e7eEE658168E1626039442",
+    "timelockLibrary": "0x60C6a303BF17Aa091968C44EbE3fE04b1bBE6460"
+  },
+  "config": {
+    "usdt": "0x55d398326f99059fF775485246999027B3197955",
+    "multisig": "0xeb2451a8dd58734134dd7bde64a5f86725b75ef2",
+    "liquidityPool": "0xeb2451a8dd58734134dd7bde64a5f86725b75ef2",
+    "infrastructureWallet": "0xeb2451a8dd58734134dd7bde64a5f86725b75ef2",
+    "companyWallet": "0xeb2451a8dd58734134dd7bde64a5f86725b75ef2"
+  },
+  "bscscan": {
+    "core": "https://bscscan.com/address/0xA64bD448aEECed62d02F0deb8305ecd30f79fb54",
+    "mlm": "https://bscscan.com/address/0xf49092DC8A288263E6d22e2a0A8aaA0F25d801da",
+    "governance": "https://bscscan.com/address/0x57ea5e1E49190B9EC2e7eEE658168E1626039442",
+    "library": "https://bscscan.com/address/0x60C6a303BF17Aa091968C44EbE3fE04b1bBE6460"
+  },
+  "verification": {
+    "note": "To verify contracts on BscScan, run these commands:",
+    "core": "npx hardhat verify --network bscMainnet 0xA64bD448aEECed62d02F0deb8305ecd30f79fb54 \"0x55d398326f99059fF775485246999027B3197955\" \"0xeb2451a8dd58734134dd7bde64a5f86725b75ef2\" \"0xeb2451a8dd58734134dd7bde64a5f86725b75ef2\" \"0xeb2451a8dd58734134dd7bde64a5f86725b75ef2\" \"0xeb2451a8dd58734134dd7bde64a5f86725b75ef2\"",
+    "mlm": "npx hardhat verify --network bscMainnet 0xf49092DC8A288263E6d22e2a0A8aaA0F25d801da \"0xA64bD448aEECed62d02F0deb8305ecd30f79fb54\" \"0xeb2451a8dd58734134dd7bde64a5f86725b75ef2\"",
+    "governance": "npx hardhat verify --network bscMainnet 0x57ea5e1E49190B9EC2e7eEE658168E1626039442 \"0x55d398326f99059fF775485246999027B3197955\" \"0xA64bD448aEECed62d02F0deb8305ecd30f79fb54\" \"0xeb2451a8dd58734134dd7bde64a5f86725b75ef2\" \"0xeb2451a8dd58734134dd7bde64a5f86725b75ef2\" \"0xeb2451a8dd58734134dd7bde64a5f86725b75ef2\" \"0xeb2451a8dd58734134dd7bde64a5f86725b75ef2\""
+  },
+  "frontendConfig": {
+    "note": "Update these addresses in frontend/config/contracts.ts",
+    "CONTRACT_ADDRESS": "0xA64bD448aEECed62d02F0deb8305ecd30f79fb54",
+    "USDT_ADDRESS": "0x55d398326f99059fF775485246999027B3197955"
+  }
+}
